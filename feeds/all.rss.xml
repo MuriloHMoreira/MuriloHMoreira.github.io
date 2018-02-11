@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>/</link><description></description><lastBuildDate>Sat, 10 Feb 2018 22:46:00 +0100</lastBuildDate><item><title>How this static website was made</title><link>/howto.html</link><description>
+<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>https://murilohmoreira.github.io/</link><description></description><lastBuildDate>Sat, 10 Feb 2018 22:46:00 +0100</lastBuildDate><item><title>How this static website was made</title><link>https://murilohmoreira.github.io/howto.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -9,4 +9,4 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Murilo Moreira</dc:creator><pubDate>Sat, 10 Feb 2018 22:46:00 +0100</pubDate><guid isPermaLink="false">tag:None,2018-02-10:/howto.html</guid><category>python</category></item></channel></rss>
+&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Murilo Moreira</dc:creator><pubDate>Sat, 10 Feb 2018 22:46:00 +0100</pubDate><guid isPermaLink="false">tag:murilohmoreira.github.io,2018-02-10:/howto.html</guid><category>python</category></item></channel></rss>
