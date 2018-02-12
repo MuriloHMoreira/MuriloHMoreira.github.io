@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>https://murilohmoreira.github.io/</link><description></description><lastBuildDate>Sat, 10 Feb 2018 22:46:00 +0100</lastBuildDate><item><title>How this static website was made</title><link>https://murilohmoreira.github.io/howto.html</link><description>
+<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>https://murilohmoreira.github.io/</link><description></description><lastBuildDate>Mon, 12 Feb 2018 22:00:00 +0100</lastBuildDate><item><title>Blog Setup</title><link>https://murilohmoreira.github.io/blog-setup.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="First-post!"&gt;First post!&lt;a class="anchor-link" href="#First-post!"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This will be the first post in our new Pelican blog! You can add any code or markdown cells to this Jupyter notebook, and they will be rendered on your blog.&lt;/p&gt;
+&lt;p&gt;&lt;h1&gt;Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;/p&gt;
+&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="My-background-1" href="#My-background"&gt;My background&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Website-2" href="#Website"&gt;Website&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Workflow-3" href="#Workflow"&gt;Workflow&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Final-Remarks-4" href="#Final-Remarks"&gt;Final Remarks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="References-5" href="#References"&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Murilo Moreira</dc:creator><pubDate>Sat, 10 Feb 2018 22:46:00 +0100</pubDate><guid isPermaLink="false">tag:murilohmoreira.github.io,2018-02-10:/howto.html</guid><category>python</category></item></channel></rss>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;This first post aims to summarize the setup of this blog. It may help anybody trying to make a static website using a similar structure. Jupyter notebooks are becoming a popular tool with data scientists and provides a framework that can fill the gap on the &lt;a href="https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261"&gt;reproducibility issues&lt;/a&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Murilo Moreira</dc:creator><pubDate>Mon, 12 Feb 2018 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:murilohmoreira.github.io,2018-02-12:/blog-setup.html</guid><category>python</category><category>how-tos</category></item></channel></rss>
