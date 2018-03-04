@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>https://murilohmoreira.github.io/</link><description></description><lastBuildDate>Mon, 12 Feb 2018 22:00:00 +0100</lastBuildDate><item><title>Blog Setup</title><link>https://murilohmoreira.github.io/blog-setup.html</link><description>
+<rss version="2.0"><channel><title>Intricacy of Simplicity</title><link>https://murilohmoreira.github.io/</link><description></description><lastBuildDate>Sun, 04 Mar 2018 12:15:00 +0100</lastBuildDate><item><title>Visualizing FEM - Part 1 - Spaces and their importance on the approximation of vectors and functions</title><link>https://murilohmoreira.github.io/visualizing_fem_1.html</link><description>
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Visualizing mathematical concepts is an art. This is a fact proven at each video of &lt;a href="http://www.3blue1brown.com/"&gt;Grant Sanderson&lt;/a&gt;. Sometimes it is easy to forget the importance of seeing things, specially when dealing with concepts that are based upon different basis. Finite elements methods is a good example of a subject that was built upon a wide range of fields of mathematics and this is one of the challenges to overcome when one tries to understand the machinery behind it.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Murilo Moreira</dc:creator><pubDate>Sun, 04 Mar 2018 12:15:00 +0100</pubDate><guid isPermaLink="false">tag:murilohmoreira.github.io,2018-03-04:/visualizing_fem_1.html</guid><category>FEM</category><category>Math</category></item><item><title>Blog Setup</title><link>https://murilohmoreira.github.io/blog-setup.html</link><description>
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
