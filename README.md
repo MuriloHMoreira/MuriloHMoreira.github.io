@@ -1,2 +1,0 @@
-# MuriloHMoreira.github.io
-Blog
