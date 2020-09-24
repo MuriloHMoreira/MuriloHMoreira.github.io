@@ -1,5 +1,6 @@
 @echo off
 
 pelican content -s publishconf.py
-ghp-import output -b master
+set /p message="Commit Message: "
+ghp-import output -b master -m %message%
 git push origin master

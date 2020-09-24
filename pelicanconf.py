@@ -13,7 +13,7 @@ SITEURL = 'http://MuriloHMoreira.github.io'
 PATH = 'content'
 ARTICLE_PATHS = ['blogs',]
 PAGE_PATHS = ['pages']
-STATIC_PATHS = ['images', 'extra/main.css']
+STATIC_PATHS = ['images', 'extra/main.css', 'extra/favicon.ico']
 
 # Internationalization settings
 TIMEZONE = 'Europe/Paris'
@@ -24,7 +24,8 @@ DEFAULT_LANG = 'en'
 THEME = "themes/pure-single"
 COVER_IMG_URL = '/images/sidebar.jpg'
 TAGLINE = "A little bit of Math turns everything fun"
-
+SUMMARY_MAX_LENGTH = (20)
+FAVICON = 'extra/FAVICON'
 # Configure the site menu
 # Fixed menu entries
 MENUITEMS = (
@@ -61,16 +62,24 @@ FEED_ALL_RSS = 'feeds/all.rss.xml'
 SOCIAL = (('twitter', 'https://twitter.com/MuriloHMoreira'),
           ('github', 'https://github.com/MuriloHMoreira'),
           ('linkedin', 'https://www.linkedin.com/in/murilo-moreira-095534bb/'), 
-          ('orcid', 'https://orcid.org/0000-0002-2591-4760'))
-
-DEFAULT_PAGINATION = 10
+          ('rss', 'https://murilohmoreira.github.io/feeds/all.rss.xml'),
+          ('orcid', 'https://orcid.org/0000-0002-2591-4760')
+          )
 
 
 MARKUP = ('md', 'ipynb')
 
+
+# pelicanfly workaround
 EXTRA_PATH_METADATA = {
-    'images/main.css': {'path': 'theme/css/main.css'},
+    'extra/main.css': {'path': 'theme/css/main.css'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
 }
 
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup', 'pelicanfly']
+DISQUS_SITENAME = "i-of-s"
+
+# Give the control on the css highlighter
+IPYNB_IGNORE_CSS=True
+

@@ -27,5 +27,5 @@ ___
 
 
 #References
-[^fn1]: This information and whole idea comes from the front page of the thesis from the Department of Mathematics, [University of Oslo](http://www.uio.no/english/). Sophus Lie (1842–1899) was a notorious Norwegian mathematician.
+[^fn1]: This information and whole idea comes from the front page of the thesis from the Department of Mathematics, [University of Oslo](http://www.uio.no/english/). Sophus Lie was a notorious Norwegian mathematician.
 [^fn2]: [The State of Being Stuck](https://mathwithbaddrawings.com/2017/09/20/the-state-of-being-stuck/)
