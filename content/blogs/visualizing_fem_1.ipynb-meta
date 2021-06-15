@@ -1,7 +1,0 @@
-Title: Visualizing FEM - Part 1 - Spaces and their importance on the approximation of vectors <s>and functions</s>
-Slug: visualizing_fem_1
-Date: 2018-03-04 12:15
-Category: posts
-Tags: FEM, Math
-Author: Murilo Moreira
-Summary: We start a series to help in the visualization of the fundamental concepts of FEM. We start by looking at the properties of approximations of Euclidean vectors and functions of single variables and defining Vector and Function Spaces.
