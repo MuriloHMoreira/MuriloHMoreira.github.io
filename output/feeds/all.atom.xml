@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Intricacy of Simplicity</title><link href="https://murilohmoreira.github.io/" rel="alternate"></link><link href="https://murilohmoreira.github.io/feeds/all.atom.xml" rel="self"></link><id>https://murilohmoreira.github.io/</id><updated>2018-03-04T12:15:00+01:00</updated><entry><title>Visualizing FEM - Part 1 - Spaces and their importance on the approximation of vectors and functions</title><link href="https://murilohmoreira.github.io/visualizing_fem_1.html" rel="alternate"></link><published>2018-03-04T12:15:00+01:00</published><updated>2018-03-04T12:15:00+01:00</updated><author><name>Murilo Moreira</name></author><id>tag:murilohmoreira.github.io,2018-03-04:/visualizing_fem_1.html</id><summary type="html">
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Intricacy of Simplicity</title><link href="https://murilohmoreira.github.io/" rel="alternate"></link><link href="https://murilohmoreira.github.io/feeds/all.atom.xml" rel="self"></link><id>https://murilohmoreira.github.io/</id><updated>2021-06-14T22:29:08+02:00</updated><entry><title>Place to (Re)Start</title><link href="https://murilohmoreira.github.io/place-to-restart.html" rel="alternate"></link><published>2020-06-14T22:30:00+02:00</published><updated>2021-06-14T22:29:08+02:00</updated><author><name>Murilo Moreira</name></author><id>tag:murilohmoreira.github.io,2020-06-14:/place-to-restart.html</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Visualizing mathematical concepts is an art. This is a fact proven at each video of &lt;a href="http://www.3blue1brown.com/"&gt;Grant Sanderson&lt;/a&gt;. Sometimes it is easy to forget the importance of seeing things, specially when dealing with concepts that are based upon different basis. Finite elements methods is a good example of a subject that was built upon a wide range of fields of mathematics and this is one of the challenges to overcome when one tries to understand the machinery behind it.&lt;/p&gt;</summary><content type="html">
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;So this was a failing (or failed?) project.&lt;/p&gt;
+&lt;p&gt;Sure I would love to finish the series on Finite Element Modelling.
+Perhaps, do some more, one on Finite Volume, one specific about the tools, FEniCS, OpenFOAM, SimFlow, or any other of the great open source tools that I have seen and got some contact in the last 4 years.&lt;/p&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;So this was a failing (or failed?) project.&lt;/p&gt;
+&lt;p&gt;Sure I would love to finish the series on Finite Element Modelling.
+Perhaps, do some more, one on Finite Volume, one specific about the tools, FEniCS, OpenFOAM, SimFlow, or any other of the great open source tools that I have seen and got some contact in the last 4 years.&lt;/p&gt;
+&lt;p&gt;I also started to be more concerned with learning. Towards the end of my Bachelor's Degree I got really interested on methodologies, both on the student and teachers perspective.&lt;/p&gt;
+&lt;p&gt;I got to know very nice Professors which were role models to me.
+Also, I got my Masters Degree early this year.&lt;/p&gt;
+&lt;p&gt;And perhaps the funny thing, is now, almost finishing my first semester as a PhD student, I came back to this urge to write, not because I feel part of, but rather because I feel the ticks of the clock slownly drifting me from academia.&lt;/p&gt;
+&lt;p&gt;It is not by any means what I would like, nor the fate that I will just accept.&lt;/p&gt;
+&lt;p&gt;I have a commitement to do my best to stick around, but I know the odds are not on my favor. Not only because of my local reality (Brazil), but even the overall stats shows the same picture: you decide to bet on the academia and most won't be able to just pursuit science for their whole carreers. Simply put there are not enough chairs for everybody.&lt;/p&gt;
+&lt;p&gt;I wanted to conclude this on a clear paragraph showing the next steps, but I guess I cannot do so.&lt;/p&gt;
+&lt;p&gt;This could be my comeback to this blog, or not. And this blog could be somewhere I list and share some of the nice things that I have learned on the last years, or serve as a portfolio of what I can do cfor future employers (?).&lt;/p&gt;
+&lt;p&gt;Academia, industry, or enterpreunship, I really don't know what the opportunities will be, let's wait and see.
+And perhaps this is a place to start.&lt;/p&gt;
+&lt;p&gt;To the unlucky one that by accident found any of the old posts interesting, perhaps in the furute we will complete the FEM course!&lt;/p&gt;
+&lt;p&gt;We'll see, funny enough, I may not talk too much about math, for the moment, I want to share some personal/professional experiences.&lt;/p&gt;
+&lt;p&gt;I'll write this to myself and to anyone that might find it helpful.
+Thanks to any unwkown reader!&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;
+</content><category term="posts"></category><category term="personal"></category></entry><entry><title>Visualizing FEM - Part 1 - Spaces and their importance on the approximation of vectors and functions</title><link href="https://murilohmoreira.github.io/visualizing_fem_1.html" rel="alternate"></link><published>2018-03-04T12:15:00+01:00</published><updated>2020-09-24T14:30:48+02:00</updated><author><name>Murilo Moreira</name></author><id>tag:murilohmoreira.github.io,2018-03-04:/visualizing_fem_1.html</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Visualizing mathematical concepts is an art. This is a fact proven at each video of &lt;a href="http://www.3blue1brown.com/"&gt;Grant Sanderson&lt;/a&gt;. Sometimes it is easy to forget the importance of seeing things, specially when dealing with concepts that are based upon different basis. Finite elements methods is a good example of a subject that was built upon a wide range of fields of mathematics and this is one of the challenges to overcome when one tries to understand the machinery behind it.&lt;/p&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Visualizing mathematical concepts is an art. This is a fact proven at each video of &lt;a href="http://www.3blue1brown.com/"&gt;Grant Sanderson&lt;/a&gt;. Sometimes it is easy to forget the importance of seeing things, specially when dealing with concepts that are based upon different basis. Finite elements methods is a good example of a subject that was built upon a wide range of fields of mathematics and this is one of the challenges to overcome when one tries to understand the machinery behind it.&lt;/p&gt;
 &lt;p&gt;There are plenty of good textbooks upon this subject but for me the one that really opened my eyes was the &lt;a href="https://github.com/hplgit/fem-book"&gt;Introduction to Numerical Methods for Variational Problems&lt;/a&gt; by Professors Kent-Andre Mardal and Hans-Peter Langtangen. 
@@ -16,8 +75,7 @@ Thus the core ideas are extracted from their text, &lt;strong&gt;however my unde
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;h1&gt;Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Series-overview-1" href="#Series-overview"&gt;Series overview&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Approximation-of-Vectors-2" href="#Approximation-of-Vectors"&gt;Approximation of Vectors&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Approximation-of-functions-3" href="#Approximation-of-functions"&gt;Approximation of functions&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Vector-Spaces-and-Function-Spaces-4" href="#Vector-Spaces-and-Function-Spaces"&gt;Vector Spaces and Function Spaces&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Final-Remarks-5" href="#Final-Remarks"&gt;Final Remarks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="References-6" href="#References"&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
@@ -25,8 +83,7 @@ Thus the core ideas are extracted from their text, &lt;strong&gt;however my unde
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Series-overview"&gt;Series overview&lt;a class="anchor-link" href="#Series-overview"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;The present series of posts aims to gather some thoughts on the visualization of the Finite Element Method an approximation technique that started to become increasingly important after the 60's [&lt;a href="#cit-Thomee2001"&gt;1&lt;/a&gt;] and today is largely used for the solution of linear and nonlinear partial derivative equations. The increase of computational power and the development of different specialized softwares (such as &lt;a href="https://www.ansys.com/"&gt;Ansys&lt;/a&gt; and &lt;a href="https://academy.3ds.com/en/software/abaqus-student-edition"&gt;ABAQUS&lt;/a&gt;) coupled with CAD disseminated this technique by allowing users without a deep background on numerical methods to perform studies solving different pre-build models in numerous geometries and boundary conditions.&lt;/p&gt;
@@ -45,18 +102,16 @@ Thus the core ideas are extracted from their text, &lt;strong&gt;however my unde
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Approximation-of-Vectors"&gt;Approximation of Vectors&lt;a class="anchor-link" href="#Approximation-of-Vectors"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;We will first consider a 2D Euclidean vector as it is the simplest way to visualize sizes and angles between them by using a Cartesian plan. We will be using the common orthogonal basis ($\hat{i} = \left[\begin{smallmatrix}1 \\ 0\end{smallmatrix}\right] $ and $\hat{j} = \left[\begin{smallmatrix} 0 \\ 1\end{smallmatrix} \right]$). First consider the vector:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 v =   \begin{bmatrix}
       5 \\
       3 
       \end{bmatrix}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;We will try to find approximations for it with vectors that are on the line $f(x) = x$. We are limiting the possibilities of our approximation, this is important because the first step to approximate any mathematical object is to define a &lt;strong&gt;space&lt;/strong&gt; where you will look for the approximations. We will be more formal on the definitions after we build the motivations to do so. For now, we are simply looking for the best approximation of $v$ on the line $f(x) = x$.&lt;/p&gt;
+\end{equation}&lt;p&gt;We will try to find approximations for it with vectors that are on the line $f(x) = x$. We are limiting the possibilities of our approximation, this is important because the first step to approximate any mathematical object is to define a &lt;strong&gt;space&lt;/strong&gt; where you will look for the approximations. We will be more formal on the definitions after we build the motivations to do so. For now, we are simply looking for the best approximation of $v$ on the line $f(x) = x$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -65,7 +120,7 @@ v =   \begin{bmatrix}
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sympy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sy&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;scipy.integrate&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;integrate&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
@@ -87,7 +142,7 @@ v =   \begin{bmatrix}
 &lt;div class="prompt input_prompt"&gt;In [22]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;V&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
 
 &lt;span class="n"&gt;a_b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -121,7 +176,7 @@ v =   \begin{bmatrix}
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_svg output_subarea "&gt;
+&lt;div class="output_svg output_subarea"&gt;
 
 
 
@@ -1395,26 +1450,22 @@ z
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Ok, I got carried away, we have &lt;strong&gt;A LOT&lt;/strong&gt; going on in this figure. Let's go step by step and everything will be all right! First, in blue we can see our vector $v$. It is just defined as the sum of three units of $\hat{i}$, and 5 units of $\hat{j}$. This is simply "expanding" our vector $v$ into its components, the &lt;em&gt;basis vectors&lt;/em&gt;. This idea is important, note that with our basis vectors we can construct any vector on this 2D plan! This is mathematically said by stating that vectors $\hat{i}$ and $\hat{j}$ &lt;em&gt;span&lt;/em&gt; the vector space of 2D vectors. We will formally define vector space later, but here we can think about it as where our basis vectors span.&lt;/p&gt;
 &lt;p&gt;Next, we se the black dashed line which is the graph of $f(x)$. It is where we are going to look for the approximations of $v$. We can think that we are looking for vectors which are of the form&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 \boldsymbol{u} = c \ \boldsymbol{\psi}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;where  $\boldsymbol{\psi} = \left[\begin{smallmatrix} 1 \\ 1\end{smallmatrix} \right]$ and $c$ is a real valued constant. If we think carefully, by choosing properly our constant $c$ we can have any vectors on the top of the graph of $f(x)$. Thus, we see that $\boldsymbol{\psi}$ spans a subspace of the plan, the line that corresponds to the graph of $f(x)$. We will just give names, we say that our space spanned by $\boldsymbol{\hat{i}}$ and $\boldsymbol{\hat{j}}$ is $\boldsymbol{R}^2$ and for our subspace we will call $\boldsymbol{F}$. So we can state that we are looking for an approximation of $\boldsymbol{v}$, namely $\boldsymbol{u}$, on the subspace $\boldsymbol{F}$ of $\boldsymbol{R^2}$, defined by the basis vector $\boldsymbol{\psi}$. Nothing harmful, hum?&lt;/p&gt;
+\end{equation}&lt;p&gt;where  $\boldsymbol{\psi} = \left[\begin{smallmatrix} 1 \\ 1\end{smallmatrix} \right]$ and $c$ is a real valued constant. If we think carefully, by choosing properly our constant $c$ we can have any vectors on the top of the graph of $f(x)$. Thus, we see that $\boldsymbol{\psi}$ spans a subspace of the plan, the line that corresponds to the graph of $f(x)$. We will just give names, we say that our space spanned by $\boldsymbol{\hat{i}}$ and $\boldsymbol{\hat{j}}$ is $\boldsymbol{R}^2$ and for our subspace we will call $\boldsymbol{F}$. So we can state that we are looking for an approximation of $\boldsymbol{v}$, namely $\boldsymbol{u}$, on the subspace $\boldsymbol{F}$ of $\boldsymbol{R^2}$, defined by the basis vector $\boldsymbol{\psi}$. Nothing harmful, hum?&lt;/p&gt;
 &lt;p&gt;The next object on our graph is the red vector $u_{optimum}$, in this case we see that we have an error vector $\boldsymbol{e_{optimum}} = \boldsymbol{v} - \boldsymbol{u_{optimum}}$  which is described by the yellow vector. On this example it is easy to see that $\boldsymbol{u_{optimum}} = \left[\begin{smallmatrix} 4 \\ 4\end{smallmatrix} \right]$. This is, for now, a given information, and you can see this by checking that it is in fact the &lt;a href="https://en.wikipedia.org/wiki/Vector_projection#Definitions_in_terms_of_a_and_b"&gt;orthogonal projection&lt;/a&gt; of $\boldsymbol{v}$ on $\boldsymbol{\psi}$.&lt;/p&gt;
 &lt;p&gt;I just preferred to show only&lt;a href="#f3"&gt;&lt;sup id="a3"&gt;3&lt;/sup&gt;&lt;/a&gt;  the errors of two other approximations $\boldsymbol{u_1} = \left[\begin{smallmatrix} 4.5 \\ 4.5\end{smallmatrix} \right]$ and $u_2 = \left[\begin{smallmatrix} 3.5 \\ 3.5\end{smallmatrix} \right]$ (a vector that is a little bit longer - $c_1 = 4.5$ - than the optimum and one that is shorter - $c_1 = 3.5$ ) where we can see that the length of the errors associated with such approximations are bigger than $\boldsymbol{e_{optimum}}$. Notice also how the angle between such errors and the subspace $\boldsymbol{F}$ are different!&lt;/p&gt;
 &lt;p&gt;Recall the formal definition of a dot product for vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ in &lt;a href="https://en.wikipedia.org/wiki/Dot_product#Geometric_definition"&gt;Euclidean Space&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 \boldsymbol{a} \cdot \boldsymbol{b} = \left\| \boldsymbol{a} \right\| \left\| \boldsymbol{b} \right\| \cos(\theta)
-\end{equation}&lt;/p&gt;
-&lt;p&gt;Thus the angle between two vectors can be easily calculated by&lt;a href="#f4"&gt;&lt;sup id="a4"&gt;4&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\end{equation}&lt;p&gt;Thus the angle between two vectors can be easily calculated by&lt;a href="#f4"&gt;&lt;sup id="a4"&gt;4&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+\begin{equation}
 \cos(\theta) = \frac{\boldsymbol{a} \cdot \boldsymbol{b}}{\left\| \boldsymbol{a} \right\| \left\| \boldsymbol{b} \right\|}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;Finally, we get that the angle between $\boldsymbol{e_1}$ and $\boldsymbol{u_1}$ is $\theta_1 = 63.43^{\circ}$, conversely, $\theta_2 = 116.56^{\circ}$ and $\theta_{optimum} = 90.0^{\circ}$ that is, $e_{optimum}$ is perpendicular while the others have different angles with such subspace. Thus we can summerize that:&lt;/p&gt;
+\end{equation}&lt;p&gt;Finally, we get that the angle between $\boldsymbol{e_1}$ and $\boldsymbol{u_1}$ is $\theta_1 = 63.43^{\circ}$, conversely, $\theta_2 = 116.56^{\circ}$ and $\theta_{optimum} = 90.0^{\circ}$ that is, $e_{optimum}$ is perpendicular while the others have different angles with such subspace. Thus we can summerize that:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;When considering the approximation of 2D vectors the best approximation of a vector $\boldsymbol{v}$ in a subspace $\boldsymbol{F}$ will have:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. The smallest error vector length&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. An orthogonal error vector to the subspace $\boldsymbol{F}$&lt;/strong&gt;&lt;/p&gt;
@@ -1423,26 +1474,22 @@ z
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Approximation-of-functions"&gt;Approximation of functions&lt;a class="anchor-link" href="#Approximation-of-functions"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;We now consider the approximation of functions. Again, instead of finding the best approximation of a function using the Least Squares or Galerkin methods (we will define each one of them formally in the next part) we will just check that better approximations of a function follow the behavior that we require in both methods (the minimization of the error for the Least Squares and the orthogonality of the error and the basis functions for the Galerkin Method), that is, the behavior that we identified for our 2D Euclidean vectors.&lt;/p&gt;
 &lt;p&gt;Let's start by the Sine function. I am far from an enthusiast of periodic functions but we can't ignore the importance of it, a transcendental function that keeps appearing just like Euler and his exponential function in different branches of math. For that we remember that sines, cosines and the exponential function can all be defined as infinite series. For the Sine it follows:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 \sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdot \cdot \cdot = \sum_{n=0}^{\infty} \frac{(-1)^n \ x^{2n+1}}{(2n+1)!}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;We will use two approximations, first a "coarser" function $u(x)_1 = x - \frac{x^3}{3!} + \mathcal{O}(x^5)$ followed by a better approximation $u(x)_2 = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \mathcal{O}(x^9)$ and then compare both conditions seen for the vectors.&lt;/p&gt;
+\end{equation}&lt;p&gt;We will use two approximations, first a "coarser" function $u(x)_1 = x - \frac{x^3}{3!} + \mathcal{O}(x^5)$ followed by a better approximation $u(x)_2 = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \mathcal{O}(x^9)$ and then compare both conditions seen for the vectors.&lt;/p&gt;
 &lt;p&gt;We will need to make minor adjustments to this quantities, the error becomes the L2-norm of the difference between the function and its approximation&lt;a href="#f5"&gt;&lt;sup id="a5"&gt;5&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
   e := \left\| f_e(x) - f_a(x) \right\|_{L2} = \sqrt{x_{1}^{2} + \cdots + x_{n}^{2}}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;where $f_e(x)$ is the exact function (in our example, $f_e(x) = \sin(x)$) and $f_a(x)$ is the approximation of the exact function (in our case, $f_a(x)$ is $u_1(x)$ and $u_2(x)$).&lt;/p&gt;
+\end{equation}&lt;p&gt;where $f_e(x)$ is the exact function (in our example, $f_e(x) = \sin(x)$) and $f_a(x)$ is the approximation of the exact function (in our case, $f_a(x)$ is $u_1(x)$ and $u_2(x)$).&lt;/p&gt;
 &lt;p&gt;When considering the dot product, we will need to define a similar operator for our functions. Let's start by thinking what happens on this operation when dealing with vectors: we start by multiplying the correspondent components of each vector and finish summing this values. The vectors that we dealt earlier had all a finite number of components (2 to be specific), one easy way to see a correlation between a vector and a function is to consider functions as vectors with infinite dimensions. You may think that our 2D vector take us from the origin, moving us some $\boldsymbol{\hat{i}}$ units to right (or left if negative) and some $\boldsymbol{\hat{j}}$ up (or down if negative). Our functions take us from the domain to the codomain. Thus, the analogy could be to multiply the two functions that we seek to apply the inner product operator and integrate them. Formally, we can also use a different notation, $\langle \bullet , \bullet \rangle$ instead of the common $\bullet \cdot \bullet$ where $\bullet$ is a place holder for the vectors (&lt;del&gt;or functions &lt;strong&gt;which are vectors after all&lt;/strong&gt;&lt;/del&gt;) that are being operated on. Formally:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 \langle e, \ f_a(x))\rangle := \int e \ f_a(x) \ dx
-\end{equation}&lt;/p&gt;
-&lt;p&gt;Thus, lets start by plotting the exact function and their approximations.&lt;/p&gt;
+\end{equation}&lt;p&gt;Thus, lets start by plotting the exact function and their approximations.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1451,7 +1498,7 @@ z
 &lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;
 &lt;span class="n"&gt;g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;120&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;5040&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'$f_e = \sin(x)$'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1470,7 +1517,7 @@ z
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_svg output_subarea "&gt;
+&lt;div class="output_svg output_subarea"&gt;
 
 
 
@@ -3102,7 +3149,7 @@ z
 &lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;e_f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;norm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;e_f&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;norm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;e_g&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;norm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xs&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;ord&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Error of u_1(x) = &lt;/span&gt;&lt;span class="si"&gt;%f&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;e_f&lt;/span&gt;)
@@ -3129,7 +3176,7 @@ Error of u_2(x) = 0.189658
 &lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f_integrand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f_integrand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;g_integrand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -3158,16 +3205,14 @@ Inner product of e(u_2(x)) and u_2(x) = 0.011099
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;em&gt;One minor observation is that initially the integration was performed analytically using &lt;a href="http://www.sympy.org/pt/index.html"&gt;SymPy&lt;/a&gt;, however the computational cost was very high (both integrations took 5 minutes). Thus, we use the numerical integration provided by &lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt; which took 10 ms.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In order to just show the convergence we can use python classes to make it easier to construct approximations of different orders. Hence we can see how the error and the inner product behaviors as we increase the number of terms of the approximation.&lt;/p&gt;
 &lt;/div&gt;
@@ -3178,7 +3223,7 @@ Inner product of e(u_2(x)) and u_2(x) = 0.011099
 &lt;div class="prompt input_prompt"&gt;In [303]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
     &lt;span class="n"&gt;val&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
     &lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;!=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -3188,7 +3233,7 @@ Inner product of e(u_2(x)) and u_2(x) = 0.011099
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;val&lt;/span&gt;
 
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;sin_series&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;o&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;approx&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;val&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
@@ -3208,7 +3253,7 @@ Inner product of e(u_2(x)) and u_2(x) = 0.011099
 &lt;div class="prompt input_prompt"&gt;In [305]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;es&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;es&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;ips&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
 &lt;span class="n"&gt;orders&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arange&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;23&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -3274,7 +3319,7 @@ Inner product of e and f(x) = 2.035938E-11
 &lt;/div&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_svg output_subarea "&gt;
+&lt;div class="output_svg output_subarea"&gt;
 
 
 
@@ -4168,16 +4213,14 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;So now we can see that the visual properties of vector approximations (smaller errors and closer to being perpendicular to the subspace where we are searching for the approximation) seems to stay true for functions as well. We now will formalize why this happens.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Vector-Spaces-and-Function-Spaces"&gt;Vector Spaces and Function Spaces&lt;a class="anchor-link" href="#Vector-Spaces-and-Function-Spaces"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;Before reaching the definition of a space we will just formally define what a vector is. This will be enough for us to understand the similarity on the behavior of such objects. A vector is a mathematical object that can be &lt;strong&gt;added&lt;/strong&gt; with other vector, or &lt;strong&gt;scaled&lt;/strong&gt; by a &lt;em&gt;scalar&lt;/em&gt;. This is straightforward for both the 2D vectors and for functions. Let's explore some examples, if we consider the 2D vector $\boldsymbol{u}_{optimum}$ it is just a scaled version of our basis vector $\boldsymbol{\psi}$. Notice also that a scaled vector is just a representation of a numerous sum of vector, in the case we would sum $\boldsymbol{\psi}$ with itself 4 times. Such important operations (sum and multiplication) are also related on the concept of numbers (probably multiplication was introduced to you like so, $2 \cdot 3 = 2 + 2 + 2$). Notice one interesting feature, the defining property of a vector is not directly related to geometry, direction, magnitude or whatsoever, but rather how it can be susceptible to very specific operations (scaling and addition, which are closely related as we saw!)&lt;a href="#f6"&gt;&lt;sup id="a6"&gt;6&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -4233,8 +4276,7 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Final-Remarks"&gt;Final Remarks&lt;a class="anchor-link" href="#Final-Remarks"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;The present series of blog posts aims to propose ways of visualizing the fundamental concepts of FEM. We start by showing examples of approximations of both 2D Euclidean vectors and single variable functions. We found out that better approximations have two important features: the measure of the error is smaller and the error and the vector space becomes "more orthogonal" as  the approximation gets better. These concepts were easier to visualize on the Euclidean vectors examples, however they remain true for functions, this happens because functions are vectors themselves. Finally,  we formalized the definitions of a vector and a function space, these structures will be helpful as the next part of this series will use such concepts to explain the orthogonality requirement and finally will lay the basis for the formalization of the methodologies to find the best approximation.&lt;/p&gt;
@@ -4242,8 +4284,7 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;b id="f1"&gt;1&lt;/b&gt; I found it presumptuous to say that I have such new content to share. It is far more fair to say that I am just willing to present this concepts in a more concise way since I had a hard time to find the intuitions from numerous different sources. &lt;a href="#a1"&gt;↩&lt;/a&gt;&lt;/p&gt;
@@ -4262,11 +4303,21 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="References"&gt;References&lt;a class="anchor-link" href="#References"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;[&lt;a href="#call-Thomee2001" id="cit-Thomee2001"&gt;1&lt;/a&gt;] Thomee Vidar, "&lt;em&gt;From finite differences to finite elements A short history of numerical analysis of partial differential equations&lt;/em&gt;'', vol. 128, number , pp. 1--54,  2001.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="input_area"&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4299,10 +4350,8 @@ L 383.782813 10.7
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="FEM"></category><category term="Math"></category></entry><entry><title>Blog Setup</title><link href="https://murilohmoreira.github.io/blog-setup.html" rel="alternate"></link><published>2018-02-12T22:00:00+01:00</published><updated>2018-02-12T22:00:00+01:00</updated><author><name>Murilo Moreira</name></author><id>tag:murilohmoreira.github.io,2018-02-12:/blog-setup.html</id><summary type="html">
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+</content><category term="posts"></category><category term="FEM"></category><category term="Math"></category></entry><entry><title>Blog Setup</title><link href="https://murilohmoreira.github.io/blog-setup.html" rel="alternate"></link><published>2018-02-12T22:00:00+01:00</published><updated>2020-09-24T14:30:48+02:00</updated><author><name>Murilo Moreira</name></author><id>tag:murilohmoreira.github.io,2018-02-12:/blog-setup.html</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;h1&gt;Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="My-background-1" href="#My-background"&gt;My background&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Website-2" href="#Website"&gt;Website&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Workflow-3" href="#Workflow"&gt;Workflow&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Final-Remarks-4" href="#Final-Remarks"&gt;Final Remarks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="References-5" href="#References"&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
@@ -4310,13 +4359,10 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;This first post aims to summarize the setup of this blog. It may help anybody trying to make a static website using a similar structure. Jupyter notebooks are becoming a popular tool with data scientists and provides a framework that can fill the gap on the &lt;a href="https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261"&gt;reproducibility issues&lt;/a&gt;</summary><content type="html">
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;p&gt;This first post aims to summarize the setup of this blog. It may help anybody trying to make a static website using a similar structure. Jupyter notebooks are becoming a popular tool with data scientists and provides a framework that can fill the gap on the &lt;a href="https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261"&gt;reproducibility issues&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;h1&gt;Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;/p&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="My-background-1" href="#My-background"&gt;My background&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Website-2" href="#Website"&gt;Website&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Workflow-3" href="#Workflow"&gt;Workflow&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="Final-Remarks-4" href="#Final-Remarks"&gt;Final Remarks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a data-toc-modified-id="References-5" href="#References"&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
@@ -4324,16 +4370,14 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This first post aims to summarize the setup of this blog. It may help anybody trying to make a static website using a similar structure. Jupyter notebooks are becoming a popular tool with data scientists and provides a framework that can fill the gap on the &lt;a href="https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261"&gt;reproducibility issues&lt;/a&gt; faced by many fields of science. There may be some &lt;a href="http://opiateforthemass.es/articles/why-i-dont-like-jupyter-fka-ipython-notebook/"&gt;controversy&lt;/a&gt; but its features remain useful, specially when sharing code with no specialized audience or using it as a study notebook.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="My-background"&gt;My background&lt;a class="anchor-link" href="#My-background"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;Before proceeding let's approach the background that took me to the point of creating this blog. I started learning python trying to reproduce one really nice work [&lt;a href="#cit-Deville2015"&gt;1&lt;/a&gt;] by Sylvain Deville that used the Scopus database in order to study the evolution of the Ceramics field research. The use of &lt;a href="https://en.wikipedia.org/wiki/Graph_theory"&gt;Graph Theory&lt;/a&gt; was a really compelling (and visually beautiful) way to present the results. However the most shocking feature: &lt;strong&gt;Every tool used on the paper was completely free and open source&lt;/strong&gt;. Beautiful plots, reproducible work, free tools and insightful conclusions, if this is not inspiring, &lt;em&gt;nothing is...&lt;/em&gt;&lt;/p&gt;
@@ -4349,17 +4393,15 @@ L 383.782813 10.7
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Let's consider the following vector field:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;And take its divergence:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\end{equation}&lt;p&gt;And take its divergence:&lt;/p&gt;
+\begin{equation}
 \nabla \cdot V = 2x - 2y
-\end{equation}&lt;/p&gt;
+\end{equation}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -4368,7 +4410,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 &lt;div class="prompt input_prompt"&gt;In [151]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;config&lt;/span&gt; InlineBackend.figure_format = 'svg'
 
@@ -4398,7 +4440,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 &lt;div class="prompt input_prompt"&gt;In [148]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quiver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;V_i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;V_j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;angles&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'xy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;quiver&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;V_i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;V_j&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;angles&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'xy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
           &lt;span class="n"&gt;scale_units&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'xy'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;scale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -4411,7 +4453,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_svg output_subarea "&gt;
+&lt;div class="output_svg output_subarea"&gt;
 
 
 
@@ -8483,7 +8525,7 @@ L 314.304688 10.7
 &lt;div class="prompt input_prompt"&gt;In [154]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Variables to plot colormap of divergent&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Variables to plot colormap of divergent&lt;/span&gt;
 &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;len_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;len_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;len_y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;len_y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
@@ -8505,7 +8547,7 @@ L 314.304688 10.7
 &lt;div class="prompt input_prompt"&gt;In [155]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contourf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;div_V&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ax&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;contourf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;div_V&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;colorbar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;collections&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_edgecolor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"face"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -8518,7 +8560,7 @@ L 314.304688 10.7
 &lt;div class="output"&gt;
 &lt;div class="output_area"&gt;
 &lt;div class="prompt"&gt;&lt;/div&gt;
-&lt;div class="output_svg output_subarea "&gt;
+&lt;div class="output_svg output_subarea"&gt;
 
 
 
@@ -10942,22 +10984,19 @@ z
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;From the formal definition of the divergence,&lt;/p&gt;
-&lt;p&gt;\begin{equation}
+\begin{equation}
 \nabla \cdot V = \lim_{A \to 0}{\frac{1}{A} \oint_C V \cdot \hat{n} \ ds}
-\end{equation}&lt;/p&gt;
-&lt;p&gt;That is to say that the divergence is the limit of the flux density of a region enclosed by the curve $C$ when this regions shrinks to a point (zero area).&lt;/p&gt;
+\end{equation}&lt;p&gt;That is to say that the divergence is the limit of the flux density of a region enclosed by the curve $C$ when this regions shrinks to a point (zero area).&lt;/p&gt;
 &lt;p&gt;We see that its quantity represents the idea of "outward flow" at a point and describes well the vector field $V$ where we can see the regions where the flux is outwards (negative divergence) and where the flux is inwards (positive divergence) a specific point.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;After starting to know the possibilities of python, I started to progressively substitute different tools (Origin by matplotlib, Maple by SymPy, Excel by Pandas and so on) and became addicted to use coding for everything (from studying different subjects to trivial tasks such as changing the metadata of mp3 files).&lt;/p&gt;
 &lt;p&gt;Regarding writing methods about the same time that I started to code and after some texts written in Word (&lt;strong&gt;and the obvious frustrations of trying to organize figures, tables, references, equations...&lt;/strong&gt;) I got in touch to LaTeX and started to use it for writing drafts of papers. The experience was really nice, however, for shorter projects the whole process can become cumbersome. This is were Markdown came back! It is a useful way to structure texts containing references, images, code cells and so on, thus the obvious choice for me to blogging is using these two sweet platforms, which integrates &lt;strong&gt;smoothly&lt;/strong&gt; to other activities such as studying and researching!&lt;/p&gt;
@@ -10965,8 +11004,7 @@ z
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Website"&gt;Website&lt;a class="anchor-link" href="#Website"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;The website was constructed following the awesome tutorial from &lt;a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/"&gt;Dataquest&lt;/a&gt;. In order to avoid redundancy I will not go into the details but basically the whole idea can be summerized in:&lt;/p&gt;
@@ -10987,8 +11025,7 @@ z
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Workflow"&gt;Workflow&lt;a class="anchor-link" href="#Workflow"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;The currently setup is the following.&lt;/p&gt;
@@ -11017,8 +11054,7 @@ git push origin master
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="Final-Remarks"&gt;Final Remarks&lt;a class="anchor-link" href="#Final-Remarks"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;This is just a primer on how this whole setup was organized. There are different details that were not mentioned due the existence of plenty useful resources.&lt;/p&gt;
@@ -11040,8 +11076,7 @@ git push origin master
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h1 id="References"&gt;References&lt;a class="anchor-link" href="#References"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;hr /&gt;
 &lt;p&gt;[&lt;a href="#call-Deville2015" id="cit-Deville2015"&gt;1&lt;/a&gt;] Deville Sylvain and Stevenson Adam J., ''&lt;em&gt;Mapping Ceramics Research and Its Evolution&lt;/em&gt;'', Journal of the American Ceramic Society, vol. 9, number 8, pp. 1-9,  2015.  &lt;a href="http://doi.wiley.com/10.1111/jace.13699"&gt;online&lt;/a&gt;&lt;/p&gt;
@@ -11077,4 +11112,4 @@ git push origin master
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="python"></category><category term="how-tos"></category></entry></feed>
+</content><category term="posts"></category><category term="python"></category><category term="how-tos"></category></entry></feed>

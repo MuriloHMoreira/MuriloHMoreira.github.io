@@ -70,10 +70,8 @@
                         </p>
                 </header>
             </section>
-            
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+            <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Contents<span class="tocSkip"></span></h1></p>
 <div class="toc"><ul class="toc-item"><li><span><a data-toc-modified-id="My-background-1" href="#My-background">My background</a></span></li><li><span><a data-toc-modified-id="Website-2" href="#Website">Website</a></span></li><li><span><a data-toc-modified-id="Workflow-3" href="#Workflow">Workflow</a></span></li><li><span><a data-toc-modified-id="Final-Remarks-4" href="#Final-Remarks">Final Remarks</a></span></li><li><span><a data-toc-modified-id="References-5" href="#References">References</a></span></li></ul></div>
@@ -81,16 +79,14 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This first post aims to summarize the setup of this blog. It may help anybody trying to make a static website using a similar structure. Jupyter notebooks are becoming a popular tool with data scientists and provides a framework that can fill the gap on the <a href="https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261">reproducibility issues</a> faced by many fields of science. There may be some <a href="http://opiateforthemass.es/articles/why-i-dont-like-jupyter-fka-ipython-notebook/">controversy</a> but its features remain useful, specially when sharing code with no specialized audience or using it as a study notebook.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="My-background">My background<a class="anchor-link" href="#My-background">¶</a></h1><hr />
 <p>Before proceeding let's approach the background that took me to the point of creating this blog. I started learning python trying to reproduce one really nice work [<a href="#cit-Deville2015">1</a>] by Sylvain Deville that used the Scopus database in order to study the evolution of the Ceramics field research. The use of <a href="https://en.wikipedia.org/wiki/Graph_theory">Graph Theory</a> was a really compelling (and visually beautiful) way to present the results. However the most shocking feature: <strong>Every tool used on the paper was completely free and open source</strong>. Beautiful plots, reproducible work, free tools and insightful conclusions, if this is not inspiring, <em>nothing is...</em></p>
@@ -106,17 +102,15 @@
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let's consider the following vector field:</p>
-<p>\begin{equation}
+\begin{equation}
 V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
-\end{equation}</p>
-<p>And take its divergence:</p>
-<p>\begin{equation}
+\end{equation}<p>And take its divergence:</p>
+\begin{equation}
 \nabla \cdot V = 2x - 2y
-\end{equation}</p>
+\end{equation}
 </div>
 </div>
 </div>
@@ -125,7 +119,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 <div class="prompt input_prompt">In [151]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'svg'
 
@@ -155,7 +149,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 <div class="prompt input_prompt">In [148]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">V_i</span><span class="p">,</span> <span class="n">V_j</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="s1">'xy'</span><span class="p">,</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">V_i</span><span class="p">,</span> <span class="n">V_j</span><span class="p">,</span> <span class="n">angles</span><span class="o">=</span><span class="s1">'xy'</span><span class="p">,</span> 
           <span class="n">scale_units</span><span class="o">=</span><span class="s1">'xy'</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
@@ -168,7 +162,7 @@ V = (x^2+y^2) \ \hat{i} + (x^2-y^2) \ \hat{j}
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_svg output_subarea ">
+<div class="output_svg output_subarea">
 
 
 
@@ -4240,7 +4234,7 @@ L 314.304688 10.7
 <div class="prompt input_prompt">In [154]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Variables to plot colormap of divergent</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Variables to plot colormap of divergent</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">len_x</span><span class="p">,</span> <span class="n">len_x</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">len_y</span><span class="p">,</span> <span class="n">len_y</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
@@ -4262,7 +4256,7 @@ L 314.304688 10.7
 <div class="prompt input_prompt">In [155]:</div>
 <div class="inner_cell">
 <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">div_V</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">div_V</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">plot</span><span class="o">.</span><span class="n">collections</span><span class="p">:</span>
     <span class="n">c</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s2">"face"</span><span class="p">)</span>
@@ -4275,7 +4269,7 @@ L 314.304688 10.7
 <div class="output">
 <div class="output_area">
 <div class="prompt"></div>
-<div class="output_svg output_subarea ">
+<div class="output_svg output_subarea">
 
 
 
@@ -6699,22 +6693,19 @@ z
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the formal definition of the divergence,</p>
-<p>\begin{equation}
+\begin{equation}
 \nabla \cdot V = \lim_{A \to 0}{\frac{1}{A} \oint_C V \cdot \hat{n} \ ds}
-\end{equation}</p>
-<p>That is to say that the divergence is the limit of the flux density of a region enclosed by the curve $C$ when this regions shrinks to a point (zero area).</p>
+\end{equation}<p>That is to say that the divergence is the limit of the flux density of a region enclosed by the curve $C$ when this regions shrinks to a point (zero area).</p>
 <p>We see that its quantity represents the idea of "outward flow" at a point and describes well the vector field $V$ where we can see the regions where the flux is outwards (negative divergence) and where the flux is inwards (positive divergence) a specific point.</p>
 <hr />
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After starting to know the possibilities of python, I started to progressively substitute different tools (Origin by matplotlib, Maple by SymPy, Excel by Pandas and so on) and became addicted to use coding for everything (from studying different subjects to trivial tasks such as changing the metadata of mp3 files).</p>
 <p>Regarding writing methods about the same time that I started to code and after some texts written in Word (<strong>and the obvious frustrations of trying to organize figures, tables, references, equations...</strong>) I got in touch to LaTeX and started to use it for writing drafts of papers. The experience was really nice, however, for shorter projects the whole process can become cumbersome. This is were Markdown came back! It is a useful way to structure texts containing references, images, code cells and so on, thus the obvious choice for me to blogging is using these two sweet platforms, which integrates <strong>smoothly</strong> to other activities such as studying and researching!</p>
@@ -6722,8 +6713,7 @@ z
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Website">Website<a class="anchor-link" href="#Website">¶</a></h1><hr />
 <p>The website was constructed following the awesome tutorial from <a href="https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/">Dataquest</a>. In order to avoid redundancy I will not go into the details but basically the whole idea can be summerized in:</p>
@@ -6744,8 +6734,7 @@ z
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Workflow">Workflow<a class="anchor-link" href="#Workflow">¶</a></h1><hr />
 <p>The currently setup is the following.</p>
@@ -6774,8 +6763,7 @@ git push origin master
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Final-Remarks">Final Remarks<a class="anchor-link" href="#Final-Remarks">¶</a></h1><hr />
 <p>This is just a primer on how this whole setup was organized. There are different details that were not mentioned due the existence of plenty useful resources.</p>
@@ -6797,8 +6785,7 @@ git push origin master
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="References">References<a class="anchor-link" href="#References">¶</a></h1><hr />
 <p>[<a href="#call-Deville2015" id="cit-Deville2015">1</a>] Deville Sylvain and Stevenson Adam J., ''<em>Mapping Ceramics Research and Its Evolution</em>'', Journal of the American Ceramic Society, vol. 9, number 8, pp. 1-9,  2015.  <a href="http://doi.wiley.com/10.1111/jace.13699">online</a></p>
