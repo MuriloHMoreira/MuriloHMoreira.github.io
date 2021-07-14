@@ -1,18 +1,22 @@
 /*=========================== Overrides of notebook CSS for static HTML export ===========================*/
 body {
-  overflow: visible;
-  /*padding: 0px;*/
+  overflow-x: hidden;
+  padding: 0px;
   background-color: #050023;
+  height: 100%;
 }
-
+   
 div {
   overflow: visible;
   border-top: none;
   margin-left: 20%;
+  margin-right: 20%;
   transition: 0.5s;
   color: #F5F2FF;
-  /*color: #B3FFAD;*/
-}@media print {
+  min-height: 100%;
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -61,13 +65,12 @@ div {
   background-color: #1183D8;
   text-align: center;
   overflow: hidden;
-  top: 0;
-  left: 0;
   z-index: 999;
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  /*height: 50px;*/
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
   vertical-align:middle;
   display: inline-block;
 }
@@ -89,6 +92,7 @@ div {
   padding: 14px;
   display: inline-block;
   background-color: #1183D8;
+  display: inline-block;
 }
 
 .topnav a.head_button:hover {
@@ -97,6 +101,63 @@ div {
 }
 
 
+.side-layout {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+a.back_top:hover{
+  /*background-color: #B3FFAD;*/
+  color: #1283D8;
+}
+
+.social_hub {
+  background-color: #CCCAD4;
+  text-align: center;
+  overflow: hidden;
+  z-index: 999;
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  vertical-align:middle;
+  display: inline-block;
+
+}
+
+.social_hub a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 120%;
+}
+
+.social_hub a.description {
+  font-weight: bold;
+  color: #201E1E;
+  padding: 14px;
+  display: inline-block;
+  background-color: #CCCAD4;
+  display: inline-block;
+}
+
+.social_hub a.icon_button {
+  font-weight: bold;
+  color: #201E1E;
+  padding: 14px;
+  display: inline-block;
+  background-color: #CCCAD4;
+  display: inline-block;
+}
+
+.social_hub a.icon_button:hover {
+  background-color: #B3FFAD;
+  color: black;
+}
 
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
