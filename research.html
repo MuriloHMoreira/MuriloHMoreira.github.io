@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<link rel="icon" href="./resources/favicon.png">
+<link rel="stylesheet" href="./css/main_theme.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
+<link href="./css/all.css" rel="stylesheet">
+<style>
+body,h1,h2,h3,h4,h5,a {font-family: "Poppins", sans-serif}
+a {color: #86BE81;}
+</style>
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<style type="text/css">
+    #mynetwork {
+        width: 600px;
+        height: 400px;
+        border: 1px solid lightgray;
+    }
+</style>
+<title>Murilo H. Moreira</title>
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        tagSide: "right"
+      },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
+    MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
+      clearTag() {
+        if (!this.global.notags) {
+          this.super(arguments).clearTag.call(this);
+        }
+      }
+    });
+  });
+    </script>
+    <!-- End of mathjax configuration -->
+
+<script>
+function overlayHelp(isShow){
+  var elm = document.getElementById('overlayHelp')
+  if (isShow) {
+    elm.style.display = 'block';
+  } else {
+    elm.style.display = 'none';
+  }
+}
+
+function openHelp() {
+  overlayHelp(true);
+  document.getElementById('HelpWindow').style.display = 'block';
+}
+
+function closeHelp() {
+  overlayHelp(false);
+  document.getElementById('HelpWindow').style.display = 'none';
+}
+
+function overlay(isShow){
+  var elm = document.getElementById('overlay')
+  if (isShow) {
+    elm.style.display = 'block';
+  } else {
+    elm.style.display = 'none';
+  }
+}
+
+function openNav() {
+  overlay(true);
+  // document.getElementById('mySidenav').style.width="250px";
+  document.getElementById('mySidenav').classList.add('sidenav_sz_open');
+  document.getElementById('mySidenav').classList.remove('sidenav_sz_close');
+  document.getElementById('sm_arrow').style.color="#111";
+  document.getElementById("notebook").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "white";
+}
+
+function closeNav() {
+  overlay(false);
+  // document.getElementById('mySidenav').style.width="15px"
+  document.getElementById('mySidenav').classList.add('sidenav_sz_close');
+  document.getElementById('mySidenav').classList.remove('sidenav_sz_open');
+  document.getElementById("notebook").style.marginLeft = "0";
+  document.getElementById('sm_arrow').style.color="grey";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+
+<!-- <img class="logoGEMM" src="./resources/logo.png" height="60px"> -->
+<!-- <img class="logoUFSCar" src="./resources/ufscar.png" height="60px"> -->
+
+
+
+
+<!-- Navigation Bar -->
+<!-- Navigation Bar -->
+<div class="topnav" id="topnav">
+  <a class="head_button" href="#About"> Murilo Henrique Moreira </a>
+  <a class="head_button" href="#Pages"><i class="fas fa-book"></i> Pages </a>
+  <a class="head_button" href="#CV"><i class="fas fa-user-graduate"></i> Curriculum Vitae </a>
+  <a class="head_button" href="./research.html"><i class="fas fa-microscope"></i> Research</a>
+  <a class="head_button" href="#Projects"><i class="fas fa-cogs"></i> Projects</a>
+</div>
+
+
+</head>
+<body>
+
+
+<div id="mynetwork"></div>
+
+<script>
+    var nodes = new vis.DataSet([
+        {id: 1, label: 'Google', url: 'http://www.google.com'},
+        {id: 2, label: 'Bing', url: 'http://www.bing.com'},
+        {id: 3, label: 'Yahoo!', url: 'http://www.yahoo.com'}
+    ]);
+  var edges = new vis.DataSet([
+        {from: 1, to: 2},
+        {from: 2, to: 3},
+        {from: 1, to: 3}
+    ]);    
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {};
+    var network = new vis.Network(container, data, options);
+
+    network.on("selectNode", function (params) {
+        if (params.nodes.length === 1) {
+            var node = nodes.get(params.nodes[0]);
+            window.open(node.url, '_blank');
+        }
+    });
+</script>
+
+
+
+
+<footer class="footer">
+  <div class="side-layout">
+  <p style="font-family: 'IBM Plex Mono'; font-weight:'bold';"> <i class="far fa-copyright"></i> Murilo Henrique Moreira &ndash;
+      <script language="javascript"> 
+months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+var theDate = new Date(document.lastModified); 
+theDate.setTime((theDate.getTime()+(5000*60*60)) ) 
+with (theDate) { 
+document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+getHours()+':'+getMinutes()+" GMT") 
+} 
+</script> 
+    </p>
+    <a class="back_top" href="#topnav"><i class="far fa-caret-square-up"></i></a>
+  </div>  
+</footer>
+</div>
+
+</body>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<link rel="icon" href="./resources/favicon.png">
+<link rel="stylesheet" href="./css/materials_reach_theme.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
+<link href="./css/all.css" rel="stylesheet">
+<style>
+body,h1,h2,h3,h4,h5,a {font-family: "Poppins", sans-serif}
+a {color: #86BE81;}
+</style>
+
+<title>Materials Reach</title>
+<!-- Loading vis-network.js -->
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+<style type="text/css">
+    #mynetwork {
+      margin-left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid lightblue;
+    }
+</style>
+
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        tagSide: "right"
+      },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
+    MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
+      clearTag() {
+        if (!this.global.notags) {
+          this.super(arguments).clearTag.call(this);
+        }
+      }
+    });
+  });
+    </script>
+    <!-- End of mathjax configuration -->
+
+</head>
+<body>
+
+<div>
+  <p><b>Portuguese Content!</b> </p>
+  <p>Mapa do Curso de Engenharia de Materiais: Representação em <a href=https://pt.wikipedia.org/wiki/Teoria_dos_grafos>grafo</a>.</p>
+  <p>Clique uma vez para selecionar os requisitos diretos de uma disciplina (ou para selecionar o perfil) - Clique em qualquer lugar para voltar a vista original.</p>
+  <p><strike>Clique duas vezes para abrir uma página com detalhes e visualização de cada disciplina.</strike> 🚧 EM CONSTRUÇÃO 🚧 </p>
+
+
+</div>
+<div id="mynetwork" style="height: 800px; width: 100%; margin-left: 0; margin-right: 0"></div>
+
+<script>
+    var nodes = new vis.DataSet([
+        {id: 1, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:50, group: 'math'},
+        {id: 2, label: 'Cálculo 2', url: 'http://www.bing.com', x:200, y:0, group: 'math'},
+        {id: 3, label: 'Cálculo 3', url: 'http://www.yahoo.com', x:400, y:0, group: 'math'},
+        {id: 4, label: 'Séries e EDO', url: 'http://www.yahoo.com', x:600, y:0, group: 'math'},
+        {id: 5, label: 'MMA', url: 'http://www.yahoo.com', x:1000, y:0, group: 'math'},
+        {id: 6, label: 'Geometria Analítica', url: 'http://www.yahoo.com', x:0, y:100, group: 'math'},
+        {id: 7, label: 'Cálculo Numérico', url: 'http://www.yahoo.com', x:800, y:50, group: 'math'},
+        
+        {id: 8, label: 'Física 1', url: 'http://www.yahoo.com', x:200, y:120, group: 'physics'},
+        {id: 9, label: 'Física 3', url: 'http://www.yahoo.com', x:400, y:120, group: 'physics'},
+        {id: 10, label: 'Física 4', url: 'http://www.yahoo.com', x:600, y:150, group: 'physics'},
+        {id: 11, label: 'Física \nExperimental A', url: 'http://www.yahoo.com', x:200, y:200, group: 'physics'},
+        {id: 12, label: 'Física \nExperimental B', url: 'http://www.yahoo.com', x:400, y:300, group: 'physics'},
+        {id: 13, label: 'Eletrotécnica', url: 'http://www.yahoo.com', x:1000, y:200, group: 'physics'},
+
+        {id: 14, label: 'Introdução \n à Computação', url: 'http://www.yahoo.com', x:0, y:300, group: 'other'},
+        {id: 15, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.yahoo.com', x:0, y:600, group: 'other'},
+        {id: 16, label: 'Introdução à CEM', url: 'http://www.yahoo.com', x:0, y:500, group: 'materials'},
+        {id: 17, label: 'Química Experimental \nGeral', url: 'http://www.yahoo.com', x:0, y:400, group: 'chemistry'},
+        {id: 18, label: 'Economia Geral', url: 'http://www.yahoo.com', x:200, y:600, group: 'other'},
+        {id: 19, label: 'Materiais e\n Meio Ambiente', url: 'http://www.yahoo.com', x:200, y:540, group: 'materials'},
+        {id: 20, label: 'Química 2 \nGeral', url: 'http://www.yahoo.com', x:200, y:300, group: 'chemistry'},
+        {id: 21, label: 'Química Inorgânica', url: 'http://www.yahoo.com', x:200, y:400, group: 'chemistry'},
+
+        {id: 22, label: 'Termodinâmica \nQuímica', url: 'http://www.yahoo.com', x:400, y:215, group: 'chemistry'},
+        {id: 23, label: 'Ciência dos \nMateriais 1', url: 'http://www.yahoo.com', x:400, y:400, group: 'materials'},
+        {id: 24, label: 'Química Orgânica', url: 'http://www.yahoo.com', x:400, y:500, group: 'chemistry'},
+
+        {id: 25, label: 'Mecânica Aplicada', url: 'http://www.yahoo.com', x:600, y:82, group: 'other'},
+        {id: 26, label: 'Química Análitica \nExperimental A', url: 'http://www.yahoo.com', x:600, y:460, group: 'chemistry'},
+        {id: 27, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.yahoo.com', x:600, y:215, group: 'materials'},
+        {id: 28, label: 'Ciência dos \nMateriais 2', url: 'http://www.yahoo.com', x:600, y:400, group: 'materials'},
+        {id: 29, label: 'Fenômenos de\n Transporte 6', url: 'http://www.yahoo.com', x:600, y:310, group: 'other'},
+
+        {id: 30, label: 'Mecânica dos\n Sólidos', url: 'http://www.yahoo.com', x:800, y:125, group: 'materials'},
+        {id: 31, label: 'Fundamentos\n em Reologia', url: 'http://www.yahoo.com', x:800, y:300, group: 'materials'},
+
+        {id: 101, label: 'Perfil 1 - OK', x:0, y:-100, group: 'profile'},
+        {id: 102, label: 'Perfil 2 - OK', x:200, y:-100, group: 'profile'},
+        {id: 103, label: 'Perfil 3 - OK', x:400, y:-100, group: 'profile'},
+        {id: 104, label: 'Perfil 4', x:600, y:-100, group: 'profile'},
+        {id: 105, label: 'Perfil 5', x:800, y:-100, group: 'profile'},
+        {id: 106, label: 'Perfil 6', x:1000, y:-100, group: 'profile'},
+        {id: 107, label: 'Perfil 7', x:1200, y:-100, group: 'profile'},
+        {id: 108, label: 'Perfil 8/9', x:1400, y:-100, group: 'profile'},
+        {id: 109, label: 'Perfil 10', x:1600, y:-100, group: 'profile'},
+
+
+
+    ]);
+  var edges = new vis.DataSet([
+        {from: 101, to: 1, hidden: true},
+        {from: 101, to: 6, hidden: true},
+        {from: 101, to: 14, hidden: true},
+        {from: 101, to: 15, hidden: true},
+        {from: 101, to: 16, hidden: true},
+        {from: 101, to: 17, hidden: true},
+
+        {from: 102, to: 2, hidden: true},
+        {from: 102, to: 8, hidden: true},
+        {from: 102, to: 11, hidden: true},
+        {from: 102, to: 20, hidden: true},
+        {from: 102, to: 21, hidden: true},
+        {from: 102, to: 19, hidden: true},
+        {from: 102, to: 18, hidden: true},
+
+        {from: 103, to: 3, hidden: true},
+        {from: 103, to: 9, hidden: true},
+        {from: 103, to: 12, hidden: true},
+        {from: 103, to: 22, hidden: true},
+        {from: 103, to: 23, hidden: true},
+        {from: 103, to: 24, hidden: true},
+
+        {from: 104, to: 4, hidden: true},
+        {from: 104, to: 25, hidden: true},
+        {from: 104, to: 26, hidden: true},
+
+        {from: 105, to: 7, hidden: true},
+        {from: 105, to: 10, hidden: true},
+        {from: 105, to: 30, hidden: true},
+
+        {from: 106, to: 5, hidden: true},
+        {from: 106, to: 13, hidden: true},
+
+        {from: 1, to: 2},
+        {from: 1, to: 7},        
+        {from: 1, to: 4},
+        {from: 1, to: 30},
+        {from: 2, to: 3},
+        {from: 2, to: 22},
+        {from: 6, to: 7},
+        {from: 6, to: 25},
+        {from: 4, to: 5},
+        {from: 8, to: 9},
+        {from: 8, to: 25},
+        {from: 12, to: 13},
+        {from: 14, to: 7},
+        {from: 16, to: 20},
+        {from: 16, to: 21},
+        {from: 16, to: 23},
+        {from: 16, to: 24},
+        {from: 17, to: 26},
+        {from: 20, to: 26},
+        {from: 20, to: 22},
+        {from: 25, to: 30},
+        {from: 29, to: 31},
+        {from: 22, to: 27},
+        {from: 23, to: 28},
+
+
+
+
+
+    ]);    
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+      groups: {
+        chemistry: {color:'coral'},
+        math: {color:'lightgreen'},
+        physics: {color:'orange'},
+        materials: {color: 'red', font: {weight: 'regular', color: 'white'}},
+        other: {color: 'lightblue', font: {weight: 'regular', color: 'black'}},
+        profile: {color: 'white'}
+        },
+          edges: {arrows: {
+      to: {
+        enabled: true,
+        imageHeight: undefined,
+        imageWidth: undefined,
+        scaleFactor: 0.5,
+        src: undefined,
+        type: "arrow"
+      },     
+      middle: {
+        enabled: false,
+        imageHeight: 32,
+        imageWidth: 32,
+        scaleFactor: 1,
+        src: "https://visjs.org/images/visjs_logo.png",
+        type: "image"
+      },
+      from: {
+        enabled: false,
+        imageHeight: undefined,
+        imageWidth: undefined,
+        scaleFactor: 1,
+        src: undefined,
+        type: "arrow"
+      }},
+        smooth: false
+    },
+    physics: false,
+    interaction: {
+        hover: true,
+        dragNodes: false,// do not allow dragging nodes
+        zoomView: true, // do not allow zooming
+        dragView: true  // do not allow dragging
+    },
+    width: "100%",   // This fills out the canvas size to the encompassing div
+    height: "100%"
+    };
+    var network = new vis.Network(container, data, options);
+
+    network.on("doubleClick", function (params) {
+        if (params.nodes.length === 1) {
+            var node = nodes.get(params.nodes[0]);
+            window.open(node.url, '_blank');
+        }
+    });
+
+    network.on("hoverNode", function(){
+     // functionality for popup to show on mouseover
+    });
+
+    network.on("click",onClick);
+
+    function onClick(selectedItems) {
+    var nodeId;
+    var degrees = 2;
+    // we get all data from the dataset once to avoid updating multiple times.
+    var allNodes = nodes.get({returnType:"Object"});
+    if (selectedItems.nodes.length == 0) {
+        // restore on unselect
+        for (nodeId in allNodes) {
+            if (allNodes.hasOwnProperty(nodeId)) {
+                allNodes[nodeId].color = undefined;
+                if (allNodes[nodeId].oldLabel !== undefined) {
+                    allNodes[nodeId].label = allNodes[nodeId].oldLabel;
+                    allNodes[nodeId].oldLabel = undefined;
+                }
+                allNodes[nodeId]['levelOfSeperation'] = undefined;
+                allNodes[nodeId]['inConnectionList'] = undefined;
+            }
+        }
+    }
+    else {
+        var allEdges = edges.get();
+
+        // we clear the level of seperation in all nodes.
+        clearLevelOfSeperation(allNodes);
+
+        // we will now start to collect all the connected nodes we want to highlight.
+        var connectedNodes = selectedItems.nodes;
+
+        // we can store them into levels of seperation and we could then later use this to define a color per level
+        // any data can be added to a node, this is just stored in the nodeObject.
+        storeLevelOfSeperation(connectedNodes,0, allNodes);
+        for (var i = 1; i < degrees + 1; i++) {
+            appendConnectedNodes(connectedNodes, allEdges);
+            storeLevelOfSeperation(connectedNodes, i, allNodes);
+        }
+        for (nodeId in allNodes) {
+            if (allNodes.hasOwnProperty(nodeId)) {
+                if (allNodes[nodeId]['inConnectionList'] == true) {
+                    if (allNodes[nodeId]['levelOfSeperation'] !== undefined) {
+                        if (allNodes[nodeId]['levelOfSeperation'] >= 2) {
+                            allNodes[nodeId].color = 'rgba(150,150,150,0.75)';
+
+                        }
+                        else {
+                            allNodes[nodeId].color = undefined;
+                        }
+                    }
+                    else {
+                        allNodes[nodeId].color = undefined;
+                    }
+                    if (allNodes[nodeId].oldLabel !== undefined) {
+                        allNodes[nodeId].label = allNodes[nodeId].oldLabel;
+                        allNodes[nodeId].oldLabel = undefined;
+                    }
+                }
+                else {
+                    allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
+
+                    if (allNodes[nodeId].oldLabel === undefined) {
+                        allNodes[nodeId].oldLabel = allNodes[nodeId].label;
+                        allNodes[nodeId].label = "";
+                    }
+                }
+            }
+        }
+    }
+    var updateArray = [];
+    for (nodeId in allNodes) {
+        if (allNodes.hasOwnProperty(nodeId)) {
+            updateArray.push(allNodes[nodeId]);
+        }
+    }
+    nodes.update(updateArray);
+}
+
+/**
+ * update the allNodes object with the level of seperation.
+ * Arrays are passed by reference, we do not need to return them because we are working in the same object.
+ */
+function storeLevelOfSeperation(connectedNodes, level, allNodes) {
+    for (var i = 0; i < connectedNodes.length; i++) {
+        var nodeId = connectedNodes[i];
+        if (allNodes[nodeId]['levelOfSeperation'] === undefined) {
+            allNodes[nodeId]['levelOfSeperation'] = level;
+        }
+        allNodes[nodeId]['inConnectionList'] = true;
+    }
+}
+
+function clearLevelOfSeperation(allNodes) {
+    for (var nodeId in allNodes) {
+        if (allNodes.hasOwnProperty(nodeId)) {
+            allNodes[nodeId]['levelOfSeperation'] = undefined;
+            allNodes[nodeId]['inConnectionList'] = undefined;
+        }
+    }
+}
+
+/**
+ * Add the connected nodes to the list of nodes we already have
+ *
+ *
+ */
+function appendConnectedNodes(sourceNodes, allEdges) {
+    var tempSourceNodes = [];
+    // first we make a copy of the nodes so we do not extend the array we loop over.
+    for (var i = 0; i < sourceNodes.length; i++) {
+        tempSourceNodes.push(sourceNodes[i])
+    }
+
+    for (var i = 0; i < tempSourceNodes.length; i++) {
+        var nodeId = tempSourceNodes[i];
+        if (sourceNodes.indexOf(nodeId) == -1) {
+            sourceNodes.push(nodeId);
+        }
+        addUnique(getConnectedNodes(nodeId, allEdges),sourceNodes);
+    }
+    tempSourceNodes = null;
+}
+
+/**
+ * Join two arrays without duplicates
+ * @param fromArray
+ * @param toArray
+ */
+function addUnique(fromArray, toArray) {
+    for (var i = 0; i < fromArray.length; i++) {
+        if (toArray.indexOf(fromArray[i]) == -1) {
+            toArray.push(fromArray[i]);
+        }
+    }
+}
+
+/**
+ * Get a list of nodes that are connected to the supplied nodeId with edges.
+ * @param nodeId
+ * @returns {Array}
+ */
+function getConnectedNodes(nodeId, allEdges) {
+    var edgesArray = allEdges;
+    var connectedNodes = [];
+
+    for (var i = 0; i < edgesArray.length; i++) {
+        var edge = edgesArray[i];
+        if (edge.to == nodeId) {
+            connectedNodes.push(edge.from);
+        }
+        else if (edge.from == nodeId) {
+            connectedNodes.push(edge.to)
+        }
+    }
+    return connectedNodes;
+}
+
+</script>
+
+
+
+
+<footer class="footer">
+  <p style="font-family: 'IBM Plex Mono'; color: white; font-weight:'bold';"> <i class="far fa-copyright"></i> Murilo Henrique Moreira &ndash;
+      <script language="javascript"> 
+months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+var theDate = new Date(document.lastModified); 
+theDate.setTime((theDate.getTime()+(5000*60*60)) ) 
+with (theDate) { 
+document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+getHours()+':'+getMinutes()+" GMT") 
+} 
+</script> 
+    </p>
+</footer>
+</div>
+
+</body>
