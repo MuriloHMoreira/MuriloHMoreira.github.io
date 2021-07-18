@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<link rel="icon" href="./resources/favicon.png">
+<!-- <link rel="icon" href="./resources/favicon.png"> -->
 <link rel="stylesheet" href="./css/materials_reach_theme.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
 <link href="./css/all.css" rel="stylesheet">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,a {font-family: "Poppins", sans-serif}
 a {color: #86BE81;}
@@ -24,6 +25,7 @@ a {color: #86BE81;}
     }
 </style>
 
+<!-- Botão para mudar visualização -->
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -65,100 +67,186 @@ a {color: #86BE81;}
 <body>
 
 <div>
-  <p><b>Portuguese Content!</b> </p>
+  <p><b> <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="false"></span> <a>  Portuguese Content!</b>  </a>  <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="false"></span> </p>
   <p>Mapa do Curso de Engenharia de Materiais: Representação em <a href=https://pt.wikipedia.org/wiki/Teoria_dos_grafos>grafo</a>.</p>
   <p>Clique uma vez para selecionar os requisitos diretos de uma disciplina (ou para selecionar o perfil) - Clique em qualquer lugar para voltar a vista original.</p>
   <p><strike>Clique duas vezes para abrir uma página com detalhes e visualização de cada disciplina.</strike> 🚧 EM CONSTRUÇÃO 🚧 </p>
-
+  <!-- Rectangular switch -->
+  <label class="switch">
+    <input id='changeView' type="checkbox" onclick="physics_toggle()">
+    <span class="slider round"></span>
+  </label>
 
 </div>
-<div id="mynetwork" style="height: 800px; width: 100%; margin-left: 0; margin-right: 0"></div>
+<div id="mynetwork" style="height: 795px; width: 100%; margin-left: 0; margin-right: 0"></div>
 
 <script>
     var nodes = new vis.DataSet([
-        {id: 1, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:50, group: 'math'},
-        {id: 2, label: 'Cálculo 2', url: 'http://www.bing.com', x:200, y:0, group: 'math'},
-        {id: 3, label: 'Cálculo 3', url: 'http://www.yahoo.com', x:400, y:0, group: 'math'},
-        {id: 4, label: 'Séries e EDO', url: 'http://www.yahoo.com', x:600, y:0, group: 'math'},
-        {id: 5, label: 'MMA', url: 'http://www.yahoo.com', x:1000, y:0, group: 'math'},
-        {id: 6, label: 'Geometria Analítica', url: 'http://www.yahoo.com', x:0, y:100, group: 'math'},
-        {id: 7, label: 'Cálculo Numérico', url: 'http://www.yahoo.com', x:800, y:50, group: 'math'},
+        {id: 1, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:50, group: 'math', perfil: 1},
+        {id: 2, label: 'Cálculo 2', url: 'http://www.bing.com', x:200, y:0, group: 'math', perfil: 2},
+        {id: 3, label: 'Cálculo 3', url: 'http://www.yahoo.com', x:400, y:0, group: 'math', perfil: 3},
+        {id: 4, label: 'Séries e EDO', url: 'http://www.yahoo.com', x:600, y:0, group: 'math', perfil: 4},
+        {id: 5, label: 'MMA', url: 'http://www.yahoo.com', x:1000, y:0, group: 'math', perfil: 6},
+        {id: 6, label: 'Geometria Analítica', url: 'http://www.yahoo.com', x:0, y:100, group: 'math', perfil: 1},
+        {id: 7, label: 'Cálculo Numérico', url: 'http://www.yahoo.com', x:800, y:50, group: 'math', perfil: 5},
         
-        {id: 8, label: 'Física 1', url: 'http://www.yahoo.com', x:200, y:120, group: 'physics'},
-        {id: 9, label: 'Física 3', url: 'http://www.yahoo.com', x:400, y:120, group: 'physics'},
-        {id: 10, label: 'Física 4', url: 'http://www.yahoo.com', x:600, y:150, group: 'physics'},
-        {id: 11, label: 'Física \nExperimental A', url: 'http://www.yahoo.com', x:200, y:200, group: 'physics'},
-        {id: 12, label: 'Física \nExperimental B', url: 'http://www.yahoo.com', x:400, y:300, group: 'physics'},
-        {id: 13, label: 'Eletrotécnica', url: 'http://www.yahoo.com', x:1000, y:200, group: 'physics'},
+        {id: 8, label: 'Física 1', url: 'http://www.yahoo.com', x:200, y:120, group: 'physics', perfil: 2},
+        {id: 9, label: 'Física 3', url: 'http://www.yahoo.com', x:400, y:120, group: 'physics', perfil: 3},
+        {id: 10, label: 'Física 4', url: 'http://www.yahoo.com', x:600, y:150, group: 'physics', perfil: 4},
+        {id: 11, label: 'Física \nExperimental A', url: 'http://www.yahoo.com', x:200, y:200, group: 'physics', perfil: 2},
+        {id: 12, label: 'Física \nExperimental B', url: 'http://www.yahoo.com', x:400, y:300, group: 'physics', perfil: 3},
+        {id: 13, label: 'Eletrotécnica', url: 'http://www.yahoo.com', x:1000, y:270, group: 'physics', perfil: 6},
 
-        {id: 14, label: 'Introdução \n à Computação', url: 'http://www.yahoo.com', x:0, y:300, group: 'other'},
-        {id: 15, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.yahoo.com', x:0, y:600, group: 'other'},
-        {id: 16, label: 'Introdução à CEM', url: 'http://www.yahoo.com', x:0, y:500, group: 'materials'},
-        {id: 17, label: 'Química Experimental \nGeral', url: 'http://www.yahoo.com', x:0, y:400, group: 'chemistry'},
-        {id: 18, label: 'Economia Geral', url: 'http://www.yahoo.com', x:200, y:600, group: 'other'},
-        {id: 19, label: 'Materiais e\n Meio Ambiente', url: 'http://www.yahoo.com', x:200, y:540, group: 'materials'},
-        {id: 20, label: 'Química 2 \nGeral', url: 'http://www.yahoo.com', x:200, y:300, group: 'chemistry'},
-        {id: 21, label: 'Química Inorgânica', url: 'http://www.yahoo.com', x:200, y:400, group: 'chemistry'},
+        {id: 14, label: 'Introdução \n à Computação', url: 'http://www.yahoo.com', x:0, y:300, group: 'other', perfil: 1},
+        {id: 15, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.yahoo.com', x:0, y:600, group: 'other', perfil: 1},
+        {id: 16, label: 'Introdução à CEM', url: 'http://www.yahoo.com', x:0, y:500, group: 'materials', perfil: 1},
+        {id: 17, label: 'Química Experimental \nGeral', url: 'http://www.yahoo.com', x:0, y:400, group: 'chemistry', perfil: 1},
 
-        {id: 22, label: 'Termodinâmica \nQuímica', url: 'http://www.yahoo.com', x:400, y:215, group: 'chemistry'},
-        {id: 23, label: 'Ciência dos \nMateriais 1', url: 'http://www.yahoo.com', x:400, y:400, group: 'materials'},
-        {id: 24, label: 'Química Orgânica', url: 'http://www.yahoo.com', x:400, y:500, group: 'chemistry'},
+        {id: 18, label: 'Economia Geral', url: 'http://www.yahoo.com', x:200, y:600, group: 'other', perfil: 2},
+        {id: 19, label: 'Materiais e\n Meio Ambiente', url: 'http://www.yahoo.com', x:200, y:540, group: 'materials', perfil: 2},
+        {id: 20, label: 'Química 2 \nGeral', url: 'http://www.yahoo.com', x:200, y:300, group: 'chemistry', perfil: 2},
+        {id: 21, label: 'Química Inorgânica', url: 'http://www.yahoo.com', x:200, y:400, group: 'chemistry', perfil: 2},
 
-        {id: 25, label: 'Mecânica Aplicada', url: 'http://www.yahoo.com', x:600, y:82, group: 'other'},
-        {id: 26, label: 'Química Análitica \nExperimental A', url: 'http://www.yahoo.com', x:600, y:460, group: 'chemistry'},
-        {id: 27, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.yahoo.com', x:600, y:215, group: 'materials'},
-        {id: 28, label: 'Ciência dos \nMateriais 2', url: 'http://www.yahoo.com', x:600, y:400, group: 'materials'},
-        {id: 29, label: 'Fenômenos de\n Transporte 6', url: 'http://www.yahoo.com', x:600, y:310, group: 'other'},
+        {id: 22, label: 'Termodinâmica \nQuímica', url: 'http://www.yahoo.com', x:400, y:215, group: 'chemistry', perfil: 3},
+        {id: 23, label: 'Ciência dos \nMateriais 1', url: 'http://www.yahoo.com', x:400, y:400, group: 'materials', perfil: 3},
+        {id: 24, label: 'Química Orgânica', url: 'http://www.yahoo.com', x:400, y:500, group: 'chemistry', perfil: 3},
 
-        {id: 30, label: 'Mecânica dos\n Sólidos', url: 'http://www.yahoo.com', x:800, y:125, group: 'materials'},
-        {id: 31, label: 'Fundamentos\n em Reologia', url: 'http://www.yahoo.com', x:800, y:300, group: 'materials'},
+        {id: 25, label: 'Mecânica Aplicada', url: 'http://www.yahoo.com', x:600, y:82, group: 'other', perfil: 4},
+        {id: 26, label: 'Química Análitica \nExperimental A', url: 'http://www.yahoo.com', x:600, y:490, group: 'chemistry', perfil: 4},
+        {id: 27, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.yahoo.com', x:600, y:215, group: 'materials', perfil: 4},
+        {id: 28, label: 'Ciência dos \nMateriais 2', url: 'http://www.yahoo.com', x:600, y:400, group: 'materials', perfil: 4},
+        {id: 29, label: 'Fenômenos de\n Transporte 6', url: 'http://www.yahoo.com', x:600, y:310, group: 'other', perfil: 4},
 
-        {id: 101, label: 'Perfil 1 - OK', x:0, y:-100, group: 'profile'},
-        {id: 102, label: 'Perfil 2 - OK', x:200, y:-100, group: 'profile'},
-        {id: 103, label: 'Perfil 3 - OK', x:400, y:-100, group: 'profile'},
-        {id: 104, label: 'Perfil 4', x:600, y:-100, group: 'profile'},
-        {id: 105, label: 'Perfil 5', x:800, y:-100, group: 'profile'},
-        {id: 106, label: 'Perfil 6', x:1000, y:-100, group: 'profile'},
-        {id: 107, label: 'Perfil 7', x:1200, y:-100, group: 'profile'},
-        {id: 108, label: 'Perfil 8/9', x:1400, y:-100, group: 'profile'},
-        {id: 109, label: 'Perfil 10', x:1600, y:-100, group: 'profile'},
+        {id: 30, label: 'Mecânica dos\n Sólidos', url: 'http://www.yahoo.com', x:800, y:125, group: 'materials', perfil: 5},
+        {id: 31, label: 'Fundamentos\n em Reologia', url: 'http://www.yahoo.com', x:800, y:190, group: 'materials', perfil: 5},
+        {id: 32, label: 'Materiais \n Poliméricos', url: 'http://www.yahoo.com', x:800, y:270, group: 'materials', perfil: 5},
+        {id: 33, label: 'Materiais \n Cerâmicos', url: 'http://www.yahoo.com', x:800, y:500, group: 'materials', perfil: 5},
+        {id: 34, label: 'Materiais \n Metálicos', url: 'http://www.yahoo.com', x:800, y:600, group: 'materials', perfil: 5},
+
+        {id: 35, label: 'Economia de\n Empresas', url: 'http://www.yahoo.com', x:1000, y:200, group: 'other', perfil: 6},
+        {id: 36, label: 'Introdução MP\n Cerâmicas', url: 'http://www.yahoo.com', x:1000, y:60, group: 'ceramics', perfil: 6},
+        {id: 37, label: 'Fundamentos de\n Met. Extr.', url: 'http://www.yahoo.com', x:1000, y:130, group: 'metals', perfil: 6},
+        {id: 38, label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.yahoo.com', x:1000, y:340, group: 'polymers', perfil: 6},
+        {id: 39, label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.yahoo.com', x:1000, y:430, group: 'materials', perfil: 6},
+        {id: 40, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.yahoo.com', x:1000, y:515, group: 'materials', perfil: 6},
+        {id: 41, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.yahoo.com', x:1000, y:630, group: 'materials', perfil: 6},
+
+        {id: 44, label: 'Intr. Planejamento e \nAnalíse. Estat. de Exps.', url: 'http://www.yahoo.com', x:1200, y:0, group: 'other', perfil: 7},
+        {id: 45, label: 'Ensaios de\n Materiais', url: 'http://www.yahoo.com', x:1200, y:300, group: 'materials', perfil: 7},
+        {id: 46, label: 'Caracterização de\n Materiais', url: 'http://www.yahoo.com', x:1200, y:365, group: 'materials', perfil: 7},
+        {id: 47, label: 'Metalurgia Mecânica', url: 'http://www.yahoo.com', x:1200, y:570, group: 'metals', perfil: 7},
+        {id: 50, label: 'Metalurgia Física', url: 'http://www.yahoo.com', x:1200, y:620, group: 'metals', perfil: 7},
+        {id: 49, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.yahoo.com', x:1200, y:515, group: 'ceramics', perfil: 7},
+        {id: 48, label: 'Síntese de\n Polímeros', url: 'http://www.yahoo.com', x:1200, y:235, group: 'polymers', perfil: 7},
+        {id: 51, label: 'Análise de Investimentos', url: 'http://www.yahoo.com', x:1200, y:50, group: 'other', perfil: 7},
+        {id: 52, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.yahoo.com', x:1200, y:170, group: 'ceramics', perfil: 7},
+        {id: 53, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.yahoo.com', x:1200, y:100, group: 'other', perfil: 7},
+        {id: 54, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.yahoo.com', x:1200, y:425, group: 'materials', perfil: 7},
+
+        {id: 55, label: 'Seleção de\n Materiais', url: 'http://www.yahoo.com', x:1400, y:300, group: 'materials', perfil: 8},
+        {id: 56, label: 'Tratamentos \n Térmicos', url: 'http://www.yahoo.com', x:1400, y:550, group: 'metals', perfil: 8},
+        {id: 57, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.yahoo.com', x:1400, y:610, group: 'ceramics', perfil: 8},
+        {id: 58, label: 'Processamento de \n Termoplásticos', url: 'http://www.yahoo.com', x:1400, y:200, group: 'polymers', perfil: 8},
+        {id: 59, label: 'Estágio PIEEG', url: 'http://www.yahoo.com', x:1400, y:100, group: 'materials', perfil: 8},
+        {id: 60, label: 'Teroria das \n Organizações', url: 'http://www.yahoo.com', x:1400, y:0, group: 'other', perfil: 8},
+
+        {id: 61, label: 'Gestão da \n Qualidade 2', url: 'http://www.yahoo.com', x:1600, y:0, group: 'other', perfil: 9},
+        {id: 62, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.yahoo.com', x:1600, y:100, group: 'materials', perfil: 9},
+        {id: 68, label: 'Processamento de \n Elstômeros e Termofixos', url: 'http://www.yahoo.com', x:1600, y:200, group: 'polymers', perfil: 9},
+        {id: 64, label: 'Engenharia de\n Polímeros', url: 'http://www.yahoo.com', x:1600, y:300, group: 'polymers', perfil: 9},
+        {id: 65, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.yahoo.com', x:1600, y:390, group: 'ceramics', perfil: 9},
+        {id: 66, label: 'Cerâmicas \n Refratárias', url: 'http://www.yahoo.com', x:1600, y:460, group: 'ceramics', perfil: 9},
+        {id: 67, label: 'Conformação \n Mecânica', url: 'http://www.yahoo.com', x:1600, y:530, group: 'metals', perfil: 9},
+        {id: 63, label: 'Fundição', url: 'http://www.yahoo.com', x:1600, y:600, group: 'metals', perfil: 9},
+
+        {id: 101, label: 'Semestre 1', x:0, y:-100, group: 'profile'},
+        {id: 102, label: 'Semestre 2', x:200, y:-100, group: 'profile'},
+        {id: 103, label: 'Semestre 3', x:400, y:-100, group: 'profile'},
+        {id: 104, label: 'Semestre 4', x:600, y:-100, group: 'profile'},
+        {id: 105, label: 'Semestre 5', x:800, y:-100, group: 'profile'},
+        {id: 106, label: 'Semestre 6', x:1000, y:-100, group: 'profile'},
+        {id: 107, label: 'Semestre 7', x:1200, y:-100, group: 'profile'},
+        {id: 108, label: 'Semestre 8/9', x:1400, y:-100, group: 'profile'},
+        {id: 109, label: 'Semestre 10', x:1600, y:-100, group: 'profile'},
 
 
 
     ]);
+
   var edges = new vis.DataSet([
-        {from: 101, to: 1, hidden: true},
-        {from: 101, to: 6, hidden: true},
-        {from: 101, to: 14, hidden: true},
-        {from: 101, to: 15, hidden: true},
-        {from: 101, to: 16, hidden: true},
-        {from: 101, to: 17, hidden: true},
+        // {from: 101, to: 1, hidden: true},
+        // {from: 101, to: 6, hidden: true},
+        // {from: 101, to: 14, hidden: true},
+        // {from: 101, to: 15, hidden: true},
+        // {from: 101, to: 16, hidden: true},
+        // {from: 101, to: 17, hidden: true},
 
-        {from: 102, to: 2, hidden: true},
-        {from: 102, to: 8, hidden: true},
-        {from: 102, to: 11, hidden: true},
-        {from: 102, to: 20, hidden: true},
-        {from: 102, to: 21, hidden: true},
-        {from: 102, to: 19, hidden: true},
-        {from: 102, to: 18, hidden: true},
+        // {from: 102, to: 2, hidden: true},
+        // {from: 102, to: 8, hidden: true},
+        // {from: 102, to: 11, hidden: true},
+        // {from: 102, to: 20, hidden: true},
+        // {from: 102, to: 21, hidden: true},
+        // {from: 102, to: 19, hidden: true},
+        // {from: 102, to: 18, hidden: true},
 
-        {from: 103, to: 3, hidden: true},
-        {from: 103, to: 9, hidden: true},
-        {from: 103, to: 12, hidden: true},
-        {from: 103, to: 22, hidden: true},
-        {from: 103, to: 23, hidden: true},
-        {from: 103, to: 24, hidden: true},
+        // {from: 103, to: 3, hidden: true},
+        // {from: 103, to: 9, hidden: true},
+        // {from: 103, to: 12, hidden: true},
+        // {from: 103, to: 22, hidden: true},
+        // {from: 103, to: 23, hidden: true},
+        // {from: 103, to: 24, hidden: true},
 
-        {from: 104, to: 4, hidden: true},
-        {from: 104, to: 25, hidden: true},
-        {from: 104, to: 26, hidden: true},
+        // {from: 104, to: 4, hidden: true},
+        // {from: 104, to: 10, hidden: true},
+        // {from: 104, to: 25, hidden: true},
+        // {from: 104, to: 26, hidden: true},
+        // {from: 104, to: 27, hidden: true},
+        // {from: 104, to: 28, hidden: true},
+        // {from: 104, to: 29, hidden: true},
 
-        {from: 105, to: 7, hidden: true},
-        {from: 105, to: 10, hidden: true},
-        {from: 105, to: 30, hidden: true},
+        // {from: 105, to: 7, hidden: true},
+        // {from: 105, to: 30, hidden: true},
+        // {from: 105, to: 31, hidden: true},
+        // {from: 105, to: 32, hidden: true},
+        // {from: 105, to: 33, hidden: true},
+        // {from: 105, to: 34, hidden: true},
 
-        {from: 106, to: 5, hidden: true},
-        {from: 106, to: 13, hidden: true},
+        // {from: 106, to: 5, hidden: true},
+        // {from: 106, to: 35, hidden: true},
+        // {from: 106, to: 36, hidden: true},
+        // {from: 106, to: 37, hidden: true},
+        // {from: 106, to: 38, hidden: true},
+        // {from: 106, to: 39, hidden: true},
+        // {from: 106, to: 40, hidden: true},
+        // {from: 106, to: 41, hidden: true},
+
+        // {from: 107, to: 44, hidden: true},
+        // {from: 107, to: 45, hidden: true},
+        // {from: 107, to: 46, hidden: true},
+        // {from: 107, to: 47, hidden: true},
+        // {from: 107, to: 48, hidden: true},
+        // {from: 107, to: 49, hidden: true},
+        // {from: 107, to: 50, hidden: true},
+        // {from: 107, to: 51, hidden: true},
+        // {from: 107, to: 52, hidden: true},
+        // {from: 107, to: 53, hidden: true},
+        // {from: 107, to: 54, hidden: true},
+
+        // {from: 108, to: 55, hidden: true},
+        // {from: 108, to: 56, hidden: true},
+        // {from: 108, to: 57, hidden: true},
+        // {from: 108, to: 58, hidden: true},
+        // {from: 108, to: 59, hidden: true},
+        // {from: 108, to: 60, hidden: true},
+
+        // {from: 109, to: 61, hidden: true},
+        // {from: 109, to: 62, hidden: true},
+        // {from: 109, to: 63, hidden: true},
+        // {from: 109, to: 64, hidden: true},
+        // {from: 109, to: 65, hidden: true},
+        // {from: 109, to: 66, hidden: true},
+        // {from: 109, to: 67, hidden: true},
+        // {from: 109, to: 68, hidden: true},
 
         {from: 1, to: 2},
         {from: 1, to: 7},        
@@ -184,15 +272,46 @@ a {color: #86BE81;}
         {from: 29, to: 31},
         {from: 22, to: 27},
         {from: 23, to: 28},
+        {from: 28, to: 32},
+        {from: 28, to: 33},
+        {from: 28, to: 34},
+        {from: 28, to: 45},
+        {from: 28, to: 46},
+        {from: 28, to: 47},
+        {from: 28, to: 50},
+        {from: 28, to: 55},
+        {from: 30, to: 45},
+        {from: 30, to: 55},
+        {from: 30, to: 67},
+        {from: 31, to: 39},
+        {from: 32, to: 39},
+        {from: 32, to: 38},
+        {from: 32, to: 48},
+        {from: 33, to: 40},
+        {from: 33, to: 57},
+        {from: 33, to: 66},
+        {from: 34, to: 41},
+        {from: 34, to: 56},
+        {from: 34, to: 63},
 
 
+        {from: 39, to: 58},
+        {from: 38, to: 64},
+        {from: 40, to: 49},
+        {from: 40, to: 65},
 
+        // {from: 59, to: 64},
+        // {from: 59, to: 65},
+        // {from: 59, to: 67},
+        // {from: 59, to: 63},
 
+        {from: 58, to: 68}
 
     ]);    
 
     // create a network
     var container = document.getElementById('mynetwork');
+    // container.oncontextmenu = () => false;
     var data = {
         nodes: nodes,
         edges: edges
@@ -203,47 +322,52 @@ a {color: #86BE81;}
         math: {color:'lightgreen'},
         physics: {color:'orange'},
         materials: {color: 'red', font: {weight: 'regular', color: 'white'}},
-        other: {color: 'lightblue', font: {weight: 'regular', color: 'black'}},
+        ceramics: {color: '#451B1B', font: {weight: 'regular', color: 'white'}},
+        metals: {color: 'CCCAD4', font: {weight: 'regular', color: 'black'}},
+        polymers: {color: 'purple', font: {weight: 'regular', color: 'white'}},
+        other: {color: '#F7E771', font: {weight: 'regular', color: 'black'}},
         profile: {color: 'white'}
         },
-          edges: {arrows: {
-      to: {
-        enabled: true,
-        imageHeight: undefined,
-        imageWidth: undefined,
-        scaleFactor: 0.5,
-        src: undefined,
-        type: "arrow"
-      },     
-      middle: {
-        enabled: false,
-        imageHeight: 32,
-        imageWidth: 32,
-        scaleFactor: 1,
-        src: "https://visjs.org/images/visjs_logo.png",
-        type: "image"
-      },
-      from: {
-        enabled: false,
-        imageHeight: undefined,
-        imageWidth: undefined,
-        scaleFactor: 1,
-        src: undefined,
-        type: "arrow"
-      }},
-        smooth: false
+      edges: {arrows: {
+                to: {
+                     enabled: true,
+                     scaleFactor: 0.5,
+                     type: "arrow"
+                     },
+                    },
+    smooth: false
     },
-    physics: false,
+    // layout: {
+    // hierarchical: {
+    //     direction: "LR",
+    //     sortMethod: "directed",
+    //     levelSeparation: 20
+    // }},
+    // physics: {
+    //     hierarchicalRepulsion: {
+    //     nodeDistance: 40
+    //       }
+    //       },
+    physics: true,
     interaction: {
         hover: true,
-        dragNodes: false,// do not allow dragging nodes
+        dragNodes: true,// do not allow dragging nodes
         zoomView: true, // do not allow zooming
-        dragView: true  // do not allow dragging
+        dragView: true,  // do not allow dragging
+        multiselect: true,
+        navigationButtons: true,
+        selectable: true,
+        selectConnectedEdges: true,
     },
     width: "100%",   // This fills out the canvas size to the encompassing div
     height: "100%"
     };
     var network = new vis.Network(container, data, options);
+
+
+
+  options.physics = false;
+  network.setOptions(options);  
 
     network.on("doubleClick", function (params) {
         if (params.nodes.length === 1) {
@@ -252,17 +376,63 @@ a {color: #86BE81;}
         }
     });
 
-    network.on("hoverNode", function(){
-     // functionality for popup to show on mouseover
-    });
+    // network.on('hoverNode', function (properties) {
+    //     var node = nodes.get(properties.node);
+    //     network.selectNodes([properties.node]);
+    //     $('#info').html(node.id);
+    // });
+    function drawDivisions(ctx) {
+            ctx.lineWidth = 3;
+            ctx.setLineDash([15, 10]);
+            ctx.strokeStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.moveTo(100, -150);
+            ctx.lineTo(100, 695);
+            ctx.moveTo(300, -150);
+            ctx.lineTo(300, 695);
+            ctx.moveTo(500, -150);
+            ctx.lineTo(500, 695);
+            ctx.moveTo(700, -150);
+            ctx.lineTo(700, 695);
+            ctx.moveTo(900, -150);
+            ctx.lineTo(900, 695);
+            ctx.moveTo(1100, -150);
+            ctx.lineTo(1100, 695);
+            ctx.moveTo(1300, -150);
+            ctx.lineTo(1300, 695);
+            ctx.moveTo(1500, -150);
+            ctx.lineTo(1500, 695);
+            ctx.stroke();
+            }
 
-    network.on("click",onClick);
+    network.on("afterDrawing", drawDivisions);
+
+    network.on("oncontext",onClick);
+
+    network.on("dragEnd",storePositions);
+
+    function  storePositions() {
+      var allNodes = nodes.get({returnType:"Object"});
+      var nodeId;
+
+      for (nodeId in allNodes) {
+        var positions = network.getPositions(nodeId);
+        allNodes[nodeId]["currentX"] = positions[nodeId].x;
+        allNodes[nodeId]["currentY"] = positions[nodeId].y;
+      } 
+    };
 
     function onClick(selectedItems) {
+    selectedItems.event.preventDefault()
     var nodeId;
-    var degrees = 2;
+    var degrees = 7;
     // we get all data from the dataset once to avoid updating multiple times.
     var allNodes = nodes.get({returnType:"Object"});
+
+    var nodesToSelect = [];
+    var finalSelection = [];
+
+
     if (selectedItems.nodes.length == 0) {
         // restore on unselect
         for (nodeId in allNodes) {
@@ -271,9 +441,15 @@ a {color: #86BE81;}
                 if (allNodes[nodeId].oldLabel !== undefined) {
                     allNodes[nodeId].label = allNodes[nodeId].oldLabel;
                     allNodes[nodeId].oldLabel = undefined;
+                    network.body.nodes[nodeId].options.font.color = undefined; // reset font colors
+
                 }
                 allNodes[nodeId]['levelOfSeperation'] = undefined;
                 allNodes[nodeId]['inConnectionList'] = undefined;
+                allNodes[nodeId].x = allNodes[nodeId]["currentX"];
+                allNodes[nodeId].y = allNodes[nodeId]["currentY"];
+
+
             }
         }
     }
@@ -297,16 +473,22 @@ a {color: #86BE81;}
             if (allNodes.hasOwnProperty(nodeId)) {
                 if (allNodes[nodeId]['inConnectionList'] == true) {
                     if (allNodes[nodeId]['levelOfSeperation'] !== undefined) {
-                        if (allNodes[nodeId]['levelOfSeperation'] >= 2) {
+                        if (allNodes[nodeId]['levelOfSeperation'] >= degrees) {
                             allNodes[nodeId].color = 'rgba(150,150,150,0.75)';
 
                         }
+
                         else {
                             allNodes[nodeId].color = undefined;
+                            nodesToSelect.push(nodeId);
+                            // console.log(nodeId); // the ones linked with the selected nodes
+
                         }
                     }
                     else {
                         allNodes[nodeId].color = undefined;
+
+
                     }
                     if (allNodes[nodeId].oldLabel !== undefined) {
                         allNodes[nodeId].label = allNodes[nodeId].oldLabel;
@@ -315,6 +497,8 @@ a {color: #86BE81;}
                 }
                 else {
                     allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
+                    // console.log(nodeId); // the ones not linked with the selected node
+                    network.body.nodes[nodeId].options.font.color = '#ffffff';
 
                     if (allNodes[nodeId].oldLabel === undefined) {
                         allNodes[nodeId].oldLabel = allNodes[nodeId].label;
@@ -323,14 +507,57 @@ a {color: #86BE81;}
                 }
             }
         }
+        var currentPerfil = allNodes[nodesToSelect[0]].perfil;
+        var perfilDiff = 0;
+        var perfilDiffToFirst = 0;
+        for (var i=0, nodeId; nodeId = nodesToSelect[i]; i++){
+            // perfilDiff = allNodes[nodeId].perfil-lastNodeId 
+            console.log(nodeId);
+            currentPerfil =  allNodes[nodeId].perfil;
+            linkedNodes = getConnectedNodes(nodeId, allEdges)
+            // for (var j=0, item; item = getConnectedNodes(nodeId, allEdges)[j]; j++){
+            for (var j = 0; j < linkedNodes.length; j++ ){
+
+                // 
+                perfilDiff = allNodes[linkedNodes[j]].perfil-currentPerfil;
+                if (j>0){
+                  perfilDiffToFirst = allNodes[linkedNodes[j]].perfil - allNodes[linkedNodes[j-1]].perfil
+                  console.log(perfilDiffToFirst)
+
+                }
+                if (perfilDiff == 1){
+                    if (perfilDiffToFirst == 0) {
+                      // console.log(item);
+                      finalSelection.push(linkedNodes[j].toString());
+                    }
+                }
+
+            }
+        }
+        finalSelection.push(nodesToSelect[0].toString());
+
     }
     var updateArray = [];
     for (nodeId in allNodes) {
         if (allNodes.hasOwnProperty(nodeId)) {
             updateArray.push(allNodes[nodeId]);
+            // console.log(nodeId);
         }
     }
+
+    console.log(finalSelection);
+    for (nodeId in allNodes) {
+        allNodes[nodeId].x = allNodes[nodeId]["currentX"];
+        allNodes[nodeId].y = allNodes[nodeId]["currentY"];
+        } 
+    // newPositions = storePositions();
     nodes.update(updateArray);
+    // console.log(finalSelection)
+    // console.log(nodesToSelect)
+    if (finalSelection.length !== 0){
+      network.selectNodes(finalSelection);
+    }
+
 }
 
 /**
@@ -403,13 +630,71 @@ function getConnectedNodes(nodeId, allEdges) {
     for (var i = 0; i < edgesArray.length; i++) {
         var edge = edgesArray[i];
         if (edge.to == nodeId) {
-            connectedNodes.push(edge.from);
+            // connectedNodes.push(edge.from); //only select ahead
         }
         else if (edge.from == nodeId) {
             connectedNodes.push(edge.to)
         }
     }
     return connectedNodes;
+}
+
+function autoScale(){var options = {
+          duration: 1000,
+          easingFunction: "easeInOutQuad",
+        };
+        network.fit({ animation: options });};
+
+function physics_on(){
+    network.on("afterDrawing", autoScale);
+  options.physics = {
+    "barnesHut": {
+      "springConstant": 0.1,
+      "avoidOverlap": 0.005
+    }};
+  // network = new vis.Network(container, data, options);
+  network.setOptions(options);
+  network.off("afterDrawing", drawDivisions);
+  var allNodes = nodes.get({returnType:"Object"});
+  for (var i = 101; i < 110; i++) {
+    console.log('on', i);
+    allNodes[i].hidden = true;
+  }
+    network.off("afterDrawing", autoScale);
+}
+
+function physics_off(){
+  options.physics = false;
+  var allNodes = nodes.get({returnType:"Object"});
+  for (var i = 101; i < 110; i++) {
+    console.log('off', i)
+    allNodes[i].hidden = false
+  }
+  network = new vis.Network(container, data, options);
+  network.on("doubleClick", function (params) {
+      if (params.nodes.length === 1) {
+          var node = nodes.get(params.nodes[0]);
+          window.open(node.url, '_blank');
+      }
+    });
+  network.on("afterDrawing", drawDivisions);
+
+  network.on("oncontext",onClick);
+
+  network.on("dragEnd",storePositions);
+
+
+
+
+}
+
+function physics_toggle(){
+  var checkBox = document.getElementById("changeView");
+    if (checkBox.checked == true){
+   physics_on()
+  } else {
+    physics_off()
+  }
 }
 
 </script>

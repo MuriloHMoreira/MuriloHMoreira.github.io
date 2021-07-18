@@ -1,6 +1,7 @@
 /*=========================== Overrides of notebook CSS for static HTML export ===========================*/
 body {
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 0px;
   background-color: #050023;
   height: 100%;
@@ -68,4 +69,174 @@ body {
 p{
   color: #f2f2f2;
   line-height: 0.9;
+}
+
+$flag-width: 250px;
+$flag-height: 150px;
+
+$color-white: #fff;
+$color-flag: #16b83e;
+$color-losangue: #ffe11f;
+$color-circle: #1651b8;
+
+$losangue-width: 105px;
+$losangue-height: 130px;
+
+.brasil-flag {
+  position: relative;
+  background-color: $color-flag;
+  width: $flag-width;
+  height: $flag-height;
+  margin: 5em auto 0;
+
+  .circle,
+  .losangue:before,
+  .losangue:after {
+    position: absolute;
+  }
+
+  .losangue {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      left: 20px;
+      right: 20px;
+    }
+
+    &:before {
+      border-left: $losangue-width solid transparent;
+      border-right: $losangue-width solid transparent;
+      border-bottom: ($losangue-height/2) solid $color-losangue;
+      top: 10px;
+    }
+
+    &:after {
+      border-left: $losangue-width solid transparent;
+      border-right: $losangue-width solid transparent;
+      border-top: ($losangue-height/2) solid $color-losangue;
+      bottom: 10px;
+    }
+  }
+
+  .circle {
+    overflow: hidden;
+    z-index: 2;
+    display: block;
+    background-color: $color-circle;
+    height: 80px;
+    width: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
+
+    &,
+    &:before,
+    &:after {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+    }
+
+    &:before,
+    &:after {
+      width: 90px;
+      height: 40px;
+      -ms-transform: rotate(14deg);
+      -webkit-transform: rotate(14deg);
+      transform: rotate(14deg);
+    }
+
+    &:before {
+      z-index: 3;
+      content: '';
+      margin-top: -20px;
+      margin-left: -45px;
+      background: $color-white;
+    }
+
+    &:after {
+      z-index: 4;
+      content: '';
+      margin-top: -10px;
+      margin-left: -48px;
+      background-color: $color-circle;
+    }
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
