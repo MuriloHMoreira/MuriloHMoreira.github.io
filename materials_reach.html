@@ -76,7 +76,6 @@ body,h1,h2,h3,h4,h5,a,button {font-family: "IBM Plex Mono", sans-serif}
     <input id='changeView' type="checkbox" onclick="physics_toggle()">
     <span class="slider round"></span>
   </label> <b>Layout de Grafo </b>
-  <!-- <button id="loadPng" onclick="saveNetwork()">Download image</button> -->
   </span>
   <button id="loadPng" style="border-radius: 15px; position:absolute; right:0; margin-right: 15px;"><b>Salvar</b></button>
 </div>
@@ -712,6 +711,7 @@ function physics_off(){
 
   network.on("dragEnd",storePositions);
 
+  $("#mynetwork canvas").attr("id","canvas");
 }
 
 function physics_toggle(){
@@ -722,19 +722,6 @@ function physics_toggle(){
     physics_off()
   }
 }
-
-// function saveNetwork() {
-//   console.log('Saving')
-//         var mynetworkCanvas = document.getElementById("mynetwork");
-//         console.log('mynetworkCanvas',mynetworkCanvas.childNodes[5]);
-//         mynetworkCanvas.toBlob(function(blob) {
-//             var a = document.createElement("a");
-//             document.body.appendChild(a);
-//             a.download = "network" + ".png";
-//             a.href = window.URL.createObjectURL(blob);
-//             a.click();
-//         });
-//     };
 
 
 $("#mynetwork canvas").attr("id","canvas");
