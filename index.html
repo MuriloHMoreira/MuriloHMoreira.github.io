@@ -1,204 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
-<link rel="icon" href="./resources/favicon.png">
-<link rel="stylesheet" href="./css/main_theme.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
-<link href="./css/all.css" rel="stylesheet">
-<style>
-body,h1,h2,h3,h4,h5,a {font-family: "Poppins", sans-serif}
-a {color: #86BE81;}
-</style>
+<html lang="en">
 
-<title>Murilo H. Moreira</title>
-<!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        tagSide: "right"
-      },
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    MathJax.Hub.Register.StartupHook("TeX AMSmath Ready", function () {
-    MathJax.InputJax.TeX.Stack.Item.AMSarray.Augment({
-      clearTag() {
-        if (!this.global.notags) {
-          this.super(arguments).clearTag.call(this);
-        }
-      }
-    });
-  });
-    </script>
-    <!-- End of mathjax configuration -->
-
-<script>
-function overlayHelp(isShow){
-  var elm = document.getElementById('overlayHelp')
-  if (isShow) {
-    elm.style.display = 'block';
-  } else {
-    elm.style.display = 'none';
-  }
-}
-
-function openHelp() {
-  overlayHelp(true);
-  document.getElementById('HelpWindow').style.display = 'block';
-}
-
-function closeHelp() {
-  overlayHelp(false);
-  document.getElementById('HelpWindow').style.display = 'none';
-}
-
-function overlay(isShow){
-  var elm = document.getElementById('overlay')
-  if (isShow) {
-    elm.style.display = 'block';
-  } else {
-    elm.style.display = 'none';
-  }
-}
-
-function openNav() {
-  overlay(true);
-  // document.getElementById('mySidenav').style.width="250px";
-  document.getElementById('mySidenav').classList.add('sidenav_sz_open');
-  document.getElementById('mySidenav').classList.remove('sidenav_sz_close');
-  document.getElementById('sm_arrow').style.color="#111";
-  document.getElementById("notebook").style.marginLeft = "250px";
-  document.body.style.backgroundColor = "white";
-}
-
-function closeNav() {
-  overlay(false);
-  // document.getElementById('mySidenav').style.width="15px"
-  document.getElementById('mySidenav').classList.add('sidenav_sz_close');
-  document.getElementById('mySidenav').classList.remove('sidenav_sz_open');
-  document.getElementById("notebook").style.marginLeft = "0";
-  document.getElementById('sm_arrow').style.color="grey";
-  document.body.style.backgroundColor = "white";
-}
-</script>
-
-<!-- <img class="logoGEMM" src="./resources/logo.png" height="60px"> -->
-<!-- <img class="logoUFSCar" src="./resources/ufscar.png" height="60px"> -->
-
-
-
-
-<!-- Navigation Bar -->
-<!-- Navigation Bar -->
-<div class="topnav" id="topnav">
-  <a class="head_button" href="#About"> Murilo Henrique Moreira </a>
-  <a class="head_button" href="#Pages"><i class="fas fa-book"></i> Pages </a>
-  <a class="head_button" href="#CV"><i class="fas fa-user-graduate"></i> Curriculum Vitae </a>
-  <a class="head_button" href="./research.html"><i class="fas fa-microscope"></i> Research</a>
-  <a class="head_button" href="#Projects"><i class="fas fa-cogs"></i> Projects</a>
-</div>
-
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Murilo Henrique Moreira</title>
+    <meta name="description" content="Personal webpage of Murilo Henrique Moreira.
+Welcome!">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/main_theme.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
 </head>
-<body>
 
-<div>
-    <div class="side-layout"><h1 class="nocount" id="About"><i class="fas fa-id-badge"></i> About </h1>
-    <spam><h1 class="nocount" ><a class="back_top" href="#topnav"><i class="far fa-caret-square-up"></i></a></div>
-
-</div>
-
-<div class="social_hub" id="topnav">
-  <a class="description"> Contact Hub: </a>
-  <a class="icon_button" href="https://github.com/MuriloHMoreira" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-  <a class="icon_button" href="https://scholar.google.com.br/citations?user=NoZwRbIAAAAJ&hl=pt-BR" target="_blank"><i class="fab fa-google"></i> Google Scholar</a>
-  <a class="icon_button" href="https://www.researchgate.net/profile/Murilo-Moreira-2" target="_blank"><i class="fab fa-researchgate"></i> Research Gate</a>
-  <a class="icon_button" href="https://orcid.org/0000-0002-2591-4760" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
-  <a class="icon_button" href="https://www.linkedin.com/in/murilo-moreira-095534bb/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-  <a class="icon_button" href="https://twitter.com/MuriloHMoreira" target="_blank"><i class="fab fa-twitter"></i> Twitter </a>
-  <!-- <a class="icon_button" href="#CV"><i class="fab fa-youtube"></i> YouTube </a> -->
-</div>  
-
-<div>
-  <div class="side-layout"><h1 class="nocount" id="Pages"><i class="fas fa-book"></i> Pages </h1>
-    <spam><h1 class="nocount" ><a class="back_top" href="#topnav"><i class="far fa-caret-square-up"></i></a></div>
-</div>
-
-<div>
-  <div class="side-layout"><h1 class="nocount" id="CV"><i class="fas fa-user-graduate"></i> Curriculum Vitae </h1>
-  <spam><h1 class="nocount" ><a class="back_top" href="#topnav"><i class="far fa-caret-square-up"></i></a></div>
-  
-  <p>E-mail: <a href="mailto:moreira.murilo@gmail.com">moreira.murilo@gmail.com</a></p>
-
-<p><strong>Currently:</strong></p> 
-<p>Doctoral Student in Materials Science and Engineering – <a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a> – <a href="https://www.ppgcem.ufscar.br/en/home?set_language=en" target="_blank">PPGCEM</a></p>
-<p><b>Education:</b></p>
-<p>Bachelor's Degree in Materials Engineering - 2019 – <a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a></p>
-<p>Master's Degree in Materials Science and Engineering - 2021 – <a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a> – <a href="https://www.ppgcem.ufscar.br/en/home?set_language=en" target="_blank">PPGCEM</a></p>
-<p><b>Professional Experience:</b></p>
-<ul>
-<li>Co-owner and Head of PMO in Luz Projetos e Assistência Técnica em Materiais LTDA from 2018 to 2020</li>
-</ul></p>
-<p><b>Software Experience:</b></p>
-<ul>
-<li>Wide experience with Python</li>
-<li>Development of Python scripts for Data Mining, Data Analysis and Numerical Models (FDM and FEM)</li>
-<li>Aplication of OpenFOAM to Conjugate Heat Transfer Problems Considering Radiation Models With Participant Medium</li>
-<li>Experience user of Paraview for results analysis;</li>
-<li>Basic HTML and CSS usage;</li>
-<li>Experienced user of Minitab for statistical analysis;</li>
-<li>User of Abaqus for thermal and mechanics simulations through finite element method</li>
-<li>User of Solidworks, Autocad and Onshape for technical drawings and 3D models</li>
-</ul>
-<p><b>Extracurricular Activities:</b></p>
-<ul>
-<li>Junior Enterprise – From March 2014 to December 2014: Advisor to the administrative and financial department</li>
-<li>Co-founder of Tritech, an undergraduate group of students focused on the study and development of 3D-Printed solutions for both Industry partners and the academic community</li>
-<li>Undergraduate Research at Materials Microstructure Engineering Group (GEMM) – From March 2014 to 2019</li>
-</ul>
-<p><b>Internship Projects:</b></p>
-<ul>
-<li>Kerneos Research and Technology Centre (KRTC) – Current Imerys Aluminates Research Center – from 02/17 to 08/17</li>
-<li>Saint Gobain Centre De Recherches Et D'etudes Europeen (CREE) – Current Saint-Gobain Provence – from 08/17 to 02/18</li>
-</ul></p>
-<p><b>Awards and Recognition:</b></p>
-<ul>
-<li><a href="http://fire-refractory.org/alumni_2017/" target="_blank">Federation for International Refractory Research and Education (FIRE)</a> Alumni (2017)</li>
-<li>Prêmio CREA-SP de Formação Profissional (2020) – Awarded to the graduate with highest GPA</li>
-<li>Prêmio Instituto de Engenharia (2020) – Awarded to the graduate with highest GPA</li>
-<li>Prêmio Professor Sérgio Mascarenhas (2020) – Associação dos Exs alunos da Engenharia de Materiais da UFSCar (DEMaEx) – Awarded for the graduate with outstanding curriculum in honor to <a href="https://pt.wikipedia.org/wiki/S%C3%A9rgio_Mascarenhas_de_Oliveira" target="_blank">Professor Sérgio Mascarenhas</a></li>
-</ul></p>
-<p><b>Languages:</b></p>
-<ul>
-<li>Fluency in English and Portuguese;</li>
-<li>Basic French and Spanish</li>
-</ul>
-
-
-
-</p>
-
-
-
-<footer class="footer">
+<body style="font-family: Poppins, sans-serif;">
+    <header class="d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center" id="navbar-top">
+        <nav class="navbar navbar-light navbar-expand-xl justify-content-xl-center align-items-xl-center justify-content-xxl-start align-items-xxl-center" style="padding-bottom: 0px;padding-top: 0px;height: 64px;">
+            <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler justify-content-xxl-center" data-bs-target="#navcol-1" style="padding-top: 0px;padding-bottom: 0px;"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a class="navbar-brand d-flex align-items-center justify-content-xxl-start" style="color: rgb(255,255,255);font-family: Poppins, sans-serif;font-weight: bold;margin-left: 15%;font-size: 20px;height: 100%;padding-top: 0px;padding-left: 0px;padding-bottom: 0px;">Murilo Henrique Moreira</a>
+                <div class="collapse navbar-collapse d-xxl-flex justify-content-xxl-start" id="navcol-1" style="height: 64px;padding-left: 18px;">
+                    <ul class="navbar-nav" style="height: 100%;width: 100%;">
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="height: 100%;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" href="#webpages" style="height: 100%;"><i class="fas fa-book"></i>&nbsp; Pages</a></li>
+                        <li class="nav-item d-xxl-flex align-items-xxl-center"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" href="#cv" style="height: 100%;"><i class="fas fa-user-graduate d-xl-flex align-items-xl-center"></i>&nbsp; Curriculum Vitae</a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" href="#" style="height: 100%;"><i class="fas fa-microscope d-xl-flex align-items-xl-center"></i>&nbsp; Research<br></a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" href="#" style="height: 100%;"><i class="fas fa-cogs"></i>&nbsp; Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="about">
+            <section class="d-inline-flex justify-content-xxl-start align-items-xxl-center" style="margin-top: 35px;width: 100%;">
+                <h6 class="display-6 d-xxl-flex justify-content-xxl-start" style="width: 95%;"><i class="fas fa-id-badge"></i>&nbsp; About</h6>
+            </section>
+            <p class="d-flex" style="text-align: justify;">I am Murilo Henrique Moreira, a PhD student in Materials Science at the Federal University of São Carlos. I'm currently researching numerical models and new experiments for efficiency gains in the drying of refractory castables at the Materials Microstructure Engineering Group (GEMM 💎). <br><br>Furthermore, I also like to code with Python and create HTML webpages. Learning is a central subject to me, on both sides, regardless of the one who learns or the one who teachs.<br><br>Right now, I am trying to build a website to share some ideas, blogs, and interactive examples on a variety of subjects ranging from math to materials science. Perhaps one day it could be helpful to anyone right there.<br><br>More details on my researches and on my ongoing projects can be found at their respective webpages.<br><br>You can also follow me and my work in any of the following platforms. Feel free to navigate on any of the web pages or learn about my experiences on my CV.<br><br></p>
+            <div class="d-flex justify-content-center align-items-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center" style="height: 70px;margin: 0px;background: #CCCAD4;font-size: 24px;">
+                <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center contact-hub">
+                    <p class="d-xl-flex align-items-xl-center" style="margin-bottom: 0px;color: rgb(0,0,0);font-weight: bold;">Contact Hub:&nbsp;</p>
+                </div><a class="d-flex align-items-center align-items-lg-center align-items-xxl-center socialhub" href="https://github.com/MuriloHMoreira" style="margin-left: 7px;margin-right: 7px;" target="_blank"><i class="fab fa-github d-xl-flex align-items-xl-center" style="margin-left: 7px;margin-right: 7px;"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>GitHub<br><br></p>
+                </a><a class="d-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center socialhub" href="https://scholar.google.com.br/citations?user=NoZwRbIAAAAJ&amp;hl=pt-BR" style="margin-left: 7px;margin-right: 7px;" target="_blank"><i class="fab fa-google" style="margin-left: 7px;margin-right: 7px;"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>Google Schoolar<br><br></p>
+                </a><a class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center socialhub" style="margin-left: 7px;margin-right: 7px;" target="_blank" href="https://www.researchgate.net/profile/Murilo-Moreira-2"><i class="fab fa-researchgate" style="margin-left: 7px;margin-right: 7px;"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>Research Gate<br><br></p>
+                </a><a class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center socialhub" style="margin-left: 7px;margin-right: 7px;" target="_blank" href="https://orcid.org/0000-0002-2591-4760"><i class="fab fa-orcid" style="margin-left: 7px;margin-right: 7px;"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>ORCID<br><br></p>
+                </a><a class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center socialhub" style="margin-left: 7px;margin-right: 7px;" target="_blank" href="https://www.linkedin.com/in/murilo-moreira-095534bb/"><i class="fab fa-linkedin-in" style="margin-left: 7px;margin-right: 7px;"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>LinkedIn<br><br></p>&nbsp;
+                </a><a class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex align-items-center align-items-sm-center align-items-md-center align-items-lg-center align-items-xl-center align-items-xxl-center socialhub" style="margin-left: 7px;margin-right: 7px;" target="_blank" href="https://twitter.com/MuriloHMoreira"><i class="fab fa-twitter"></i>
+                    <p class="contact-id" style="margin-bottom: 0px;font-weight: bold;"><br>&nbsp;Twitter<br><br></p>&nbsp;
+                </a>
+            </div>
+        </section>
+        <section id="webpages">
+            <section class="d-inline-flex justify-content-xxl-start align-items-xxl-center" style="margin-top: 35px;width: 100%;">
+                <h6 class="display-6 d-xxl-flex justify-content-xxl-start" style="width: 95%;margin-bottom: 20px;"><i class="fas fa-book"></i>&nbsp; Pages</h6><a class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" href="#navbar-top" style="width: auto;height: auto;"><i class="fa fa-caret-square-o-up d-lg-flex d-xxl-flex justify-content-lg-center justify-content-xxl-center" style="font-size: 38px;width: 5%;color: rgb(255,244,186);"></i></a>
+            </section><a href="https://murilohmoreira.github.io/ios/" target="_blank"><img data-bss-hover-animate="bounce" src="assets/img/intricacy_of_simplicity.jpg" style="width: 97.5%;"></a><a href="https://murilohmoreira.github.io/host_widgets/" target="_blank"><img data-bss-hover-animate="bounce" src="assets/img/mooc.jpg" style="width: 97.5%;margin-top: 35px;"></a><a href="https://murilohmoreira.github.io/materials_reach" target="_blank"><img data-bss-hover-animate="bounce" src="assets/img/reach_page.jpg" style="margin-top: 35px;margin-bottom: 35px;width: 97.5%;"></a>
+        </section>
+        <section id="cv">
+            <section class="d-inline-flex justify-content-xxl-start align-items-xxl-center" style="margin-top: 35px;width: 100%;">
+                <h6 class="display-6 d-xxl-flex justify-content-xxl-start" style="width: 95%;"><i class="fas fa-user-graduate"></i>&nbsp; Curriculum Vitae</h6><a class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" href="#navbar-top" style="width: auto;height: auto;"><i class="fa fa-caret-square-o-up d-lg-flex d-xxl-flex justify-content-lg-center justify-content-xxl-center" style="font-size: 38px;width: 5%;color: rgb(255,244,186);"></i></a>
+            </section>
+            <div><img class="img-fluid d-flex justify-content-center float-start profile-image" src="assets/img/Profile.jpg" style="width: 17%;margin: 0px;margin-right: 15px;">
+                <p style="margin-bottom: 0px;"><strong>E-mail:</strong>&nbsp;<a href="mailto:moreira.murilo@gmail.com">moreira.murilo@gmail.com</a><br><br><strong>Currently:</strong><br>Doctoral Student in Materials Science and Engineering – <a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a> – <a href="https://www.ppgcem.ufscar.br/en/home?set_language=en" target="_blank">PPGCEM</a><br><br><strong>Education:</strong><br></p>
+                <ul style="margin-left: 18%;margin-bottom: 0px;">
+                    <li>Bachelor's Degree in Materials Engineering - 2019 –&nbsp;<a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a><br></li>
+                    <li>Master's Degree in Materials Science and Engineering - 2021 –&nbsp;<a href="https://www2.ufscar.br/" target="_blank">Federal University of São Carlos (UFSCar)</a>&nbsp;–&nbsp;<a href="https://www.ppgcem.ufscar.br/en/home?set_language=en" target="_blank">PPGCEM</a><br></li>
+                </ul>
+                <p style="margin-bottom: 0px;"><br><strong>Professional Experience:</strong><br></p>
+                <ul style="margin-left: 18%;margin-bottom: 0px;">
+                    <li>Co-owner and Head of PMO in Luz Projetos e Assistência Técnica em Materiais LTDA from 2018 to 2020<br></li>
+                </ul>
+                <p style="margin-top: 80px;margin-bottom: 0px;"><strong>Software Experience:</strong><br></p>
+                <ul style="margin-bottom: 0px;">
+                    <li>Wide experience with Python<br></li>
+                    <li>Development of Python scripts for Data Mining, Data Analysis and Numerical Models (FDM and FEM)<br></li>
+                    <li>User of OpenFOAM to solve Conjugate Heat Transfer Problems considering Radiation Models with Participant Medium<br></li>
+                    <li>Basic knowledge of HTML, CSS and Bootstrap<br></li>
+                    <li>Experienced user of Paraview for results analysis<br></li>
+                    <li>Experienced user of Minitab for statistical analysis;<br></li>
+                    <li>User of Abaqus for thermal and mechanics simulations through finite element method<br></li>
+                    <li>User of Solidworks, Autocad and Onshape for technical drawings and 3D models<br></li>
+                </ul>
+                <p style="margin-bottom: 0px;"><br><strong>Extracurricular Activities:</strong><br></p>
+                <ul style="margin-bottom: 0px;">
+                    <li>Junior Enterprise – From March 2014 to December 2014: Advisor to the administrative and financial department<br></li>
+                    <li>Co-founder of Tritech, an undergraduate group of students focused on the study and development of 3D-Printed solutions for both Industry partners and the academic community<br></li>
+                    <li>Undergraduate Research at Materials Microstructure Engineering Group (GEMM) – From March 2014 to August 2018<br></li>
+                </ul>
+                <p style="margin-bottom: 0px;"><br><strong>Internship Projects:</strong><br></p>
+                <ul style="margin-bottom: 0px;">
+                    <li>Kerneos Research and Technology Centre (KRTC) – Current Imerys Aluminates Research Center – from 02/2017 to 07/2017<br></li>
+                    <li>Saint Gobain Centre De Recherches Et D'etudes Europeen (CREE) – Current Saint-Gobain Provence – from 09/2018 to 02/2018<br></li>
+                </ul>
+                <p style="margin-bottom: 0px;"><br><strong>Awards and Recognition:</strong><br></p>
+                <ul style="margin-bottom: 0px;">
+                    <li>Federation for International Refractory Research and Education (FIRE) Alumni (2017)<br></li>
+                    <li>Prêmio CREA-SP de Formação Profissional (2020) – Awarded to the graduate with highest GPA<br></li>
+                    <li>Prêmio Instituto de Engenharia (2020) – Awarded to the graduate with highest GPA<br></li>
+                    <li>Prêmio Professor Sérgio Mascarenhas (2020) – Associação dos Exs alunos da Engenharia de Materiais da UFSCar (DEMaEx) – Awarded for the graduate with outstanding curriculum in honor to Professor Sérgio Mascarenhas<br></li>
+                </ul>
+                <p style="margin-bottom: 0px;"><br><strong>Languages:</strong><br></p>
+                <ul style="margin-bottom: 0px;">
+                    <li>Fluency in English and Portuguese<br></li>
+                    <li>Basic French and Spanish<br></li>
+                </ul>
+            </div>
+        </section>
+        <div class="d-xxl-flex justify-content-xxl-center"><div><footer class="footer">
   <div class="side-layout">
-  <p style="font-family: 'IBM Plex Mono'; font-weight:'bold';"> <i class="far fa-copyright"></i> Murilo Henrique Moreira &ndash;
+  <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;;"> <i class="far fa-copyright"></i> Murilo Henrique Moreira –
       <script language="javascript"> 
 months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
 var theDate = new Date(document.lastModified); 
@@ -206,13 +121,14 @@ theDate.setTime((theDate.getTime()+(5000*60*60)) )
 with (theDate) { 
 document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+getHours()+':'+getMinutes()+" GMT") 
 } 
-</script> 
+</script>
     </p>
-    <a class="back_top" href="#topnav"><i class="far fa-caret-square-up"></i></a>
   </div>  
 </footer>
-</div>
-
-
-
+</div></div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
 </body>
+
+</html>
