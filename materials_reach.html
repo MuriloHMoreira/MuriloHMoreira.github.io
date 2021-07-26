@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="./css/materials_reach_theme.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
-<!-- <link href="./css/all.css" rel="stylesheet"> -->
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 <style>
@@ -76,92 +75,91 @@ body,h1,h2,h3,h4,h5,a,button {font-family: "IBM Plex Mono", sans-serif}
   <label class="switch">
     <input id='changeView' type="checkbox" onclick="physics_toggle()">
     <span class="slider round"></span>
-  </label> <b>Layout de Grafo</b>
+  </label> <b>Layout de Grafo </b>
   <!-- <button id="loadPng" onclick="saveNetwork()">Download image</button> -->
-  <button id="loadPng" style="background-color: #9A99A1; border-radius: 15px;"><b>Salvar</b></button>
-
   </span>
+  <button id="loadPng" style="border-radius: 15px; position:absolute; right:0; margin-right: 15px;"><b>Salvar</b></button>
 </div>
 <div id="mynetwork" style="height: 730px; width: 100%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
 
 <script>
     var nodes = new vis.DataSet([
         {id: 1, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:50, group: 'math', perfil: 1},
-        {id: 2, label: 'Cálculo 2', url: 'http://www.bing.com', x:200, y:0, group: 'math', perfil: 2},
-        {id: 3, label: 'Cálculo 3', url: 'http://www.yahoo.com', x:400, y:0, group: 'math', perfil: 3},
-        {id: 4, label: 'Séries e EDO', url: 'http://www.yahoo.com', x:600, y:0, group: 'math', perfil: 4},
-        {id: 5, label: 'MMA', url: 'http://www.yahoo.com', x:1000, y:0, group: 'math', perfil: 6},
-        {id: 6, label: 'Geometria Analítica', url: 'http://www.yahoo.com', x:0, y:100, group: 'math', perfil: 1},
-        {id: 7, label: 'Cálculo Numérico', url: 'http://www.yahoo.com', x:800, y:50, group: 'math', perfil: 5},
+        {id: 2, label: 'Cálculo 2', url: 'http://www.google.com', x:200, y:0, group: 'math', perfil: 2},
+        {id: 3, label: 'Cálculo 3', url: 'http://www.google.com', x:400, y:0, group: 'math', perfil: 3},
+        {id: 4, label: 'Séries e EDO', url: 'http://www.google.com', x:600, y:0, group: 'math', perfil: 4},
+        {id: 5, label: 'MMA', url: 'http://www.google.com', x:1000, y:0, group: 'math', perfil: 6},
+        {id: 6, label: 'Geometria Analítica', url: 'http://www.google.com', x:0, y:100, group: 'math', perfil: 1},
+        {id: 7, label: 'Cálculo Numérico', url: 'http://www.google.com', x:800, y:50, group: 'math', perfil: 5},
         
-        {id: 8, label: 'Física 1', url: 'http://www.yahoo.com', x:200, y:120, group: 'physics', perfil: 2},
-        {id: 9, label: 'Física 3', url: 'http://www.yahoo.com', x:400, y:120, group: 'physics', perfil: 3},
-        {id: 10, label: 'Física 4', url: 'http://www.yahoo.com', x:600, y:150, group: 'physics', perfil: 4},
-        {id: 11, label: 'Física \nExperimental A', url: 'http://www.yahoo.com', x:200, y:200, group: 'physics', perfil: 2},
-        {id: 12, label: 'Física \nExperimental B', url: 'http://www.yahoo.com', x:400, y:300, group: 'physics', perfil: 3},
-        {id: 13, label: 'Eletrotécnica', url: 'http://www.yahoo.com', x:1000, y:270, group: 'physics', perfil: 6},
+        {id: 8, label: 'Física 1', url: 'http://www.google.com', x:200, y:120, group: 'physics', perfil: 2},
+        {id: 9, label: 'Física 3', url: 'http://www.google.com', x:400, y:120, group: 'physics', perfil: 3},
+        {id: 10, label: 'Física 4', url: 'http://www.google.com', x:600, y:150, group: 'physics', perfil: 4},
+        {id: 11, label: 'Física \nExperimental A', url: 'http://www.google.com', x:200, y:200, group: 'physics', perfil: 2},
+        {id: 12, label: 'Física \nExperimental B', url: 'http://www.google.com', x:400, y:300, group: 'physics', perfil: 3},
+        {id: 13, label: 'Eletrotécnica', url: 'http://www.google.com', x:1000, y:270, group: 'physics', perfil: 6},
 
-        {id: 14, label: 'Introdução \n à Computação', url: 'http://www.yahoo.com', x:0, y:300, group: 'other', perfil: 1},
-        {id: 15, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.yahoo.com', x:0, y:600, group: 'other', perfil: 1},
-        {id: 16, label: 'Introdução à CEM', url: 'http://www.yahoo.com', x:0, y:500, group: 'materials', perfil: 1},
-        {id: 17, label: 'Química Experimental \nGeral', url: 'http://www.yahoo.com', x:0, y:400, group: 'chemistry', perfil: 1},
+        {id: 14, label: 'Introdução \n à Computação', url: 'http://www.google.com', x:0, y:300, group: 'other', perfil: 1},
+        {id: 15, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.google.com', x:0, y:600, group: 'other', perfil: 1},
+        {id: 16, label: 'Introdução à CEM', url: 'http://www.google.com', x:0, y:500, group: 'materials', perfil: 1},
+        {id: 17, label: 'Química Experimental \nGeral', url: 'http://www.google.com', x:0, y:400, group: 'chemistry', perfil: 1},
 
-        {id: 18, label: 'Economia Geral', url: 'http://www.yahoo.com', x:200, y:600, group: 'other', perfil: 2},
-        {id: 19, label: 'Materiais e\n Meio Ambiente', url: 'http://www.yahoo.com', x:200, y:540, group: 'materials', perfil: 2},
-        {id: 20, label: 'Química 2 \nGeral', url: 'http://www.yahoo.com', x:200, y:300, group: 'chemistry', perfil: 2},
-        {id: 21, label: 'Química Inorgânica', url: 'http://www.yahoo.com', x:200, y:400, group: 'chemistry', perfil: 2},
+        {id: 18, label: 'Economia Geral', url: 'http://www.google.com', x:200, y:600, group: 'other', perfil: 2},
+        {id: 19, label: 'Materiais e\n Meio Ambiente', url: 'http://www.google.com', x:200, y:540, group: 'materials', perfil: 2},
+        {id: 20, label: 'Química 2 \nGeral', url: 'http://www.google.com', x:200, y:300, group: 'chemistry', perfil: 2},
+        {id: 21, label: 'Química Inorgânica', url: 'http://www.google.com', x:200, y:400, group: 'chemistry', perfil: 2},
 
-        {id: 22, label: 'Termodinâmica \nQuímica', url: 'http://www.yahoo.com', x:400, y:215, group: 'chemistry', perfil: 3},
-        {id: 23, label: 'Ciência dos \nMateriais 1', url: 'http://www.yahoo.com', x:400, y:400, group: 'materials', perfil: 3},
-        {id: 24, label: 'Química Orgânica', url: 'http://www.yahoo.com', x:400, y:500, group: 'chemistry', perfil: 3},
+        {id: 22, label: 'Termodinâmica \nQuímica', url: 'http://www.google.com', x:400, y:215, group: 'chemistry', perfil: 3},
+        {id: 23, label: 'Ciência dos \nMateriais 1', url: 'http://www.google.com', x:400, y:400, group: 'materials', perfil: 3},
+        {id: 24, label: 'Química Orgânica', url: 'http://www.google.com', x:400, y:500, group: 'chemistry', perfil: 3},
 
-        {id: 25, label: 'Mecânica Aplicada', url: 'http://www.yahoo.com', x:600, y:82, group: 'other', perfil: 4},
-        {id: 26, label: 'Química Análitica \nExperimental A', url: 'http://www.yahoo.com', x:600, y:490, group: 'chemistry', perfil: 4},
-        {id: 27, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.yahoo.com', x:600, y:215, group: 'materials', perfil: 4},
-        {id: 28, label: 'Ciência dos \nMateriais 2', url: 'http://www.yahoo.com', x:600, y:400, group: 'materials', perfil: 4},
-        {id: 29, label: 'Fenômenos de\n Transporte 6', url: 'http://www.yahoo.com', x:600, y:310, group: 'other', perfil: 4},
+        {id: 25, label: 'Mecânica Aplicada', url: 'http://www.google.com', x:600, y:82, group: 'other', perfil: 4},
+        {id: 26, label: 'Química Análitica \nExperimental A', url: 'http://www.google.com', x:600, y:490, group: 'chemistry', perfil: 4},
+        {id: 27, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:215, group: 'materials', perfil: 4},
+        {id: 28, label: 'Ciência dos \nMateriais 2', url: 'http://www.google.com', x:600, y:400, group: 'materials', perfil: 4},
+        {id: 29, label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:310, group: 'other', perfil: 4},
 
-        {id: 30, label: 'Mecânica dos\n Sólidos', url: 'http://www.yahoo.com', x:800, y:125, group: 'materials', perfil: 5},
-        {id: 31, label: 'Fundamentos\n em Reologia', url: 'http://www.yahoo.com', x:800, y:190, group: 'materials', perfil: 5},
-        {id: 32, label: 'Materiais \n Poliméricos', url: 'http://www.yahoo.com', x:800, y:270, group: 'materials', perfil: 5},
-        {id: 33, label: 'Materiais \n Cerâmicos', url: 'http://www.yahoo.com', x:800, y:500, group: 'materials', perfil: 5},
-        {id: 34, label: 'Materiais \n Metálicos', url: 'http://www.yahoo.com', x:800, y:600, group: 'materials', perfil: 5},
+        {id: 30, label: 'Mecânica dos\n Sólidos', url: 'http://www.google.com', x:800, y:125, group: 'materials', perfil: 5},
+        {id: 31, label: 'Fundamentos\n em Reologia', url: 'http://www.google.com', x:800, y:190, group: 'materials', perfil: 5},
+        {id: 32, label: 'Materiais \n Poliméricos', url: 'http://www.google.com', x:800, y:270, group: 'materials', perfil: 5},
+        {id: 33, label: 'Materiais \n Cerâmicos', url: 'http://www.google.com', x:800, y:500, group: 'materials', perfil: 5},
+        {id: 34, label: 'Materiais \n Metálicos', url: 'http://www.google.com', x:800, y:600, group: 'materials', perfil: 5},
 
-        {id: 35, label: 'Economia de\n Empresas', url: 'http://www.yahoo.com', x:1000, y:200, group: 'other', perfil: 6},
-        {id: 36, label: 'Introdução MP\n Cerâmicas', url: 'http://www.yahoo.com', x:1000, y:60, group: 'ceramics', perfil: 6},
-        {id: 37, label: 'Fundamentos de\n Met. Extr.', url: 'http://www.yahoo.com', x:1000, y:130, group: 'metals', perfil: 6},
-        {id: 38, label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.yahoo.com', x:1000, y:340, group: 'polymers', perfil: 6},
-        {id: 39, label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.yahoo.com', x:1000, y:430, group: 'materials', perfil: 6},
-        {id: 40, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.yahoo.com', x:1000, y:515, group: 'materials', perfil: 6},
-        {id: 41, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.yahoo.com', x:1000, y:630, group: 'materials', perfil: 6},
+        {id: 35, label: 'Economia de\n Empresas', url: 'http://www.google.com', x:1000, y:200, group: 'other', perfil: 6},
+        {id: 36, label: 'Introdução MP\n Cerâmicas', url: 'http://www.google.com', x:1000, y:60, group: 'ceramics', perfil: 6},
+        {id: 37, label: 'Fundamentos de\n Met. Extr.', url: 'http://www.google.com', x:1000, y:130, group: 'metals', perfil: 6},
+        {id: 38, label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.google.com', x:1000, y:340, group: 'polymers', perfil: 6},
+        {id: 39, label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.google.com', x:1000, y:430, group: 'materials', perfil: 6},
+        {id: 40, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.google.com', x:1000, y:515, group: 'materials', perfil: 6},
+        {id: 41, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.google.com', x:1000, y:630, group: 'materials', perfil: 6},
 
-        {id: 44, label: 'Intr. Planejamento e \nAnalíse. Estat. de Exps.', url: 'http://www.yahoo.com', x:1200, y:0, group: 'other', perfil: 7},
-        {id: 45, label: 'Ensaios de\n Materiais', url: 'http://www.yahoo.com', x:1200, y:300, group: 'materials', perfil: 7},
-        {id: 46, label: 'Caracterização de\n Materiais', url: 'http://www.yahoo.com', x:1200, y:365, group: 'materials', perfil: 7},
-        {id: 47, label: 'Metalurgia Mecânica', url: 'http://www.yahoo.com', x:1200, y:570, group: 'metals', perfil: 7},
-        {id: 50, label: 'Metalurgia Física', url: 'http://www.yahoo.com', x:1200, y:620, group: 'metals', perfil: 7},
-        {id: 49, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.yahoo.com', x:1200, y:515, group: 'ceramics', perfil: 7},
-        {id: 48, label: 'Síntese de\n Polímeros', url: 'http://www.yahoo.com', x:1200, y:235, group: 'polymers', perfil: 7},
-        {id: 51, label: 'Análise de Investimentos', url: 'http://www.yahoo.com', x:1200, y:50, group: 'other', perfil: 7},
-        {id: 52, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.yahoo.com', x:1200, y:170, group: 'ceramics', perfil: 7},
-        {id: 53, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.yahoo.com', x:1200, y:100, group: 'other', perfil: 7},
-        {id: 54, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.yahoo.com', x:1200, y:425, group: 'materials', perfil: 7},
+        {id: 44, label: 'Intr. Planejamento e \nAnalíse. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:0, group: 'other', perfil: 7},
+        {id: 45, label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:300, group: 'materials', perfil: 7},
+        {id: 46, label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:365, group: 'materials', perfil: 7},
+        {id: 47, label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:570, group: 'metals', perfil: 7},
+        {id: 50, label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:620, group: 'metals', perfil: 7},
+        {id: 49, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:515, group: 'ceramics', perfil: 7},
+        {id: 48, label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:235, group: 'polymers', perfil: 7},
+        {id: 51, label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
+        {id: 52, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:170, group: 'ceramics', perfil: 7},
+        {id: 53, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:100, group: 'other', perfil: 7},
+        {id: 54, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:425, group: 'materials', perfil: 7},
 
-        {id: 55, label: 'Seleção de\n Materiais', url: 'http://www.yahoo.com', x:1400, y:300, group: 'materials', perfil: 8},
-        {id: 56, label: 'Tratamentos \n Térmicos', url: 'http://www.yahoo.com', x:1400, y:550, group: 'metals', perfil: 8},
-        {id: 57, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.yahoo.com', x:1400, y:610, group: 'ceramics', perfil: 8},
-        {id: 58, label: 'Processamento de \n Termoplásticos', url: 'http://www.yahoo.com', x:1400, y:200, group: 'polymers', perfil: 8},
-        {id: 59, label: 'Estágio PIEEG', url: 'http://www.yahoo.com', x:1400, y:100, group: 'materials', perfil: 8},
-        {id: 60, label: 'Teroria das \n Organizações', url: 'http://www.yahoo.com', x:1400, y:0, group: 'other', perfil: 8},
+        {id: 55, label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
+        {id: 56, label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:550, group: 'metals', perfil: 8},
+        {id: 57, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
+        {id: 58, label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
+        {id: 59, label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
+        {id: 60, label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
 
-        {id: 61, label: 'Gestão da \n Qualidade 2', url: 'http://www.yahoo.com', x:1600, y:0, group: 'other', perfil: 9},
-        {id: 62, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.yahoo.com', x:1600, y:100, group: 'materials', perfil: 9},
-        {id: 68, label: 'Processamento de \n Elstômeros e Termofixos', url: 'http://www.yahoo.com', x:1600, y:200, group: 'polymers', perfil: 9},
-        {id: 64, label: 'Engenharia de\n Polímeros', url: 'http://www.yahoo.com', x:1600, y:300, group: 'polymers', perfil: 9},
-        {id: 65, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.yahoo.com', x:1600, y:390, group: 'ceramics', perfil: 9},
-        {id: 66, label: 'Cerâmicas \n Refratárias', url: 'http://www.yahoo.com', x:1600, y:460, group: 'ceramics', perfil: 9},
-        {id: 67, label: 'Conformação \n Mecânica', url: 'http://www.yahoo.com', x:1600, y:530, group: 'metals', perfil: 9},
-        {id: 63, label: 'Fundição', url: 'http://www.yahoo.com', x:1600, y:600, group: 'metals', perfil: 9},
+        {id: 61, label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
+        {id: 62, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:100, group: 'materials', perfil: 9},
+        {id: 68, label: 'Processamento de \n Elstômeros e Termofixos', url: 'http://www.google.com', x:1600, y:200, group: 'polymers', perfil: 9},
+        {id: 64, label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:300, group: 'polymers', perfil: 9},
+        {id: 65, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:390, group: 'ceramics', perfil: 9},
+        {id: 66, label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:460, group: 'ceramics', perfil: 9},
+        {id: 67, label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:530, group: 'metals', perfil: 9},
+        {id: 63, label: 'Fundição', url: 'http://www.google.com', x:1600, y:600, group: 'metals', perfil: 9},
 
         {id: 101, label: 'Semestre 1', x:0, y:-100, group: 'profile'},
         {id: 102, label: 'Semestre 2', x:200, y:-100, group: 'profile'},
