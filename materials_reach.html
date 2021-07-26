@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono">
 <link href="./css/all.css" rel="stylesheet">
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
 <style>
-body,h1,h2,h3,h4,h5,a {font-family: "Poppins", sans-serif}
-a {color: #86BE81;}
+body,h1,h2,h3,h4,h5,a,button {font-family: "IBM Plex Mono", sans-serif}
+
 </style>
 
 <title>Materials Reach</title>
@@ -21,7 +22,7 @@ a {color: #86BE81;}
       margin-left: 0;
         width: 100%;
         height: 100%;
-        border: 1px solid lightblue;
+        border: 1px solid black;
     }
 </style>
 
@@ -64,21 +65,24 @@ a {color: #86BE81;}
     <!-- End of mathjax configuration -->
 
 </head>
-<body>
-
+<body style="padding-top:8px;">
 <div>
-  <p><b> <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="false"></span> <a>  Portuguese Content!</b>  </a>  <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="false"></span> </p>
-  <p>Mapa do Curso de Engenharia de Materiais: Representação em <a href=https://pt.wikipedia.org/wiki/Teoria_dos_grafos>grafo</a>.</p>
-  <p>Clique uma vez para selecionar os requisitos diretos de uma disciplina (ou para selecionar o perfil) - Clique em qualquer lugar para voltar a vista original.</p>
-  <p><strike>Clique duas vezes para abrir uma página com detalhes e visualização de cada disciplina.</strike> 🚧 EM CONSTRUÇÃO 🚧 </p>
+  <p><b> <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span> <a>  Portuguese Content!</b>  </a>  <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span> </p>
+  <p><b>Mapa do Curso de Engenharia de Materiais:</b> Representação em <b>grade</b> ou em <b><a href=https://pt.wikipedia.org/wiki/Teoria_dos_grafos>grafo</a></b>.</p>
+  <p>Clique com o <b>botão direito</b> para selecionar os requisitos diretos de uma disciplina.</p>
+  <p>Após selecionar uma disciplina, clique com o <b>botão direito</b> para selecionar as matérias que serão trancadas por ela. Mova a sua grade para reposicionar os cursos.</p>
   <!-- Rectangular switch -->
+  <span> <b>Layout de Grade</b>
   <label class="switch">
     <input id='changeView' type="checkbox" onclick="physics_toggle()">
     <span class="slider round"></span>
-  </label>
+  </label> <b>Layout de Grafo</b>
+  <!-- <button id="loadPng" onclick="saveNetwork()">Download image</button> -->
+  <button id="loadPng" style="background-color: #9A99A1; border-radius: 15px;"><b>Salvar</b></button>
 
+  </span>
 </div>
-<div id="mynetwork" style="height: 795px; width: 100%; margin-left: 0; margin-right: 0"></div>
+<div id="mynetwork" style="height: 730px; width: 100%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
 
 <script>
     var nodes = new vis.DataSet([
@@ -319,7 +323,7 @@ a {color: #86BE81;}
     var options = {
       groups: {
         chemistry: {color:'coral'},
-        math: {color:'lightgreen'},
+        math: {color:'#149AFE'},
         physics: {color:'orange'},
         materials: {color: 'red', font: {weight: 'regular', color: 'white'}},
         ceramics: {color: '#451B1B', font: {weight: 'regular', color: 'white'}},
@@ -355,7 +359,7 @@ a {color: #86BE81;}
         zoomView: true, // do not allow zooming
         dragView: true,  // do not allow dragging
         multiselect: true,
-        navigationButtons: true,
+        navigationButtons: false,
         selectable: true,
         selectConnectedEdges: true,
     },
@@ -384,7 +388,7 @@ a {color: #86BE81;}
     function drawDivisions(ctx) {
             ctx.lineWidth = 3;
             ctx.setLineDash([15, 10]);
-            ctx.strokeStyle = '#ffffff';
+            ctx.strokeStyle = '#000000';
             ctx.beginPath();
             ctx.moveTo(100, -150);
             ctx.lineTo(100, 695);
@@ -507,34 +511,41 @@ a {color: #86BE81;}
                 }
             }
         }
+
+        
         var currentPerfil = allNodes[nodesToSelect[0]].perfil;
+        finalSelection.push(nodesToSelect[0].toString());
         var perfilDiff = 0;
-        var perfilDiffToFirst = 0;
+        var perfilDiffFirst = 0;
         for (var i=0, nodeId; nodeId = nodesToSelect[i]; i++){
-            // perfilDiff = allNodes[nodeId].perfil-lastNodeId 
-            console.log(nodeId);
             currentPerfil =  allNodes[nodeId].perfil;
-            linkedNodes = getConnectedNodes(nodeId, allEdges)
-            // for (var j=0, item; item = getConnectedNodes(nodeId, allEdges)[j]; j++){
-            for (var j = 0; j < linkedNodes.length; j++ ){
+            backLinks = getConnectedNodesBehind(nodeId, allEdges)
+            for (var j = 0; j < backLinks.length; j++ ){
+              if (nodesToSelect.includes(String(backLinks[j]))){
+                perfilDiff = currentPerfil - allNodes[backLinks[j]].perfil
+                console.log('currentNode = ', nodeId)
+                console.log('currentBackLink = ', backLinks[j])
+                console.log('perfilDiff = ', perfilDiff)
 
-                // 
-                perfilDiff = allNodes[linkedNodes[j]].perfil-currentPerfil;
-                if (j>0){
-                  perfilDiffToFirst = allNodes[linkedNodes[j]].perfil - allNodes[linkedNodes[j-1]].perfil
-                  console.log(perfilDiffToFirst)
-
-                }
                 if (perfilDiff == 1){
-                    if (perfilDiffToFirst == 0) {
-                      // console.log(item);
-                      finalSelection.push(linkedNodes[j].toString());
+                  perfilDiffFirst = allNodes[backLinks[j]].perfil - allNodes[nodesToSelect[0]].perfil;
+                  console.log(perfilDiffFirst)
+                  if (perfilDiffFirst > 1){
+                    if (finalSelection.includes(String(backLinks[j]))){
+                      console.log(finalSelection.includes(backLinks[j]));
+                      console.log('incluia', backLinks[j]);
+                      finalSelection.push(nodeId);
                     }
+                  }
+                  else{
+                    finalSelection.push(nodeId);
+                  }
                 }
+              }
 
             }
         }
-        finalSelection.push(nodesToSelect[0].toString());
+
 
     }
     var updateArray = [];
@@ -550,10 +561,7 @@ a {color: #86BE81;}
         allNodes[nodeId].x = allNodes[nodeId]["currentX"];
         allNodes[nodeId].y = allNodes[nodeId]["currentY"];
         } 
-    // newPositions = storePositions();
     nodes.update(updateArray);
-    // console.log(finalSelection)
-    // console.log(nodesToSelect)
     if (finalSelection.length !== 0){
       network.selectNodes(finalSelection);
     }
@@ -639,36 +647,58 @@ function getConnectedNodes(nodeId, allEdges) {
     return connectedNodes;
 }
 
+function getConnectedNodesBehind(nodeId, allEdges) {
+    var edgesArray = allEdges;
+    var connectedNodes = [];
+
+    for (var i = 0; i < edgesArray.length; i++) {
+        var edge = edgesArray[i];
+        if (edge.to == nodeId) {
+            connectedNodes.push(edge.from); //only select ahead
+        }
+    }
+    return connectedNodes;
+}
+
 function autoScale(){var options = {
           duration: 1000,
           easingFunction: "easeInOutQuad",
         };
         network.fit({ animation: options });};
 
+function autoScaleOff(){
+      // console.log('Stabilized!!')
+      network.off("afterDrawing", autoScale);
+}
 function physics_on(){
-    network.on("afterDrawing", autoScale);
   options.physics = {
     "barnesHut": {
-      "springConstant": 0.1,
-      "avoidOverlap": 0.005
+      "springConstant": 0.01,
+      "avoidOverlap": 0.0075
     }};
-  // network = new vis.Network(container, data, options);
   network.setOptions(options);
   network.off("afterDrawing", drawDivisions);
   var allNodes = nodes.get({returnType:"Object"});
   for (var i = 101; i < 110; i++) {
-    console.log('on', i);
-    allNodes[i].hidden = true;
+    // console.log('on', i);
+    // console.log(allNodes[String(i)])
+    allNodes[String(i)].hidden = true;
+    nodes.update([allNodes[String(i)]]);
   }
-    network.off("afterDrawing", autoScale);
+    network.on("afterDrawing", autoScale);
+    network.on("stabilized", autoScaleOff);
+    network.off("oncontext",onClick);
+
 }
 
 function physics_off(){
   options.physics = false;
   var allNodes = nodes.get({returnType:"Object"});
   for (var i = 101; i < 110; i++) {
-    console.log('off', i)
-    allNodes[i].hidden = false
+    // console.log('off', i)
+    // console.log( allNodes[String(i)])
+    allNodes[String(i)].hidden = false
+
   }
   network = new vis.Network(container, data, options);
   network.on("doubleClick", function (params) {
@@ -677,14 +707,12 @@ function physics_off(){
           window.open(node.url, '_blank');
       }
     });
+
   network.on("afterDrawing", drawDivisions);
 
   network.on("oncontext",onClick);
 
   network.on("dragEnd",storePositions);
-
-
-
 
 }
 
@@ -697,13 +725,45 @@ function physics_toggle(){
   }
 }
 
+// function saveNetwork() {
+//   console.log('Saving')
+//         var mynetworkCanvas = document.getElementById("mynetwork");
+//         console.log('mynetworkCanvas',mynetworkCanvas.childNodes[5]);
+//         mynetworkCanvas.toBlob(function(blob) {
+//             var a = document.createElement("a");
+//             document.body.appendChild(a);
+//             a.download = "network" + ".png";
+//             a.href = window.URL.createObjectURL(blob);
+//             a.click();
+//         });
+//     };
+
+
+$("#mynetwork canvas").attr("id","canvas");
+    /**
+           * Download pictures
+     */
+    $("#loadPng").on('click',function () {
+        var mynetworkCanvas = document.getElementById("canvas");
+        console.log('mynetworkCanvas',mynetworkCanvas);
+        mynetworkCanvas.toBlob(function(blob) {
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.download = "network" + ".png";
+            a.href = window.URL.createObjectURL(blob);
+            a.click();
+        });
+    });
+
+
 </script>
 
 
 
+<p> 🚧 <b>EM CONSTRUÇÃO</b> 🚧 - <b>No futuro ao clicar duas vezes em cada disciplina uma página com detalhes e visualizações será aberta.</b> </p>
 
 <footer class="footer">
-  <p style="font-family: 'IBM Plex Mono'; color: white; font-weight:'bold';"> <i class="far fa-copyright"></i> Murilo Henrique Moreira &ndash;
+  <p style="font-family: 'IBM Plex Mono'; color: #201E1E; font-weight:'bold';"> <i class="far fa-copyright"></i> <a href="https://murilohmoreira.github.io/">Murilo Henrique Moreira</a> &ndash;
       <script language="javascript"> 
 months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
 var theDate = new Date(document.lastModified); 
