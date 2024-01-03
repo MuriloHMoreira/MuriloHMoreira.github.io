@@ -1,0 +1,5 @@
+:root, [data-bs-theme=light] {
+  --bs-focus-ring-opacity: 1;
+  --bs-focus-ring-color: rgb(255,255,255);
+}
+
