@@ -1,6 +1,7 @@
 /* =========================== Overrides of notebook CSS for static HTML export =========================== */
 
 body {
+  /*max-width: 1400px;*/
   overflow-x: hidden;
   padding: 0px;
   background-color: #050023;
@@ -539,46 +540,46 @@ a.socialhub {
 
 @media (min-width: 1400px) {
   .contact-hub {
-    gap: 56px;
-    font-size: 20px!important;
+    gap: 65px;
+    font-size: 22px!important;
   }
 }
 
 @media (max-width: 1200px) {
   .contact-hub {
     gap: 30px;
-    font-size: 20px!important;
+    font-size: 22px!important;
   }
 }
 
 @media (max-width: 992px) {
   .contact-hub {
-    gap: 5px;
-    font-size: 19px!important;
+    gap: 15px;
+    font-size: 20px!important;
   }
 }
 
 @media (max-width: 768px) {
   .contact-hub {
-    gap: 5px;
+    gap: 14px;
     height: 30px!important;
-    font-size: 13.7px!important;
+    font-size: 14.7px!important;
   }
 }
 
 @media (max-width: 576px) {
   .contact-hub {
-    gap: 30px;
+    gap: 40px;
     height: 60px!important;
-    font-size: 26px!important;
+    font-size: 54px!important;
   }
 }
 
 @media (max-width: 380px) {
   .contact-hub {
-    gap: 5px;
-    height: 60px!important;
-    font-size: 26px!important;
+    gap: 9px;
+    height: 45px!important;
+    font-size: 23px!important;
   }
 }
 
@@ -708,5 +709,19 @@ footer {
 
 .navbar-links {
   font-size: 28px!important;
+}
+
+@media (min-width:576px) {
+  .modal {
+    --bs-modal-margin: 11.8rem;
+    --bs-modal-box-shadow: var(--bs-box-shadow);
+  }
+}
+
+@media (min-width:300px) {
+  .modal {
+    --bs-modal-margin: 10.8rem 0.0rem 0.0rem 0.0rem;
+    --bs-modal-box-shadow: var(--bs-box-shadow);
+  }
 }
 
