@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Murilo Henrique Moreira</title>
-    <meta name="description" content="Personal webpage of Murilo Henrique Moreira.
-Welcome!">
+    <meta name="description" content="Murilo Henrique Moreira's research efforts.">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -16,9 +15,18 @@ Welcome!">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $(window).on('load', function() {
+function open_modal() {
+        $('#modal-1').modal('show');
+    };
+
+if (document.readyState === "complete") {
+    console.log('oi');
+
+    } else {
+      window.addEventListener('load', function() {
         $('#modal-1').modal('show');
     });
+    }
 </script>
 </head>
 
