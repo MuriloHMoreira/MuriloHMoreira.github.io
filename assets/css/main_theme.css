@@ -544,28 +544,39 @@ a.socialhub {
   color: #000000;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 300px) {
   .contact-hub {
-    gap: 65px;
-    font-size: 22px!important;
+    gap: 9px;
+    height: 45px!important;
+    font-size: 23px!important;
   }
 }
 
-@media (max-width: 1200px) {
-  .contact-hub {
-    gap: 30px;
-    font-size: 22px!important;
-  }
-}
-
-@media (max-width: 992px) {
+@media (min-width: 360px) {
   .contact-hub {
     gap: 15px;
-    font-size: 20px!important;
+    height: 45px!important;
+    font-size: 24px!important;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 400px) {
+  .contact-hub {
+    gap: 28px;
+    height: 45px!important;
+    font-size: 30px!important;
+  }
+}
+
+@media (min-width: 575px) {
+  .contact-hub {
+    gap: 24px;
+    height: 45px!important;
+    font-size: 34px!important;
+  }
+}
+
+@media (min-width: 768px) {
   .contact-hub {
     gap: 14px;
     height: 30px!important;
@@ -573,19 +584,24 @@ a.socialhub {
   }
 }
 
-@media (max-width: 576px) {
+@media (min-width: 992px) {
   .contact-hub {
-    gap: 40px;
-    height: 60px!important;
-    font-size: 54px!important;
+    gap: 15px;
+    font-size: 20px!important;
   }
 }
 
-@media (max-width: 380px) {
+@media (min-width: 1200px) {
   .contact-hub {
-    gap: 9px;
-    height: 45px!important;
-    font-size: 23px!important;
+    gap: 30px;
+    font-size: 22px!important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contact-hub {
+    gap: 65px;
+    font-size: 22px!important;
   }
 }
 
