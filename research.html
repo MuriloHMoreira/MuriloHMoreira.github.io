@@ -61,22 +61,22 @@ window.onload = function(){
                 </div>
             </div>
         </section>
-        <footer style="margin-top: 20px;color: rgb(254,217,103);">
-            <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><div><footer class="footer">
+    </div>
+    <footer style="margin-top: 20px;color: rgb(254,217,103);">
+        <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><div><footer class="footer">
   <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;;"> <i class="far fa-copyright"></i> Murilo Henrique Moreira –
       <script language="javascript"> 
 months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
 var theDate = new Date(document.lastModified); 
 theDate.setTime((theDate.getTime()+(5000*60*60)) ) 
 with (theDate) { 
-document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+getHours()+':'+getMinutes()+" GMT") 
-} 
+document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+ ("0" +getHours()).slice(-2) +':'+("0" +getMinutes()).slice(-2)+" GMT") 
+}
 </script>
     </p>
 </footer>
 </div></div>
-        </footer>
-    </div>
+    </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
 </body>
