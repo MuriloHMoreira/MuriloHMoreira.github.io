@@ -15,18 +15,9 @@
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
-function open_modal() {
-        $('#modal-1').modal('show');
-    };
-
-if (document.readyState === "complete") {
-    console.log('oi');
-
-    } else {
-      window.addEventListener('load', function() {
-        $('#modal-1').modal('show');
-    });
-    }
+window.onload = function(){
+                  document.getElementById('open_modal_button').click();
+                }
 </script>
 </head>
 
@@ -44,7 +35,7 @@ if (document.readyState === "complete") {
                 </div>
             </div>
         </nav>
-    </header>
+    </header><button class="btn btn-primary d-none" id="open_modal_button" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Button</button>
     <div class="container container-content">
         <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
             <div class="modal-dialog modal-lg" role="document">
