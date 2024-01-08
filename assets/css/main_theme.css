@@ -799,3 +799,11 @@ footer {
   border-color: #fed968!important;
 }
 
+.tooltip {
+  /*offset-distance: 100px;*/
+  /*height: 100%;*/
+  /*position: relative;*/
+  /*width: 100%;*/
+  /*z-index: 2;*/
+}
+
