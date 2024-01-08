@@ -763,3 +763,39 @@ footer {
   }
 }
 
+.tab-items {
+  background-color: #1283d8;
+  row-gap: 15px;
+  column-gap: 40px!important;
+}
+
+.nav-link {
+  background-color: #827baa!important;
+}
+
+.nav-link.active {
+  background-color: #fed968!important;
+  border-width: 6px!important;
+  border-color: #fed968!important;
+}
+
+.nav-item:has(.disabled) {
+  display: none;
+}
+
+.nav-link.disabled {
+  display: none;
+  background-color: #94a6b4!important;
+}
+
+.tab-paragraphs {
+  color: #fed968!important;
+}
+
+.nav-pills {
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: var(--bs-nav-pills-link-active-bg);
+  border-width: 19px!important;
+  border-color: #fed968!important;
+}
+
