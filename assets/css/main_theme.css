@@ -807,3 +807,15 @@ footer {
   /*z-index: 2;*/
 }
 
+@media (max-width: 600px) {
+  .certificate-pdf {
+    display: none!important;
+  }
+}
+
+@media (min-width: 600px) {
+  .certificate-pdf-link {
+    display: none!important;
+  }
+}
+
