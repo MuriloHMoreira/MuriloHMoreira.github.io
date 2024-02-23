@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" style="font-family: 'IBM Plex Mono';">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM)</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/fontawesome4-overrides.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="./css/materials_reach_theme.css">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+                  document.getElementById('open_modal_button').click();
+                }
+</script>
+
+<!-- Loading vis-network.js -->
+<script type="text/javascript" src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+
+<style type="text/css">
+    #mynetwork {
+      margin-left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+    }
+</style>
+
+
+</head>
+
+<body style="overflow-x: auto; overflow-y:auto; font-family: 'IBM Plex Mono', monospace; background-color: #CCCAD4; margin-top: 30px; color: black;">
+    <button class="btn btn-primary d-none" id="open_modal_button" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Button</button>
+    <div class="container container-content">
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="text-align: center;">
+                        <h4 class="modal-title" style="color: var(--bs-primary-text-emphasis);">Atenção!</h4><button class="btn-close text-start d-xxl-flex justify-content-xxl-end" type="button" aria-label="Close" data-bs-dismiss="modal" style="padding-bottom: 8px;margin-right: 0px;margin-left: 0px;"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b> <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span> <a>  Portuguese Content!</b>  </a>  <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span></p>
+                        <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b>🚧 Página em Construção&nbsp;🚧</b></p>
+                        <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b> É recomendável abrir a página em seu computador 💻. Caso contrário, coloque o celular em paisagem ↻. </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+<div>
+  
+  <p><b>Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM):</b> Utilize o quadro abaixo para avaliar cada uma das disciplinas. Baseado no trabalho do Prof. Vinicius Sciuti no Simpósio sobre Ensino do PPGCEM.</p>
+  <p>Clique em cada uma delas e defina o nível de dificuldade entre 1 (Muito Fácil) a 5 (Muito Difícil). Para disciplinas não realizadas, mantenha o nível zero para destacar os requisitos diretos de uma disciplina. Após classificar suas disciplinas, observe o mapa de cor. Adicione seu nome se desejar e em qual semestre está antes de submeter.</p>
+  
+  <!-- Rectangular switch -->
+<!--   <span> <b>Layout de Grade</b>
+  <label class="switch">
+    <input id='changeView' type="checkbox" onclick="physics_toggle()">
+    <span class="slider round"></span>
+  </label> <b>Layout de Grafo </b>
+  </span> -->
+  <!-- <div style="display: flex; position: absolute; right:0"> -->
+  <!-- <button id="loadPng" style="border-radius: 15px; right:0; margin-right: 15px;"><b>Salvar</b></button> -->
+  <!-- <button id="loadPng" style="border-radius: 15px; right:0; margin-right: 15px;"><b>Salvar</b></button> -->
+  <!-- </div> -->
+</div>
+<div id="mynetwork" style="height: 730px; width: 100%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
+
+<script>
+    var nodes = new vis.DataSet([
+        {id: 1, rating: 0, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:30, group: 'math', perfil: 1},
+        {id: 2, rating: 0, label: 'Cálculo 2', url: 'http://www.google.com', x:200, y:0, group: 'math', perfil: 2},
+        {id: 3, rating: 0, label: 'Cálculo 3', url: 'http://www.google.com', x:400, y:0, group: 'math', perfil: 3},
+        {id: 4, rating: 0, label: 'Séries e EDO', url: 'http://www.google.com', x:600, y:0, group: 'math', perfil: 4},
+        {id: 5, rating: 0, label: 'MMA', url: 'http://www.google.com', x:1000, y:0, group: 'math', perfil: 6},
+        {id: 6, rating: 0, label: 'Geometria Analítica', url: 'http://www.google.com', x:0, y:100, group: 'math', perfil: 1},
+        {id: 7, rating: 0, label: 'Cálculo Numérico', url: 'http://www.google.com', x:800, y:0, group: 'math', perfil: 5},
+        
+        {id: 8, rating: 0, label: 'Física 1', url: 'http://www.google.com', x:200, y:120, group: 'physics', perfil: 2},
+        {id: 9, rating: 0, label: 'Física 3', url: 'http://www.google.com', x:400, y:120, group: 'physics', perfil: 3},
+        {id: 10, rating: 0, label: 'Física 4', url: 'http://www.google.com', x:600, y:150, group: 'physics', perfil: 4},
+        {id: 11, rating: 0, label: 'Física \nExperimental A', url: 'http://www.google.com', x:200, y:200, group: 'physics', perfil: 2},
+        {id: 12, rating: 0, label: 'Física \nExperimental B', url: 'http://www.google.com', x:400, y:300, group: 'physics', perfil: 3},
+        {id: 13, rating: 0, label: 'Eletrotécnica', url: 'http://www.google.com', x:1000, y:335, group: 'physics', perfil: 6},
+
+        {id: 14, rating: 0, label: 'Introdução \n à Computação', url: 'http://www.google.com', x:0, y:300, group: 'other', perfil: 1},
+        {id: 15, rating: 0, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.google.com', x:0, y:600, group: 'other', perfil: 1},
+        {id: 16, rating: 0, label: 'Introdução à CEM', url: 'http://www.google.com', x:0, y:500, group: 'materials', perfil: 1},
+        {id: 17, rating: 0, label: 'Química Experimental \nGeral', url: 'http://www.google.com', x:0, y:400, group: 'chemistry', perfil: 1},
+
+        {id: 18, rating: 0, label: 'Economia Geral', url: 'http://www.google.com', x:200, y:640, group: 'other', perfil: 2},
+        {id: 19, rating: 0, label: 'Materiais e\n Meio Ambiente', url: 'http://www.google.com', x:200, y:540, group: 'materials', perfil: 2},
+        {id: 20, rating: 0, label: 'Química 2 \nGeral', url: 'http://www.google.com', x:200, y:300, group: 'chemistry', perfil: 2},
+        {id: 21, rating: 0, label: 'Química Inorgânica', url: 'http://www.google.com', x:200, y:400, group: 'chemistry', perfil: 2},
+
+        {id: 22, rating: 0, label: 'Termodinâmica \nQuímica', url: 'http://www.google.com', x:400, y:215, group: 'chemistry', perfil: 3},
+        {id: 23, rating: 0, label: 'Ciência dos \nMateriais 1', url: 'http://www.google.com', x:400, y:400, group: 'materials', perfil: 3},
+        {id: 24, rating: 0, label: 'Química Orgânica', url: 'http://www.google.com', x:400, y:500, group: 'chemistry', perfil: 3},
+
+        {id: 25, rating: 0, label: 'Mecânica Aplicada', url: 'http://www.google.com', x:600, y:82, group: 'other', perfil: 4},
+        {id: 26, rating: 0, label: 'Química Analítica \nExperimental A', url: 'http://www.google.com', x:600, y:490, group: 'chemistry', perfil: 4},
+        {id: 27, rating: 0, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:215, group: 'materials', perfil: 4},
+        {id: 28, rating: 0, label: 'Ciência dos \nMateriais 2', url: 'http://www.google.com', x:600, y:400, group: 'materials', perfil: 4},
+        {id: 29, rating: 0, label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:310, group: 'other', perfil: 4},
+
+        {id: 30, rating: 0, label: 'Mecânica dos\n Sólidos', url: 'http://www.google.com', x:800, y:85, group: 'materials', perfil: 5},
+        {id: 31, rating: 0, label: 'Fundamentos\n em Reologia', url: 'http://www.google.com', x:800, y:190, group: 'materials', perfil: 5},
+        {id: 32, rating: 0, label: 'Materiais \n Poliméricos', url: 'http://www.google.com', x:800, y:290, group: 'materials', perfil: 5},
+        {id: 33, rating: 0, label: 'Materiais \n Cerâmicos', url: 'http://www.google.com', x:800, y:500, group: 'materials', perfil: 5},
+        {id: 34, rating: 0, label: 'Materiais \n Metálicos', url: 'http://www.google.com', x:800, y:600, group: 'materials', perfil: 5},
+
+        {id: 35, rating: 0, label: 'Economia de\n Empresas', url: 'http://www.google.com', x:1000, y:260, group: 'other', perfil: 6},
+        {id: 36, rating: 0, label: 'Introdução MP\n Cerâmicas', url: 'http://www.google.com', x:1000, y:80, group: 'ceramics', perfil: 6},
+        {id: 37, rating: 0, label: 'Fundamentos de\n Met. Extr.', url: 'http://www.google.com', x:1000, y:170, group: 'metals', perfil: 6},
+        {id: 38, rating: 0, label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.google.com', x:1000, y:410, group: 'polymers', perfil: 6},
+        {id: 39, rating: 0, label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.google.com', x:1000, y:500, group: 'materials', perfil: 6},
+        {id: 40, rating: 0, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.google.com', x:1000, y:590, group: 'materials', perfil: 6},
+        {id: 41, rating: 0, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.google.com', x:1000, y:680, group: 'materials', perfil: 6},
+
+        {id: 44, rating: 0, label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
+        {id: 45, rating: 0, label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
+        {id: 46, rating: 0, label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
+        {id: 47, rating: 0, label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
+        {id: 50, rating: 0, label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
+        {id: 49, rating: 0, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
+        {id: 48, rating: 0, label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:305, group: 'polymers', perfil: 7},
+        {id: 51, rating: 0, label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
+        {id: 52, rating: 0, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:210, group: 'ceramics', perfil: 7},
+        {id: 53, rating: 0, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:122.5, group: 'other', perfil: 7},
+        {id: 54, rating: 0, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:560, group: 'materials', perfil: 7},
+
+        {id: 55, rating: 0, label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
+        {id: 56, rating: 0, label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:520, group: 'metals', perfil: 8},
+        {id: 57, rating: 0, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
+        {id: 58, rating: 0, label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
+        {id: 59, rating: 0, label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
+        {id: 60, rating: 0, label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
+
+        {id: 61, rating: 0, label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
+        {id: 62, rating: 0, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:90, group: 'materials', perfil: 9},
+        {id: 68, rating: 0, label: 'Processamento de \n Elstômeros e Termofixos', url: 'http://www.google.com', x:1600, y:180, group: 'polymers', perfil: 9},
+        {id: 64, rating: 0, label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:270, group: 'polymers', perfil: 9},
+        {id: 65, rating: 0, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:360, group: 'ceramics', perfil: 9},
+        {id: 66, rating: 0, label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:450, group: 'ceramics', perfil: 9},
+        {id: 67, rating: 0, label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:540, group: 'metals', perfil: 9},
+        {id: 63, rating: 0, label: 'Fundição', url: 'http://www.google.com', x:1600, y:620, group: 'metals', perfil: 9},
+
+        {id: 101, label: 'Semestre 1', x:0, y:-100, group: 'profile'},
+        {id: 102, label: 'Semestre 2', x:200, y:-100, group: 'profile'},
+        {id: 103, label: 'Semestre 3', x:400, y:-100, group: 'profile'},
+        {id: 104, label: 'Semestre 4', x:600, y:-100, group: 'profile'},
+        {id: 105, label: 'Semestre 5', x:800, y:-100, group: 'profile'},
+        {id: 106, label: 'Semestre 6', x:1000, y:-100, group: 'profile'},
+        {id: 107, label: 'Semestre 7', x:1200, y:-100, group: 'profile'},
+        {id: 108, label: 'Semestre 8/9', x:1400, y:-100, group: 'profile'},
+        {id: 109, label: 'Semestre 10', x:1600, y:-100, group: 'profile'},
+
+
+
+    ]);
+  var edges = new vis.DataSet([
+        // {from: 101, to: 1, hidden: true},
+        // {from: 101, to: 6, hidden: true},
+        // {from: 101, to: 14, hidden: true},
+        // {from: 101, to: 15, hidden: true},
+        // {from: 101, to: 16, hidden: true},
+        // {from: 101, to: 17, hidden: true},
+
+        // {from: 102, to: 2, hidden: true},
+        // {from: 102, to: 8, hidden: true},
+        // {from: 102, to: 11, hidden: true},
+        // {from: 102, to: 20, hidden: true},
+        // {from: 102, to: 21, hidden: true},
+        // {from: 102, to: 19, hidden: true},
+        // {from: 102, to: 18, hidden: true},
+
+        // {from: 103, to: 3, hidden: true},
+        // {from: 103, to: 9, hidden: true},
+        // {from: 103, to: 12, hidden: true},
+        // {from: 103, to: 22, hidden: true},
+        // {from: 103, to: 23, hidden: true},
+        // {from: 103, to: 24, hidden: true},
+
+        // {from: 104, to: 4, hidden: true},
+        // {from: 104, to: 10, hidden: true},
+        // {from: 104, to: 25, hidden: true},
+        // {from: 104, to: 26, hidden: true},
+        // {from: 104, to: 27, hidden: true},
+        // {from: 104, to: 28, hidden: true},
+        // {from: 104, to: 29, hidden: true},
+
+        // {from: 105, to: 7, hidden: true},
+        // {from: 105, to: 30, hidden: true},
+        // {from: 105, to: 31, hidden: true},
+        // {from: 105, to: 32, hidden: true},
+        // {from: 105, to: 33, hidden: true},
+        // {from: 105, to: 34, hidden: true},
+
+        // {from: 106, to: 5, hidden: true},
+        // {from: 106, to: 35, hidden: true},
+        // {from: 106, to: 36, hidden: true},
+        // {from: 106, to: 37, hidden: true},
+        // {from: 106, to: 38, hidden: true},
+        // {from: 106, to: 39, hidden: true},
+        // {from: 106, to: 40, hidden: true},
+        // {from: 106, to: 41, hidden: true},
+
+        // {from: 107, to: 44, hidden: true},
+        // {from: 107, to: 45, hidden: true},
+        // {from: 107, to: 46, hidden: true},
+        // {from: 107, to: 47, hidden: true},
+        // {from: 107, to: 48, hidden: true},
+        // {from: 107, to: 49, hidden: true},
+        // {from: 107, to: 50, hidden: true},
+        // {from: 107, to: 51, hidden: true},
+        // {from: 107, to: 52, hidden: true},
+        // {from: 107, to: 53, hidden: true},
+        // {from: 107, to: 54, hidden: true},
+
+        // {from: 108, to: 55, hidden: true},
+        // {from: 108, to: 56, hidden: true},
+        // {from: 108, to: 57, hidden: true},
+        // {from: 108, to: 58, hidden: true},
+        // {from: 108, to: 59, hidden: true},
+        // {from: 108, to: 60, hidden: true},
+
+        // {from: 109, to: 61, hidden: true},
+        // {from: 109, to: 62, hidden: true},
+        // {from: 109, to: 63, hidden: true},
+        // {from: 109, to: 64, hidden: true},
+        // {from: 109, to: 65, hidden: true},
+        // {from: 109, to: 66, hidden: true},
+        // {from: 109, to: 67, hidden: true},
+        // {from: 109, to: 68, hidden: true},
+
+        {from: 1, to: 2},
+        {from: 1, to: 7},        
+        {from: 1, to: 4},
+        {from: 1, to: 30},
+        {from: 2, to: 3},
+        {from: 2, to: 22},
+        {from: 6, to: 7},
+        {from: 6, to: 25},
+        {from: 4, to: 5},
+        {from: 8, to: 9},
+        {from: 8, to: 25},
+        {from: 12, to: 13},
+        {from: 14, to: 7},
+        {from: 16, to: 20},
+        {from: 16, to: 21},
+        {from: 16, to: 23},
+        {from: 16, to: 24},
+        {from: 17, to: 26},
+        {from: 20, to: 26},
+        {from: 20, to: 22},
+        {from: 25, to: 30},
+        {from: 29, to: 31},
+        {from: 22, to: 27},
+        {from: 23, to: 28},
+        {from: 28, to: 32},
+        {from: 28, to: 33},
+        {from: 28, to: 34},
+        {from: 28, to: 45},
+        {from: 28, to: 46},
+        {from: 28, to: 47},
+        {from: 28, to: 50},
+        {from: 28, to: 55},
+        {from: 30, to: 45},
+        {from: 30, to: 55},
+        {from: 30, to: 67},
+        {from: 31, to: 39},
+        {from: 32, to: 39},
+        {from: 32, to: 38},
+        {from: 32, to: 48},
+        {from: 33, to: 40},
+        {from: 33, to: 57},
+        {from: 33, to: 66},
+        {from: 34, to: 41},
+        {from: 34, to: 56},
+        {from: 34, to: 63},
+
+
+        {from: 39, to: 58},
+        {from: 38, to: 64},
+        {from: 40, to: 49},
+        {from: 40, to: 65},
+
+        // {from: 59, to: 64},
+        // {from: 59, to: 65},
+        // {from: 59, to: 67},
+        // {from: 59, to: 63},
+
+        {from: 58, to: 68}
+
+    ]);    
+
+    // create a network
+    var container = document.getElementById('mynetwork');
+    // container.oncontextmenu = () => false;
+    var data = {
+        nodes: nodes,
+        edges: edges
+    };
+    var options = {
+      // improvedLayout: true,
+      groups: {
+        chemistry: {color:'coral'},
+        math: {color:'#149AFE'},
+        physics: {color:'orange'},
+        materials: {color: 'red', font: {weight: 'regular', color: 'white'}},
+        ceramics: {color: '#451B1B', font: {weight: 'regular', color: 'white'}},
+        metals: {color: 'CCCAD4', font: {weight: 'regular', color: 'black'}},
+        polymers: {color: 'purple', font: {weight: 'regular', color: 'white'}},
+        other: {color: '#F7E771', font: {weight: 'regular', color: 'black'}},
+        profile: {color: 'white'}
+        },
+      edges: {arrows: {
+                to: {
+                     enabled: true,
+                     scaleFactor: 0.5,
+                     type: "arrow"
+                     },
+                    },
+    smooth: false
+    },
+    // layout: {
+    // hierarchical: {
+    //     direction: "LR",
+    //     sortMethod: "directed",
+    //     levelSeparation: 20
+    // }},
+    // physics: {
+    //     hierarchicalRepulsion: {
+    //     nodeDistance: 40
+    //       }
+    //       },
+    physics: true,
+    interaction: {
+        hover: true,
+        dragNodes: false,// do not allow dragging nodes
+        zoomView: true, // do not allow zooming
+        dragView: true,  // do not allow dragging
+        multiselect: true,
+        navigationButtons: false,
+        selectable: true,
+        selectConnectedEdges: true,
+    },
+    width: "100%",   // This fills out the canvas size to the encompassing div
+    height: "100%"
+    };
+    var network = new vis.Network(container, data, options);
+
+
+
+  options.physics = false;
+  network.setOptions(options);  
+
+
+    network.on("click", function(params) {
+      // Get the node ID
+      var nodeId = params.nodes[0];
+      if (nodeId) {
+        // Get the node title to show in the popup
+        var popup = this.body.nodes[nodeId].options.title;
+
+        // Get the node coordinates
+        var { x: nodeX, y: nodeY } = network.canvasToDOM(
+          network.getPositions([nodeId])[nodeId]
+        );
+
+        // Show the tooltip in a div
+        var mynetworkCanvas = document.getElementById("canvas");
+        var rect = mynetworkCanvas.getBoundingClientRect();
+        nodeX += rect.left;
+        nodeY += rect.top - (document.body.getBoundingClientRect().top - 30);
+        
+        console.log("rank_selection_" + nodeId)
+        document.getElementById("rank_selection_" + nodeId).style.display = "block";
+        // Place the div
+        document.getElementById("rank_selection_" + nodeId).style.position = "absolute";
+        document.getElementById("rank_selection_" + nodeId).style.top = nodeY + "px";
+        document.getElementById("rank_selection_" + nodeId).style.left = nodeX + "px";
+      }
+    });
+
+    var firstUpdatedColorRun = true;
+    function updateColors() {
+    var allNodes = nodes.get({returnType:"Object"});
+    var nodeId;
+    for (nodeId in allNodes){
+        network.body.nodes[nodeId].options.font.color = "black";
+        var rating = document.getElementById("rank_selection_" + nodeId).value;
+        clickedNode = nodes.get(parseFloat(nodeId))
+        if (firstUpdatedColorRun){
+            var new_label = clickedNode.label + "\n Dificuldade: " + rating;
+        }
+        else{
+            var new_label = clickedNode.label.split(':')[0] + ": " + rating;
+        }
+        
+        if (clickedNode){
+            if (parseFloat(nodeId) < 100){
+            if (rating == 0){
+                new_color = {border: '#000000',
+                                     background: 'white',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                                   label: new_label, color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                    } 
+            else if (rating == 1){
+                new_color = {border: '#000000',
+                                     background: 'LemonChiffon',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                                   label: new_label, color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                    } 
+            else if (rating == 2){
+                new_color = {border: '#000000',
+                                     background: 'PaleGoldenRod',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                                   label: new_label, color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                    } 
+            else if (rating == 3){
+                new_color = {border: '#000000',
+                                     background: 'yellow',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                                   label: new_label, color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                    } 
+
+            else if (rating == 4){
+                new_color = {border: '#000000',
+                                     background: 'orangered',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                                   label: new_label, color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                    } 
+
+            else if (rating == 5){
+                new_color = {border: '#000000',
+                                     background: 'red',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: '#D2E5FF'
+                                      }};
+                nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
+                                   color: new_color,
+                                   x:clickedNode.x, y:clickedNode.y})
+                                  }
+        
+        ;
+    }}  
+
+      };
+    firstUpdatedColorRun = false;
+    }
+
+
+    // Empty and hide the div when click elsewhere
+    network.on("deselectNode", function (params) {
+        var selectors = document.getElementsByTagName('select') 
+        for (let i = 0; i < selectors.length; i++){
+            if (selectors[i].id != 'profile'){
+                selectors[i].style.display = "none";}
+        }
+        updateColors();
+    });
+
+  // network.on("doubleClick", function (params) {
+  //     if (params.nodes.length === 1) {
+  //       var nodeId = params.nodes[0];
+  //       // var popup = this.body.nodes[nodeId].options.title;
+  //       var popup = document.createElement("p");
+  //       popup.text = 'Test'
+  //       popup.id = "popup";
+
+  //       // Get the node coordinates
+  //       var { x: nodeX, y: nodeY } = network.canvasToDOM(
+  //         network.getPositions([nodeId])[nodeId]
+  //       );
+  //       console.log(nodeX, nodeY)
+  //       // Show the tooltip in a div
+  //       popup.style.display = "block";
+  //       // Place the div
+  //       popup.style.position = "absolute";
+  //       popup.style.top = nodeY + "px";
+  //       popup.style.left = nodeX + "px";
+  //         // var node = nodes.get(params.nodes[0]);
+  //         // var input = document.createElement("input");
+  //         // input.type = "text";
+  //         // input.id = "textbox_id";
+  //         // container.appendChild(input);
+  //         // var rating = document.getElementById('textbox_id').value;
+  //         // var new_label = node.label + "\n" + rating;
+  //         // data.nodes.update({id: node.id, rating: 0, label: new_label, rating: rating});
+  //         // console.log(node.rating)
+         
+  //     }
+
+  //   });
+
+    // network.on('hoverNode', function (properties) {
+    //     var node = nodes.get(properties.node);
+    //     network.selectNodes([properties.node]);
+    //     $('#info').html(node.id);
+    // });
+    function drawDivisions(ctx) {
+            ctx.lineWidth = 3;
+            ctx.setLineDash([15, 10]);
+            ctx.strokeStyle = '#000000';
+            ctx.beginPath();
+            ctx.moveTo(100, -150);
+            ctx.lineTo(100, 695);
+            ctx.moveTo(300, -150);
+            ctx.lineTo(300, 695);
+            ctx.moveTo(500, -150);
+            ctx.lineTo(500, 695);
+            ctx.moveTo(700, -150);
+            ctx.lineTo(700, 695);
+            ctx.moveTo(900, -150);
+            ctx.lineTo(900, 695);
+            ctx.moveTo(1100, -150);
+            ctx.lineTo(1100, 695);
+            ctx.moveTo(1300, -150);
+            ctx.lineTo(1300, 695);
+            ctx.moveTo(1500, -150);
+            ctx.lineTo(1500, 695);
+            ctx.stroke();
+            }
+
+
+    let initialPositions = {};
+    var allNodes = nodes.get({returnType:"Object"});
+    var nodeId;
+    for (nodeId in allNodes) {
+        var positions = network.getPositions(nodeId);
+        initialPositions[nodeId] =  {'x': positions[nodeId].x, 
+                               'y': positions[nodeId].y};
+                              };
+      
+
+    function resetNetwork() {
+      var allNodes = nodes.get({returnType:"Object"});
+      var nodeId;
+      for (nodeId in allNodes) {
+        network.moveNode(nodeId,  initialPositions[nodeId].x,  initialPositions[nodeId].y);
+      storePositions()
+    }};
+
+
+
+
+    // Create selectors
+    var allNodes = nodes.get({returnType:"Object"});
+    var myParent = document.body;
+    //Create array of options to be added
+    var possible_ratings = [0, 1, 2, 3, 4, 5];
+    var nodeId;
+
+    for (nodeId in allNodes){
+      //Create and append select list
+      var selectList = document.createElement("select");
+      selectList.id = "rank_selection_" + nodeId;
+      document.body.appendChild(selectList);
+      //Create and append the options
+      for (let j = 0; j < possible_ratings.length; j++) {
+          var option = document.createElement("option");
+          option.value = possible_ratings[j];
+          option.text = String(possible_ratings[j]);
+          selectList.appendChild(option);
+      }
+      selectList.style.display = "none";
+    }
+
+    updateColors();
+
+    network.on("afterDrawing", drawDivisions);
+
+    // network.on("dragEnd", storePositions);
+
+    function  storePositions() {
+      var allNodes = nodes.get({returnType:"Object"});
+      var nodeId;
+
+      for (nodeId in allNodes) {
+        var positions = network.getPositions(nodeId);
+        allNodes[nodeId]["currentX"] = positions[nodeId].x;
+        allNodes[nodeId]["currentY"] = positions[nodeId].y;
+      } 
+    };
+
+
+
+/**
+ * update the allNodes object with the level of seperation.
+ * Arrays are passed by reference, we do not need to return them because we are working in the same object.
+ */
+function storeLevelOfSeperation(connectedNodes, level, allNodes) {
+    for (var i = 0; i < connectedNodes.length; i++) {
+        var nodeId = connectedNodes[i];
+        if (allNodes[nodeId]['levelOfSeperation'] === undefined) {
+            allNodes[nodeId]['levelOfSeperation'] = level;
+        }
+        allNodes[nodeId]['inConnectionList'] = true;
+    }
+}
+
+function clearLevelOfSeperation(allNodes) {
+    for (var nodeId in allNodes) {
+        if (allNodes.hasOwnProperty(nodeId)) {
+            allNodes[nodeId]['levelOfSeperation'] = undefined;
+            allNodes[nodeId]['inConnectionList'] = undefined;
+        }
+    }
+}
+
+/**
+ * Add the connected nodes to the list of nodes we already have
+ *
+ *
+ */
+function appendConnectedNodes(sourceNodes, allEdges) {
+    var tempSourceNodes = [];
+    // first we make a copy of the nodes so we do not extend the array we loop over.
+    for (var i = 0; i < sourceNodes.length; i++) {
+        tempSourceNodes.push(sourceNodes[i])
+    }
+
+    for (var i = 0; i < tempSourceNodes.length; i++) {
+        var nodeId = tempSourceNodes[i];
+        if (sourceNodes.indexOf(nodeId) == -1) {
+            sourceNodes.push(nodeId);
+        }
+        addUnique(getConnectedNodes(nodeId, allEdges),sourceNodes);
+    }
+    tempSourceNodes = null;
+}
+
+/**
+ * Join two arrays without duplicates
+ * @param fromArray
+ * @param toArray
+ */
+function addUnique(fromArray, toArray) {
+    for (var i = 0; i < fromArray.length; i++) {
+        if (toArray.indexOf(fromArray[i]) == -1) {
+            toArray.push(fromArray[i]);
+        }
+    }
+}
+
+/**
+ * Get a list of nodes that are connected to the supplied nodeId with edges.
+ * @param nodeId
+ * @returns {Array}
+ */
+function getConnectedNodes(nodeId, allEdges) {
+    var edgesArray = allEdges;
+    var connectedNodes = [];
+
+    for (var i = 0; i < edgesArray.length; i++) {
+        var edge = edgesArray[i];
+        if (edge.to == nodeId) {
+            // connectedNodes.push(edge.from); //only select ahead
+        }
+        else if (edge.from == nodeId) {
+            connectedNodes.push(edge.to)
+        }
+    }
+    return connectedNodes;
+}
+
+function getConnectedNodesBehind(nodeId, allEdges) {
+    var edgesArray = allEdges;
+    var connectedNodes = [];
+
+    for (var i = 0; i < edgesArray.length; i++) {
+        var edge = edgesArray[i];
+        if (edge.to == nodeId) {
+            connectedNodes.push(edge.from); //only select ahead
+        }
+    }
+    return connectedNodes;
+}
+
+function autoScale(){var options = {
+          duration: 1000,
+          easingFunction: "easeInOutQuad",
+        };
+        network.fit({ animation: options });};
+
+function autoScaleOff(){
+      // console.log('Stabilized!!')
+      network.off("afterDrawing", autoScale);
+}
+function physics_on(){
+  options.physics = {
+    "barnesHut": {
+      "springConstant": 0.01,
+      "avoidOverlap": 0.0075
+    }};
+  network.setOptions(options);
+  network.off("afterDrawing", drawDivisions);
+  var allNodes = nodes.get({returnType:"Object"});
+  for (var i = 101; i < 110; i++) {
+    // console.log('on', i);
+    // console.log(allNodes[String(i)])
+    allNodes[String(i)].hidden = true;
+    nodes.update([allNodes[String(i)]]);
+  }
+    network.on("afterDrawing", autoScale);
+    network.on("stabilized", autoScaleOff);
+
+}
+
+function physics_off(){
+  options.physics = false;
+  var allNodes = nodes.get({returnType:"Object"});
+  for (var i = 101; i < 110; i++) {
+    // console.log('off', i)
+    // console.log( allNodes[String(i)])
+    allNodes[String(i)].hidden = false
+
+  }
+  network = new vis.Network(container, data, options);
+  // network.on("doubleClick", function (params) {
+  //     if (params.nodes.length === 1) {
+  //         var node = nodes.get(params.nodes[0]);
+  //         var input = document.createElement("input");
+  //         input.type = "text";
+  //         container.appendChild(input);
+  //         var rating = document.getElementById('textbox_id').value;
+  //         data.nodes.update({id: node.id, rating: 0, label: rating});
+         
+  //     }
+
+  //   });
+
+  network.on("afterDrawing", drawDivisions);
+
+
+  network.on("dragEnd",storePositions);
+
+  $("#mynetwork canvas").attr("id","canvas");
+}
+
+
+function physics_toggle(){
+  var checkBox = document.getElementById("changeView");
+    if (checkBox.checked == true){
+   physics_on()
+  } else {
+    physics_off()
+  }
+}
+
+
+
+$("#mynetwork canvas").attr("id","canvas");
+    /**
+           * Download pictures
+     */
+    $("#loadPng").on('click',function () {
+        var mynetworkCanvas = document.getElementById("canvas");
+        console.log('mynetworkCanvas',mynetworkCanvas);
+        mynetworkCanvas.toBlob(function(blob) {
+            var a = document.createElement("a");
+            document.body.appendChild(a);
+            a.download = "network" + ".png";
+            a.href = window.URL.createObjectURL(blob);
+            a.click();
+        });
+    });
+
+     $("#resetNet").on('click', resetNetwork);
+
+
+</script>
+
+
+<!-- <p> 🚧 <b>EM CONSTRUÇÃO</b> 🚧 - <b>No futuro ao clicar duas vezes em cada disciplina uma página com detalhes e visualizações será aberta.</b> </p> -->
+
+
+<div class="flex items-center h-screen w-full">
+      <div class="w-full bg-white rounded shadow-lg p-8 mt-2 md:max-w-sm md:mx-auto">
+        <h3 class="block w-full text-center text-grey-darkest" style="padding-top: 10px">Envio:</h3>
+
+        <form class="mb-2 flex flex-wrap justify-between" style="display: flex; justify-content: center; align-items: center; padding-left: 30px;" id="form">
+          <div class="flex flex-col w-full mb-2">
+            <label class="field-label" for="email">Nome (Opcional):</label>
+            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 400px" type="text" name="Nome" id="email">
+          </div>
+          <div class="flex flex-col w-full mb-2" style="margin-right: 30px">
+            <label class="field-label" for="profile">Semestre:</label>
+            <select id='profile' name="Perfil" required>
+              <option value="1" selected>Semestre 1</option>
+              <option value="2">Semestre 2</option>
+              <option value="3">Semestre 3</option>
+              <option value="4">Semestre 4</option>
+              <option value="5">Semestre 5</option>
+              <option value="6">Semestre 6</option>
+              <option value="7">Semestre 7</option>
+              <option value="8">Semestre 8</option>
+              <option value="9">Semestre 9</option>
+              <option value="10">Semestre 10</option>
+            </select>
+          </div>
+          <div class="mb-2" style="align-items: center;">
+            <button style="" type="submit" id="submit">Enviar</button>
+        </div>
+        </form>
+    </div>
+  </div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx47-V3I7eiXKc-OyQPn5eKqE11ne-qO-AFnQ2qkFnweNEfUoNT6KJe9YCL2EMJ_2LCOQ/exec'
+    const form = document.querySelector('#form')
+    const btn = document.querySelector('#submit')
+
+
+    var newField = document.createElement('input');
+    newField.setAttribute('type','text');
+    newField.setAttribute('name','Data');
+    newField.setAttribute('class','text');
+    newField.setAttribute('siz',50);
+    newField.style.display = 'none';
+
+    form.appendChild(newField);
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btn.disabled = true
+      btn.innerHTML = "Enviando..."
+      nodesRating = nodes.map(function(item){return item.rating;});
+      newField.value  = nodesRating.filter(function( element ) {
+                            return element !== undefined;
+            });
+      console.log(form)
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => { 
+              btn.disabled = false
+      btn.innerHTML = "Submit"
+            alert('Success!', response) })
+        .catch(error => {
+                     btn.disabled = false
+      btn.innerHTML = "Submit"
+            alert('Error!', error.message)})
+    })
+</script>
+
+<footer style="margin-top: 10px;color: black;">
+<div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: black;"><div><footer class="footer">
+  <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;;"> <i class="far fa-copyright"></i> <a href="https://murilohmoreira.github.io/">Murilo Henrique Moreira</a> &ndash;
+      <script language="javascript"> 
+months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+var theDate = new Date(document.lastModified); 
+theDate.setTime((theDate.getTime()+(5000*60*60)) ) 
+with (theDate) { 
+document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear()+' '+ ("0" +getHours()).slice(-2) +':'+("0" +getMinutes()).slice(-2)+" GMT") 
+}
+</script>
+    </p>
+</footer>
+</div></div>
+        </footer>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
