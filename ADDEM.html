@@ -346,7 +346,7 @@ window.onload = function(){
         hover: true,
         dragNodes: false,// do not allow dragging nodes
         zoomView: true, // do not allow zooming
-        dragView: false,  // do not allow dragging
+        dragView: true,  // do not allow dragging
         multiselect: true,
         navigationButtons: false,
         selectable: true,
@@ -783,24 +783,6 @@ function physics_toggle(){
 }
 
 
-
-$("#mynetwork canvas").attr("id","canvas");
-    /**
-           * Download pictures
-     */
-    $("#loadPng").on('click',function () {
-        var mynetworkCanvas = document.getElementById("canvas");
-        console.log('mynetworkCanvas',mynetworkCanvas);
-        mynetworkCanvas.toBlob(function(blob) {
-            var a = document.createElement("a");
-            document.body.appendChild(a);
-            a.download = "network" + ".png";
-            a.href = window.URL.createObjectURL(blob);
-            a.click();
-        });
-    });
-
-     $("#resetNet").on('click', resetNetwork);
 
 
 </script>
