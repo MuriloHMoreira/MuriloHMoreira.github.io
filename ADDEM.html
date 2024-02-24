@@ -45,7 +45,6 @@ window.onload = function(){
                         <h4 class="modal-title" style="color: var(--bs-primary-text-emphasis);">Atenção!</h4><button class="btn-close text-start d-xxl-flex justify-content-xxl-end" type="button" aria-label="Close" data-bs-dismiss="modal" style="padding-bottom: 8px;margin-right: 0px;margin-left: 0px;"></button>
                     </div>
                     <div class="modal-body">
-                        <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b> <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span> <a>  Portuguese Content!</b>  </a>  <span class="iconify" data-icon="emojione-v1:flag-for-brazil" data-inline="true"></span></p>
                         <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b>🚧 Página em Construção&nbsp;🚧</b></p>
                         <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;"><b> É recomendável abrir a página em seu computador 💻. Caso contrário, coloque o celular em paisagem ↻. </b></p>
                     </div>
@@ -57,7 +56,7 @@ window.onload = function(){
 <div>
   
   <p><b>Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM):</b> Utilize o quadro abaixo para avaliar cada uma das disciplinas. Baseado no trabalho do Prof. Vinicius Sciuti no Simpósio sobre Ensino do PPGCEM.</p>
-  <p>Clique em cada uma delas e defina o nível de dificuldade entre 1 (Muito Fácil) a 5 (Muito Difícil). Para disciplinas não realizadas, mantenha o nível zero para destacar os requisitos diretos de uma disciplina. Após classificar suas disciplinas, observe o mapa de cor. Adicione seu nome se desejar e em qual semestre está antes de submeter.</p>
+  <p>Clique em cada uma delas e defina o nível de dificuldade entre <b>1 (Muito Fácil) a 5 (Muito Difícil)</b>. Para disciplinas não realizadas, mantenha o nível zero para destacar os requisitos diretos de uma disciplina. Após classificar suas disciplinas, observe o mapa de cor. Adicione seu nome e em qual semestre está antes de submeter.</p>
 <!--   <div style="display: flex; flex-direction: column; position: absolute; right:0">
   <p><b>Compartilhar:</b></p>
   <img id="qrcode" src="./resources/qr_code_ADDEM.png" style="right:5px; margin-right: 30px; width: 150px;"></img>
@@ -413,9 +412,10 @@ window.onload = function(){
             if (rating == 0){
                 new_color = {border: '#000000',
                                      background: 'white',
+                                     hover: 'white',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
@@ -424,9 +424,10 @@ window.onload = function(){
             else if (rating == 1){
                 new_color = {border: '#000000',
                                      background: 'LemonChiffon',
+                                     hover: 'LemonChiffon',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
@@ -435,9 +436,10 @@ window.onload = function(){
             else if (rating == 2){
                 new_color = {border: '#000000',
                                      background: 'PaleGoldenRod',
+                                     hover: 'PaleGoldenRod',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
@@ -446,9 +448,10 @@ window.onload = function(){
             else if (rating == 3){
                 new_color = {border: '#000000',
                                      background: 'yellow',
+                                     hover: 'yellow',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
@@ -458,9 +461,10 @@ window.onload = function(){
             else if (rating == 4){
                 new_color = {border: '#000000',
                                      background: 'orangered',
+                                     hover: 'orangered',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
@@ -470,9 +474,10 @@ window.onload = function(){
             else if (rating == 5){
                 new_color = {border: '#000000',
                                      background: 'red',
+                                     hover: 'red',
                                      highlight: {
                                      border: '#2B7CE9',
-                                     background: '#D2E5FF'
+                                     background: 'lightblue'
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
                                    color: new_color,
@@ -818,13 +823,14 @@ $("#mynetwork canvas").attr("id","canvas");
 
         <form class="mb-2 flex flex-wrap justify-between" style="display: flex; justify-content: center; align-items: center; padding-left: 30px;" id="form">
           <div class="flex flex-col w-full mb-2">
-            <label class="field-label" for="email">Nome (Opcional):</label>
-            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 300px" type="text" name="Nome" id="email">
+            <label class="field-label" for="email">Nome:</label>
+            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 300px" type="text" name="Nome" id="email" required>
           </div>
           <div class="flex flex-col w-full mb-2" style="margin-right: 30px">
             <label class="field-label" for="profile">Semestre:</label>
             <select id='profile' name="Perfil" required>
-              <option value="1" selected>Semestre 1</option>
+              <option value="-" selected>-</option>
+              <option value="1">Semestre 1</option>
               <option value="2">Semestre 2</option>
               <option value="3">Semestre 3</option>
               <option value="4">Semestre 4</option>
@@ -837,7 +843,7 @@ $("#mynetwork canvas").attr("id","canvas");
             </select>
           </div>
           <div class="mb-2" style="align-items: center;">
-            <button style="" type="submit" id="submit">Enviar</button>
+            <button style="" type="submit" id="submit" disabled>Enviar</button>
         </div>
         </form>
     </div>
@@ -857,6 +863,26 @@ $("#mynetwork canvas").attr("id","canvas");
     newField.style.display = 'none';
 
     form.appendChild(newField);
+
+    const email = document.getElementById('email')
+    const profile = document.getElementById('profile')
+
+    const submitBtn = document.getElementById('submit');
+    function updateSubmitBtn(){
+      const emailValue = email.value.trim();
+      const profileValue = profile.value;
+
+      debugger;
+      if(emailValue && profileValue != '-'){
+        btn.removeAttribute('disabled');
+      }else {
+        btn.setAttribute('disabled', 'disabled');
+      }
+    }
+
+    email.addEventListener('change', updateSubmitBtn);
+    profile.addEventListener('change', updateSubmitBtn);
+
 
     form.addEventListener('submit', e => {
       e.preventDefault()
