@@ -1,0 +1,70 @@
+  #bubble-circle-div {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  width: 700px;
+  height: 400px;
+  background: #ffffff;
+  opacity: 0.5;
+  z-index: 200;
+  font-family: 'IBM Plex Mono';
+}
+.hero-body {
+  position: relative;
+}
+
+* {
+            box-sizing: border-box
+        }
+        html, body {
+            width: 100%;
+            overflow: hidden;
+        }
+        .glider-contain {
+            width: 100%;
+/*            max-width: 997px;*/
+            margin: 0 auto;
+        }
+        .glider-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+/*            border: 3px solid currentColor;*/
+            background-image: url('logo.svg');
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        .glider-slide img {
+            width: 100%;
+        }
+        .glider-slide .slide-title {
+            font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+            /* https://modernfontstacks.com/ */
+            font-size: 3rem;
+            position: relative;
+            top: 100px;
+        }
+        .glider-prev{  
+            position: absolute;
+            margin-top: auto;
+            margin-bottom: auto;
+            top: 0;
+            bottom: 0;
+        }
+        .glider-next{  
+            position: absolute;
+            margin-top: auto;
+            margin-bottom: auto;
+            top: 0;
+            bottom: 0;
+        }
