@@ -8,7 +8,7 @@ var nodes = new vis.DataSet([
     {id: 40, label: 'Processamento\nde Arquivos', url: 'http://www.google.com', x:0, y:250, group: 'python_funs'},
     {id: 50, label: 'Cálculos Avançados', url: 'http://www.google.com', x:0, y:300, group: 'python_funs'},
     {id: 60, label: 'Otimização', url: 'http://www.google.com', x:400, y:200, group: 'python_funs'},
-    {id: 70, label: 'Ler/Escrever Dados', url: 'http://www.google.com', x:400, y:250, group: 'python_funs'},
+    {id: 70, label: 'Otimização', url: 'http://www.google.com', x:400, y:250, group: 'python_funs'},
     {id: 80, label: 'Aplicações Específicas', url: 'http://www.google.com', x:400, y:300, group: 'python_funs'},
     ]);
 
@@ -58,11 +58,12 @@ var options = {
            size: 50,
            shape: 'box'},
     },
-  edges: {width: 3,
+  edges: {width: 2,
+          arrowStrikethrough: false,
           arrows: {
             to: {
                  enabled: true,
-                 scaleFactor: 1,
+                 scaleFactor: 0.5,
                  type: "arrow",
 
                  },
@@ -99,11 +100,19 @@ for (nodeId in allNodes){
   //Create and append select list
   var divNode = document.createElement("div");
   divNode.id = "node_info_" + nodeId;
-  divNode.classList.add("divNode");
+  if (allNodes[nodeId].group == 'python_funs'){
+    divNode.classList.add("PythonFuns");
+  }
+  else{
+    divNode.classList.add("divNode");
+
+  }
   document.body.appendChild(divNode);
   divNode.style.display = "none";
   divNodeText = document.createElement("p")
   divNodeText.textContent = allNodes[nodeId].label
+  divNodeText.classList.add("divNodeText");
+
   divNode.appendChild(divNodeText)
 }
 $("#mynetwork canvas").attr("id","canvas");
@@ -123,8 +132,15 @@ function showNodeInfo(params) {
         var mynetworkCanvas = document.getElementById("canvas");
         var rect = mynetworkCanvas.getBoundingClientRect();
         bb = network.getBoundingBox(nodeId)
-        nodeX += rect.left + (bb.left - bb.right)/2;
-        nodeY += rect.top - (document.body.getBoundingClientRect().top - 30);
+        if(network.getPositions([nodeId])[nodeId].x == 0){
+            nodeX += - 1.8 * bb.right;
+
+        }
+        else{
+            nodeX += rect.left + (bb.right - bb.left)/1.2;
+
+        }
+        nodeY += rect.top - (document.body.getBoundingClientRect().top - (bb.top - bb.bottom));
         
         console.log("rank_selection_" + nodeId)
         document.getElementById("node_info_" + nodeId).style.display = "block";
@@ -210,18 +226,18 @@ var options2 = {
            size: 50,
            shape: 'box'},
     },
-  edges: {width: 3,
+  edges: {width: 1,
           arrows: {
             to: {
                  enabled: true,
-                 scaleFactor: 1,
+                 scaleFactor: 0.2,
                  type: "arrow",
 
                  },
                 },
 smooth: false
 },
-physics: false,
+physics: true,
 interaction: {
     hover: true,
     dragNodes: true,// do not allow dragging nodes

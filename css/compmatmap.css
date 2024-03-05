@@ -97,3 +97,18 @@
   width: 300px;
   padding: 10px;
 }
+
+.divNodeText{
+  text-align: center;
+}
+
+
+.PythonFuns{
+  background: rgba(201, 201, 201, 0.9);
+  border-radius: 10px;
+  border: 1px solid; black;
+  border-width: 3px!important;
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+}
