@@ -19,6 +19,13 @@
     <link rel="stylesheet" type="text/css" href="css/glider.css" />
     <script src="scripts/glider.js"></script>
     <script src="scripts/gliderLoad.js"> </script>
+
+    <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+
+<style type="text/css">
+
+</style>
+
 </head>
 <body>
 
@@ -36,18 +43,22 @@
   </div>
 </section>
 
-<section id="page-langs" class="hero is-success is-large is-bold">
+<section id="page-langs" class="langs">
   <div class="hero-body">
+    <h1 style="text-align: center; color:white; font-family: IBM Plex Mono">Toda jornada começa com um primeiro passo...</h1>
     <div class="container">
 
     <div class="glider-contain">
         <div class="glider">
-            <div><span class="slide-title">Slide 1</span></div>
+            <div>
+                <div id="mynetwork" style="height: 80%; width: 95%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
+                <script src="scripts/mynetwork.js"> </script>
+            </div>
             <div><span class="slide-title">Slide 2</span></div>
             <div><span class="slide-title">Slide 3</span></div>
         </div>
-        <button class="glider-prev"><i class="fas fa-arrow-left"></i></button>
-        <button class="glider-next"><i class="fas fa-arrow-right"></i></button>
+        <button class="glider-prev"><p style="color: white;"><i class="fas fa-arrow-left"></i></p></button>
+        <button class="glider-next"><p style="color: white;"><i class="fas fa-arrow-right"></i></p></button>
     </div>
 
     </div>
