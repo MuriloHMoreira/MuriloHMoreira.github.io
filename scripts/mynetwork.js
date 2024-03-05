@@ -89,6 +89,67 @@ network.moveTo({
   scale: 1.5            // Zooms out; 1 is no zoom
 });
 
+// Create info windows
+var allNodes = nodes.get({returnType:"Object"});
+var myParent = document.body;
+//Create array of options to be added
+var nodeId;
+
+for (nodeId in allNodes){
+  //Create and append select list
+  var divNode = document.createElement("div");
+  divNode.id = "node_info_" + nodeId;
+  divNode.classList.add("divNode");
+  document.body.appendChild(divNode);
+  divNode.style.display = "none";
+  divNodeText = document.createElement("p")
+  divNodeText.textContent = allNodes[nodeId].label
+  divNode.appendChild(divNodeText)
+}
+$("#mynetwork canvas").attr("id","canvas");
+function showNodeInfo(params) {
+      // Get the node ID
+      var nodeId = params.node;
+      if (nodeId) {
+        // Get the node title to show in the popup
+        var popup = this.body.nodes[nodeId].options.title;
+
+        // Get the node coordinates
+        var { x: nodeX, y: nodeY } = network.canvasToDOM(
+          network.getPositions([nodeId])[nodeId]
+        );
+
+        // Show the tooltip in a div
+        var mynetworkCanvas = document.getElementById("canvas");
+        var rect = mynetworkCanvas.getBoundingClientRect();
+        bb = network.getBoundingBox(nodeId)
+        nodeX += rect.left + (bb.left - bb.right)/2;
+        nodeY += rect.top - (document.body.getBoundingClientRect().top - 30);
+        
+        console.log("rank_selection_" + nodeId)
+        document.getElementById("node_info_" + nodeId).style.display = "block";
+        // Place the div
+        document.getElementById("node_info_" + nodeId).style.position = "absolute";
+        document.getElementById("node_info_" + nodeId).style.top = nodeY + "px";
+        document.getElementById("node_info_" + nodeId).style.left = nodeX + "px";
+      }
+};
+
+
+function hideNodesInfo(params) {
+var allNodes = nodes.get({returnType:"Object"});
+var myParent = document.body;
+//Create array of options to be added
+var nodeId;
+
+for (nodeId in allNodes){
+  //Create and append select list
+  document.getElementById("node_info_" + nodeId).style.display = "none";
+}
+};
+network.on("hoverNode", showNodeInfo);
+network.on("blurNode", hideNodesInfo);
+
 var nodes2 = new vis.DataSet([
     {id: 1, label: 'Linguagem de\nProgramação', url: 'http://www.google.com', x:200, y:-100, group: 'programming'},
     {id: 2, label: 'Bash/Shell', url: 'http://www.google.com', font:{color: "white"}, shape:'image', image: "assets/img/Bash-logo.svg", x:200, y:40, group: 'bash'},
