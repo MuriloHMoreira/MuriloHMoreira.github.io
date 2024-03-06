@@ -14,11 +14,7 @@
     <link rel="stylesheet" href="./css/materials_reach_theme.css">
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-window.onload = function(){
-                  document.getElementById('open_modal_button').click();
-                }
-</script>
+
 
 <!-- Loading vis-network.js -->
 <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
@@ -31,9 +27,6 @@ window.onload = function(){
         border: 1px solid black;
     }
 </style>
-
-
-</head>
 
 <body style="overflow-x: auto; overflow-y:auto; font-family: 'IBM Plex Mono', monospace; background-color: #CCCAD4; margin-top: 30px; color: black;">
     <button class="btn btn-primary d-none" id="open_modal_button" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Button</button>
@@ -54,7 +47,8 @@ window.onload = function(){
         
 
 <div>
-  
+</head>
+
   <p><b>Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM):</b> Utilize o quadro abaixo para avaliar cada uma das disciplinas. Baseado no trabalho do Prof. Vinicius Sciuti no Simpósio sobre Ensino do PPGCEM.</p>
   <p>Clique em cada uma delas e defina o nível de dificuldade entre <b>1 (Muito Fácil) a 5 (Muito Difícil)</b>. Para disciplinas não realizadas, mantenha o nível como "-". Após classificar suas disciplinas, observe o mapa de cor. Adicione seu nome e em qual semestre está antes de submeter.</p>
 <!--   <div style="display: flex; flex-direction: column; position: absolute; right:0">
@@ -77,82 +71,82 @@ window.onload = function(){
 
 <script>
     var nodes = new vis.DataSet([
-        {id: 1, rating: 0, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:30, group: 'math', perfil: 1},
-        {id: 2, rating: 0, label: 'Cálculo 2', url: 'http://www.google.com', x:200, y:0, group: 'math', perfil: 2},
-        {id: 3, rating: 0, label: 'Cálculo 3', url: 'http://www.google.com', x:400, y:0, group: 'math', perfil: 3},
-        {id: 4, rating: 0, label: 'Séries e EDO', url: 'http://www.google.com', x:600, y:0, group: 'math', perfil: 4},
-        {id: 5, rating: 0, label: 'MMA', url: 'http://www.google.com', x:1000, y:0, group: 'math', perfil: 6},
-        {id: 6, rating: 0, label: 'Geometria Analítica', url: 'http://www.google.com', x:0, y:100, group: 'math', perfil: 1},
-        {id: 7, rating: 0, label: 'Cálculo Numérico', url: 'http://www.google.com', x:800, y:0, group: 'math', perfil: 5},
+        {id: 1, rating: 0.0, shape: 'box',label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:30, group: 'math', perfil: 1},
+        {id: 2, rating: 0.0, shape: 'box',label: 'Cálculo 2', url: 'http://www.google.com', x:200, y:0, group: 'math', perfil: 2},
+        {id: 3, rating: 0.0, shape: 'box',label: 'Cálculo 3', url: 'http://www.google.com', x:400, y:0, group: 'math', perfil: 3},
+        {id: 4, rating: 0.0, shape: 'box',label: 'Séries e EDO', url: 'http://www.google.com', x:600, y:0, group: 'math', perfil: 4},
+        {id: 5, rating: 0.0, shape: 'box',label: 'MMA', url: 'http://www.google.com', x:1000, y:0, group: 'math', perfil: 6},
+        {id: 6, rating: 0.0, shape: 'box',label: 'Geometria Analítica', url: 'http://www.google.com', x:0, y:100, group: 'math', perfil: 1},
+        {id: 7, rating: 0.0, shape: 'box',label: 'Cálculo Numérico', url: 'http://www.google.com', x:800, y:0, group: 'math', perfil: 5},
         
-        {id: 8, rating: 0, label: 'Física 1', url: 'http://www.google.com', x:200, y:120, group: 'physics', perfil: 2},
-        {id: 9, rating: 0, label: 'Física 3', url: 'http://www.google.com', x:400, y:120, group: 'physics', perfil: 3},
-        {id: 10, rating: 0, label: 'Física 4', url: 'http://www.google.com', x:600, y:150, group: 'physics', perfil: 4},
-        {id: 11, rating: 0, label: 'Física \nExperimental A', url: 'http://www.google.com', x:200, y:200, group: 'physics', perfil: 2},
-        {id: 12, rating: 0, label: 'Física \nExperimental B', url: 'http://www.google.com', x:400, y:300, group: 'physics', perfil: 3},
-        {id: 13, rating: 0, label: 'Eletrotécnica', url: 'http://www.google.com', x:1000, y:335, group: 'physics', perfil: 6},
+        {id: 8, rating: 0.0, shape: 'box',label: 'Física 1', url: 'http://www.google.com', x:200, y:120, group: 'physics', perfil: 2},
+        {id: 9, rating: 0.0, shape: 'box',label: 'Física 3', url: 'http://www.google.com', x:400, y:120, group: 'physics', perfil: 3},
+        {id: 10, rating: 0.0, shape: 'box',label: 'Física 4', url: 'http://www.google.com', x:600, y:150, group: 'physics', perfil: 4},
+        {id: 11, rating: 0.0, shape: 'box',label: 'Física \nExperimental A', url: 'http://www.google.com', x:200, y:200, group: 'physics', perfil: 2},
+        {id: 12, rating: 0.0, shape: 'box',label: 'Física \nExperimental B', url: 'http://www.google.com', x:400, y:300, group: 'physics', perfil: 3},
+        {id: 13, rating: 0.0, shape: 'box',label: 'Eletrotécnica', url: 'http://www.google.com', x:1000, y:335, group: 'physics', perfil: 6},
 
-        {id: 14, rating: 0, label: 'Introdução \n à Computação', url: 'http://www.google.com', x:0, y:300, group: 'other', perfil: 1},
-        {id: 15, rating: 0, label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.google.com', x:0, y:600, group: 'other', perfil: 1},
-        {id: 16, rating: 0, label: 'Introdução à CEM', url: 'http://www.google.com', x:0, y:500, group: 'materials', perfil: 1},
-        {id: 17, rating: 0, label: 'Química Experimental \nGeral', url: 'http://www.google.com', x:0, y:400, group: 'chemistry', perfil: 1},
+        {id: 14, rating: 0.0, shape: 'box',label: 'Introdução \n à Computação', url: 'http://www.google.com', x:0, y:300, group: 'other', perfil: 1},
+        {id: 15, rating: 0.0, shape: 'box',label: 'Desenho e\n Tecnologia Mecânica', url: 'http://www.google.com', x:0, y:600, group: 'other', perfil: 1},
+        {id: 16, rating: 0.0, shape: 'box',label: 'Introdução à CEM', url: 'http://www.google.com', x:0, y:500, group: 'materials', perfil: 1},
+        {id: 17, rating: 0.0, shape: 'box',label: 'Química Experimental \nGeral', url: 'http://www.google.com', x:0, y:400, group: 'chemistry', perfil: 1},
 
-        {id: 18, rating: 0, label: 'Economia Geral', url: 'http://www.google.com', x:200, y:640, group: 'other', perfil: 2},
-        {id: 19, rating: 0, label: 'Materiais e\n Meio Ambiente', url: 'http://www.google.com', x:200, y:540, group: 'materials', perfil: 2},
-        {id: 20, rating: 0, label: 'Química 2 \nGeral', url: 'http://www.google.com', x:200, y:300, group: 'chemistry', perfil: 2},
-        {id: 21, rating: 0, label: 'Química Inorgânica', url: 'http://www.google.com', x:200, y:400, group: 'chemistry', perfil: 2},
+        {id: 18, rating: 0.0, shape: 'box',label: 'Economia Geral', url: 'http://www.google.com', x:200, y:640, group: 'other', perfil: 2},
+        {id: 19, rating: 0.0, shape: 'box',label: 'Materiais e\n Meio Ambiente', url: 'http://www.google.com', x:200, y:540, group: 'materials', perfil: 2},
+        {id: 20, rating: 0.0, shape: 'box',label: 'Química 2 \nGeral', url: 'http://www.google.com', x:200, y:300, group: 'chemistry', perfil: 2},
+        {id: 21, rating: 0.0, shape: 'box',label: 'Química Inorgânica', url: 'http://www.google.com', x:200, y:400, group: 'chemistry', perfil: 2},
 
-        {id: 22, rating: 0, label: 'Termodinâmica \nQuímica', url: 'http://www.google.com', x:400, y:215, group: 'chemistry', perfil: 3},
-        {id: 23, rating: 0, label: 'Ciência dos \nMateriais 1', url: 'http://www.google.com', x:400, y:400, group: 'materials', perfil: 3},
-        {id: 24, rating: 0, label: 'Química Orgânica', url: 'http://www.google.com', x:400, y:500, group: 'chemistry', perfil: 3},
+        {id: 22, rating: 0.0, shape: 'box',label: 'Termodinâmica \nQuímica', url: 'http://www.google.com', x:400, y:215, group: 'chemistry', perfil: 3},
+        {id: 23, rating: 0.0, shape: 'box',label: 'Ciência dos \nMateriais 1', url: 'http://www.google.com', x:400, y:400, group: 'materials', perfil: 3},
+        {id: 24, rating: 0.0, shape: 'box',label: 'Química Orgânica', url: 'http://www.google.com', x:400, y:500, group: 'chemistry', perfil: 3},
 
-        {id: 25, rating: 0, label: 'Mecânica Aplicada', url: 'http://www.google.com', x:600, y:82, group: 'other', perfil: 4},
-        {id: 26, rating: 0, label: 'Química Analítica \nExperimental A', url: 'http://www.google.com', x:600, y:490, group: 'chemistry', perfil: 4},
-        {id: 27, rating: 0, label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:215, group: 'materials', perfil: 4},
-        {id: 28, rating: 0, label: 'Ciência dos \nMateriais 2', url: 'http://www.google.com', x:600, y:400, group: 'materials', perfil: 4},
-        {id: 29, rating: 0, label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:310, group: 'other', perfil: 4},
+        {id: 25, rating: 0.0, shape: 'box',label: 'Mecânica Aplicada', url: 'http://www.google.com', x:600, y:82, group: 'other', perfil: 4},
+        {id: 26, rating: 0.0, shape: 'box',label: 'Química Analítica \nExperimental A', url: 'http://www.google.com', x:600, y:490, group: 'chemistry', perfil: 4},
+        {id: 27, rating: 0.0, shape: 'box',label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:215, group: 'materials', perfil: 4},
+        {id: 28, rating: 0.0, shape: 'box',label: 'Ciência dos \nMateriais 2', url: 'http://www.google.com', x:600, y:400, group: 'materials', perfil: 4},
+        {id: 29, rating: 0.0, shape: 'box',label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:310, group: 'other', perfil: 4},
 
-        {id: 30, rating: 0, label: 'Mecânica dos\n Sólidos', url: 'http://www.google.com', x:800, y:85, group: 'materials', perfil: 5},
-        {id: 31, rating: 0, label: 'Fundamentos\n em Reologia', url: 'http://www.google.com', x:800, y:190, group: 'materials', perfil: 5},
-        {id: 32, rating: 0, label: 'Materiais \n Poliméricos', url: 'http://www.google.com', x:800, y:290, group: 'materials', perfil: 5},
-        {id: 33, rating: 0, label: 'Materiais \n Cerâmicos', url: 'http://www.google.com', x:800, y:500, group: 'materials', perfil: 5},
-        {id: 34, rating: 0, label: 'Materiais \n Metálicos', url: 'http://www.google.com', x:800, y:600, group: 'materials', perfil: 5},
+        {id: 30, rating: 0.0, shape: 'box',label: 'Mecânica dos\n Sólidos', url: 'http://www.google.com', x:800, y:85, group: 'materials', perfil: 5},
+        {id: 31, rating: 0.0, shape: 'box',label: 'Fundamentos\n em Reologia', url: 'http://www.google.com', x:800, y:190, group: 'materials', perfil: 5},
+        {id: 32, rating: 0.0, shape: 'box',label: 'Materiais \n Poliméricos', url: 'http://www.google.com', x:800, y:290, group: 'materials', perfil: 5},
+        {id: 33, rating: 0.0, shape: 'box',label: 'Materiais \n Cerâmicos', url: 'http://www.google.com', x:800, y:500, group: 'materials', perfil: 5},
+        {id: 34, rating: 0.0, shape: 'box',label: 'Materiais \n Metálicos', url: 'http://www.google.com', x:800, y:600, group: 'materials', perfil: 5},
 
-        {id: 35, rating: 0, label: 'Economia de\n Empresas', url: 'http://www.google.com', x:1000, y:260, group: 'other', perfil: 6},
-        {id: 36, rating: 0, label: 'Introdução MP\n Cerâmicas', url: 'http://www.google.com', x:1000, y:80, group: 'ceramics', perfil: 6},
-        {id: 37, rating: 0, label: 'Fundamentos de\n Met. Extr.', url: 'http://www.google.com', x:1000, y:170, group: 'metals', perfil: 6},
-        {id: 38, rating: 0, label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.google.com', x:1000, y:410, group: 'polymers', perfil: 6},
-        {id: 39, rating: 0, label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.google.com', x:1000, y:500, group: 'materials', perfil: 6},
-        {id: 40, rating: 0, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.google.com', x:1000, y:590, group: 'materials', perfil: 6},
-        {id: 41, rating: 0, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.google.com', x:1000, y:680, group: 'materials', perfil: 6},
+        {id: 35, rating: 0.0, shape: 'box',label: 'Economia de\n Empresas', url: 'http://www.google.com', x:1000, y:260, group: 'other', perfil: 6},
+        {id: 36, rating: 0.0, shape: 'box',label: 'Introdução MP\n Cerâmicas', url: 'http://www.google.com', x:1000, y:80, group: 'ceramics', perfil: 6},
+        {id: 37, rating: 0.0, shape: 'box',label: 'Fundamentos de\n Met. Extr.', url: 'http://www.google.com', x:1000, y:170, group: 'metals', perfil: 6},
+        {id: 38, rating: 0.0, shape: 'box',label: 'Estrutura e Props. \n dos Polímeros', url: 'http://www.google.com', x:1000, y:410, group: 'polymers', perfil: 6},
+        {id: 39, rating: 0.0, shape: 'box',label: 'Processamento de\n Mat. Poliméricos', url: 'http://www.google.com', x:1000, y:500, group: 'materials', perfil: 6},
+        {id: 40, rating: 0.0, shape: 'box',label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.google.com', x:1000, y:590, group: 'materials', perfil: 6},
+        {id: 41, rating: 0.0, shape: 'box',label: 'Processamento de\n Mat. Metálicos', url: 'http://www.google.com', x:1000, y:680, group: 'materials', perfil: 6},
 
-        {id: 44, rating: 0, label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
-        {id: 45, rating: 0, label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
-        {id: 46, rating: 0, label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
-        {id: 47, rating: 0, label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
-        {id: 50, rating: 0, label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
-        {id: 49, rating: 0, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
-        {id: 48, rating: 0, label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:305, group: 'polymers', perfil: 7},
-        {id: 51, rating: 0, label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
-        {id: 52, rating: 0, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:210, group: 'ceramics', perfil: 7},
-        {id: 53, rating: 0, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:122.5, group: 'other', perfil: 7},
-        {id: 54, rating: 0, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:560, group: 'materials', perfil: 7},
+        {id: 42, rating: 0.0, shape: 'box',label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
+        {id: 43, rating: 0.0, shape: 'box',label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
+        {id: 44, rating: 0.0, shape: 'box',label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
+        {id: 45, rating: 0.0, shape: 'box',label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
+        {id: 46, rating: 0.0, shape: 'box',label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
+        {id: 47, rating: 0.0, shape: 'box',label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
+        {id: 48, rating: 0.0, shape: 'box',label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:305, group: 'polymers', perfil: 7},
+        {id: 49, rating: 0.0, shape: 'box',label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
+        {id: 50, rating: 0.0, shape: 'box',label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:210, group: 'ceramics', perfil: 7},
+        {id: 51, rating: 0.0, shape: 'box',label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:122.5, group: 'other', perfil: 7},
+        {id: 52, rating: 0.0, shape: 'box',label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:560, group: 'materials', perfil: 7},
 
-        {id: 55, rating: 0, label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
-        {id: 56, rating: 0, label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:520, group: 'metals', perfil: 8},
-        {id: 57, rating: 0, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
-        {id: 58, rating: 0, label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
-        {id: 59, rating: 0, label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
-        {id: 60, rating: 0, label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
+        {id: 53, rating: 0.0, shape: 'box',label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
+        {id: 54, rating: 0.0, shape: 'box',label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:520, group: 'metals', perfil: 8},
+        {id: 55, rating: 0.0, shape: 'box',label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
+        {id: 56, rating: 0.0, shape: 'box',label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
+        {id: 57, rating: 0.0, shape: 'box',label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
+        {id: 58, rating: 0.0, shape: 'box',label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
 
-        {id: 61, rating: 0, label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
-        {id: 62, rating: 0, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:90, group: 'materials', perfil: 9},
-        {id: 68, rating: 0, label: 'Processamento de \n Elastômeros e Termofixos', url: 'http://www.google.com', x:1600, y:180, group: 'polymers', perfil: 9},
-        {id: 64, rating: 0, label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:270, group: 'polymers', perfil: 9},
-        {id: 65, rating: 0, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:360, group: 'ceramics', perfil: 9},
-        {id: 66, rating: 0, label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:450, group: 'ceramics', perfil: 9},
-        {id: 67, rating: 0, label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:540, group: 'metals', perfil: 9},
-        {id: 63, rating: 0, label: 'Fundição', url: 'http://www.google.com', x:1600, y:620, group: 'metals', perfil: 9},
+        {id: 59, rating: 0.0, shape: 'box',label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
+        {id: 60, rating: 0.0, shape: 'box',label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:90, group: 'materials', perfil: 9},
+        {id: 61, rating: 0.0, shape: 'box',label: 'Processamento de \n Elastômeros e Termofixos', url: 'http://www.google.com', x:1600, y:180, group: 'polymers', perfil: 9},
+        {id: 62, rating: 0.0, shape: 'box',label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:270, group: 'polymers', perfil: 9},
+        {id: 63, rating: 0.0, shape: 'box',label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:360, group: 'ceramics', perfil: 9},
+        {id: 64, rating: 0.0, shape: 'box',label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:450, group: 'ceramics', perfil: 9},
+        {id: 65, rating: 0.0, shape: 'box',label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:540, group: 'metals', perfil: 9},
+        {id: 66, rating: 0.0, shape: 'box',label: 'Fundição', url: 'http://www.google.com', x:1600, y:620, group: 'metals', perfil: 9},
 
         {id: 101, label: 'Semestre 1', x:0, y:-100, group: 'profile'},
         {id: 102, label: 'Semestre 2', x:200, y:-100, group: 'profile'},
@@ -313,14 +307,14 @@ window.onload = function(){
     var options = {
       // improvedLayout: true,
       groups: {
-        chemistry: {color:'coral'},
-        math: {color:'#149AFE'},
-        physics: {color:'orange'},
-        materials: {color: 'red', font: {weight: 'regular', color: 'white'}},
-        ceramics: {color: '#451B1B', font: {weight: 'regular', color: 'white'}},
-        metals: {color: 'CCCAD4', font: {weight: 'regular', color: 'black'}},
-        polymers: {color: 'purple', font: {weight: 'regular', color: 'white'}},
-        other: {color: '#F7E771', font: {weight: 'regular', color: 'black'}},
+        chemistry: {color:'coral', font: {weight: 'bold', color: 'white'},},
+        math: {color:'#149AFE', font: {weight: 'bold', color: 'white'},},
+        physics: {color:'orange', font: {weight: 'bold', color: 'white'},},
+        materials: {color: 'red', font: {weight: 'bold', color: 'white'},},
+        ceramics: {color: '#451B1B', font: {weight: 'bold', color: 'white'},},
+        metals: {color: 'CCCAD4', font: {weight: 'bold', color: 'black'},},
+        polymers: {color: 'purple', font: {weight: 'bold', color: 'white'},},
+        other: {color: '#F7E771', font: {weight: 'bold', color: 'black'},},
         profile: {color: 'white'}
         },
       edges: {arrows: {
@@ -365,32 +359,9 @@ window.onload = function(){
   network.setOptions(options);  
 
 
-    network.on("hoverNode", function(params) {
-      // Get the node ID
-      var nodeId = params.node;
-      if (nodeId && allNodes[nodeId].group != 'profile') {
-        // Get the node title to show in the popup
-        var popup = this.body.nodes[nodeId].options.title;
 
-        // Get the node coordinates
-        var { x: nodeX, y: nodeY } = network.canvasToDOM(
-          network.getPositions([nodeId])[nodeId]
-        );
 
-        // Show the tooltip in a div
-        var mynetworkCanvas = document.getElementById("canvas");
-        var rect = mynetworkCanvas.getBoundingClientRect();
-        nodeX += rect.left;
-        nodeY += rect.top - (document.body.getBoundingClientRect().top - 30);
-        
-        console.log("rank_selection_" + nodeId)
-        document.getElementById("rank_selection_" + nodeId).style.display = "block";
-        // Place the div
-        document.getElementById("rank_selection_" + nodeId).style.position = "absolute";
-        document.getElementById("rank_selection_" + nodeId).style.top = nodeY + "px";
-        document.getElementById("rank_selection_" + nodeId).style.left = nodeX + "px";
-      }
-    });
+
 
     var firstUpdatedColorRun = true;
     function updateColors() {
@@ -398,8 +369,8 @@ window.onload = function(){
     var nodeId;
     for (nodeId in allNodes){
         network.body.nodes[nodeId].options.font.color = "black";
-        var rating = document.getElementById("rank_selection_" + nodeId).value;
-        clickedNode = nodes.get(parseFloat(nodeId))
+        clickedNode = nodes.get({returnType:"Object"})[parseFloat(nodeId)]
+        console.log(allNodes[nodeId])
         if (firstUpdatedColorRun){
             var new_label = clickedNode.label + "\n Dificuldade: " + rating;
         }
@@ -409,7 +380,96 @@ window.onload = function(){
         
         if (clickedNode){
             if (parseFloat(nodeId) < 100){
+            var rating = clickedNode.rating
+            console.log(rating)
             if (rating == '-'){
+                new_color = {border: '#000000',
+                                     background: 'white',
+                                     hover: 'white',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                    } 
+            else if (rating <= 1){
+                new_color = {border: '#000000',
+                                     background: 'LemonChiffon',
+                                     hover: 'LemonChiffon',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                    } 
+            else if (rating <= 2){
+                new_color = {border: '#000000',
+                                     background: 'PaleGoldenRod',
+                                     hover: 'PaleGoldenRod',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                    } 
+            else if (rating <= 3){
+                new_color = {border: '#000000',
+                                     background: 'yellow',
+                                     hover: 'yellow',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                    } 
+
+            else if (rating <= 4){
+                new_color = {border: '#000000',
+                                     background: 'orangered',
+                                     hover: 'orangered',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                    } 
+
+            else if (rating <= 5){
+                new_color = {border: '#000000',
+                                     background: 'red',
+                                     hover: 'red',
+                                     highlight: {
+                                     border: '#2B7CE9',
+                                     background: 'lightblue'
+                                      }};
+                                  }
+        
+        ;
+    }}  
+
+      };
+    firstUpdatedColorRun = false;
+    }
+
+var means;
+function fetchJSONData() {
+            fetch("./resources/averages.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then(function(data){
+                    means = data;
+                    var nodeId;
+                    var allNodes = nodes.get({returnType:"Object"});
+                    for (nodeId in allNodes){
+                        var clickedNode = nodes.get(parseFloat(nodeId));
+                        var rating = data["means"][0][nodeId - 1]
+                        var new_label = clickedNode.label + "\n Dificuldade: " + rating.toPrecision(2);
+
+                        if (parseFloat(nodeId) < 100){
+                        nodes.update({id: nodeId, rating: parseFloat(rating),
+                                   label: new_label, color: 'white',
+                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                        if (rating == '-'){
                 new_color = {border: '#000000',
                                      background: 'white',
                                      hover: 'white',
@@ -421,7 +481,7 @@ window.onload = function(){
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
-            else if (rating == 1){
+            else if (rating <= 1){
                 new_color = {border: '#000000',
                                      background: 'LemonChiffon',
                                      hover: 'LemonChiffon',
@@ -433,7 +493,7 @@ window.onload = function(){
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
-            else if (rating == 2){
+            else if (rating <= 2){
                 new_color = {border: '#000000',
                                      background: 'PaleGoldenRod',
                                      hover: 'PaleGoldenRod',
@@ -445,7 +505,7 @@ window.onload = function(){
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
-            else if (rating == 3){
+            else if (rating <= 3){
                 new_color = {border: '#000000',
                                      background: 'yellow',
                                      hover: 'yellow',
@@ -458,7 +518,7 @@ window.onload = function(){
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
 
-            else if (rating == 4){
+            else if (rating <= 4){
                 new_color = {border: '#000000',
                                      background: 'orangered',
                                      hover: 'orangered',
@@ -468,10 +528,10 @@ window.onload = function(){
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                    label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
                                     } 
 
-            else if (rating == 5){
+            else if (rating <= 5){
                 new_color = {border: '#000000',
                                      background: 'red',
                                      hover: 'red',
@@ -481,26 +541,18 @@ window.onload = function(){
                                       }};
                 nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
                                    color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
                                   }
-        
-        ;
-    }}  
 
-      };
-    firstUpdatedColorRun = false;
-    }
-
-
-    // Empty and hide the div when click elsewhere
-    network.on("blurNode", function (params) {
-        var selectors = document.getElementsByTagName('select') 
-        for (let i = 0; i < selectors.length; i++){
-            if (selectors[i].id != 'profile'){
-                selectors[i].style.display = "none";}
+                        }
+                        }
+                })
+                .catch((error) => 
+                       console.error("Unable to fetch data:", error));
         }
-        updateColors();
-    });
+    fetchJSONData();
+
+
 
   // network.on("doubleClick", function (params) {
   //     if (params.nodes.length === 1) {
@@ -528,7 +580,7 @@ window.onload = function(){
   //         // container.appendChild(input);
   //         // var rating = document.getElementById('textbox_id').value;
   //         // var new_label = node.label + "\n" + rating;
-  //         // data.nodes.update({id: node.id, rating: 0, label: new_label, rating: rating});
+  //         // data.nodes.update({id: node.id, rating: 0.0, shape: 'box',label: new_label, rating: rating});
   //         // console.log(node.rating)
          
   //     }
@@ -595,7 +647,7 @@ window.onload = function(){
 
     for (nodeId in allNodes){
       //Create and append select list
-      var selectList = document.createElement("select");
+      var selectList = document.createElement("text");
       selectList.id = "rank_selection_" + nodeId;
       document.body.appendChild(selectList);
       //Create and append the options
@@ -608,7 +660,6 @@ window.onload = function(){
       selectList.style.display = "none";
     }
 
-    updateColors();
 
     network.on("afterDrawing", drawDivisions);
 
@@ -766,7 +817,7 @@ function physics_off(){
   //         input.type = "text";
   //         container.appendChild(input);
   //         var rating = document.getElementById('textbox_id').value;
-  //         data.nodes.update({id: node.id, rating: 0, label: rating});
+  //         data.nodes.update({id: node.id, rating: 0.0, shape: 'box',label: rating});
          
   //     }
 
@@ -814,102 +865,6 @@ $("#mynetwork canvas").attr("id","canvas");
 </script>
 
 
-<!-- <p> 🚧 <b>EM CONSTRUÇÃO</b> 🚧 - <b>No futuro ao clicar duas vezes em cada disciplina uma página com detalhes e visualizações será aberta.</b> </p> -->
-
-
-<div class="flex items-center h-screen w-full">
-      <div class="w-full bg-white rounded shadow-lg p-8 mt-2 md:max-w-sm md:mx-auto">
-        <h3 class="block w-full text-center text-grey-darkest" style="padding-top: 10px">Envio:</h3>
-
-        <form class="mb-2 flex flex-wrap justify-between" style="display: flex; justify-content: center; align-items: center; padding-left: 30px;" id="form">
-          <div class="flex flex-col w-full mb-2">
-            <label class="field-label" for="email">Nome:</label>
-            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 300px" type="text" name="Nome" id="email" required>
-          </div>
-          <div class="flex flex-col w-full mb-2">
-            <label class="field-label" for="email">Ano de Ingresso:</label>
-            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 80px" type="text" name="Ingresso" id="ingresso" required>
-          </div>
-          <div class="flex flex-col w-full mb-2" style="margin-right: 30px">
-            <label class="field-label" for="profile">Semestre:</label>
-            <select id='profile' name="Perfil" required>
-              <option value="-" selected>-</option>
-              <option value="1">Semestre 1</option>
-              <option value="2">Semestre 2</option>
-              <option value="3">Semestre 3</option>
-              <option value="4">Semestre 4</option>
-              <option value="5">Semestre 5</option>
-              <option value="6">Semestre 6</option>
-              <option value="7">Semestre 7</option>
-              <option value="8">Semestre 8</option>
-              <option value="9">Semestre 9</option>
-              <option value="10">Semestre 10</option>
-              <option value="Concluído">Concluído</option>
-
-            </select>
-          </div>
-          <div class="mb-2" style="align-items: center;">
-            <button style="" type="submit" id="submit" disabled>Enviar</button>
-        </div>
-        </form>
-    </div>
-  </div>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx47-V3I7eiXKc-OyQPn5eKqE11ne-qO-AFnQ2qkFnweNEfUoNT6KJe9YCL2EMJ_2LCOQ/exec'
-    const form = document.querySelector('#form')
-    const btn = document.querySelector('#submit')
-
-
-    var newField = document.createElement('input');
-    newField.setAttribute('type','text');
-    newField.setAttribute('name','Data');
-    newField.setAttribute('class','text');
-    newField.setAttribute('siz',50);
-    newField.style.display = 'none';
-
-    form.appendChild(newField);
-
-    const email = document.getElementById('email')
-    const profile = document.getElementById('profile')
-
-    const submitBtn = document.getElementById('submit');
-    function updateSubmitBtn(){
-      const emailValue = email.value.trim();
-      const profileValue = profile.value;
-
-      debugger;
-      if(emailValue && profileValue != '-'){
-        btn.removeAttribute('disabled');
-      }else {
-        btn.setAttribute('disabled', 'disabled');
-      }
-    }
-
-    email.addEventListener('change', updateSubmitBtn);
-    profile.addEventListener('change', updateSubmitBtn);
-
-
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      btn.disabled = true
-      btn.innerHTML = "Enviando..."
-      nodesRating = nodes.map(function(item){return item.rating;});
-      newField.value  = nodesRating.filter(function( element ) {
-                            return element !== undefined;
-            });
-      console.log(form)
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => { 
-              btn.disabled = false
-      btn.innerHTML = "Submit"
-            alert('Success!', response) })
-        .catch(error => {
-                     btn.disabled = false
-      btn.innerHTML = "Submit"
-            alert('Error!', error.message)})
-    })
-</script>
 
 <footer style="margin-top: 10px;color: black;">
 <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: black;"><div><footer class="footer">
