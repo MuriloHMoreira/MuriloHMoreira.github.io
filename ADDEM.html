@@ -351,8 +351,8 @@ window.onload = function(){
         dragView: true,  // do not allow dragging
         multiselect: true,
         navigationButtons: false,
-        selectable: true,
-        selectConnectedEdges: true,
+        selectable: false,
+        selectConnectedEdges: false,
     },
     width: "100%",   // This fills out the canvas size to the encompassing div
     height: "100%"
@@ -365,10 +365,10 @@ window.onload = function(){
   network.setOptions(options);  
 
 
-    network.on("click", function(params) {
+    network.on("hoverNode", function(params) {
       // Get the node ID
-      var nodeId = params.nodes[0];
-      if (nodeId) {
+      var nodeId = params.node;
+      if (nodeId && allNodes[nodeId].group != 'profile') {
         // Get the node title to show in the popup
         var popup = this.body.nodes[nodeId].options.title;
 
@@ -409,7 +409,7 @@ window.onload = function(){
         
         if (clickedNode){
             if (parseFloat(nodeId) < 100){
-            if (rating == 0){
+            if (rating == '-'){
                 new_color = {border: '#000000',
                                      background: 'white',
                                      hover: 'white',
@@ -493,7 +493,7 @@ window.onload = function(){
 
 
     // Empty and hide the div when click elsewhere
-    network.on("deselectNode", function (params) {
+    network.on("blurNode", function (params) {
         var selectors = document.getElementsByTagName('select') 
         for (let i = 0; i < selectors.length; i++){
             if (selectors[i].id != 'profile'){
@@ -590,7 +590,7 @@ window.onload = function(){
     var allNodes = nodes.get({returnType:"Object"});
     var myParent = document.body;
     //Create array of options to be added
-    var possible_ratings = [0, 1, 2, 3, 4, 5];
+    var possible_ratings = ['-', 1, 2, 3, 4, 5];
     var nodeId;
 
     for (nodeId in allNodes){
@@ -826,6 +826,10 @@ $("#mynetwork canvas").attr("id","canvas");
             <label class="field-label" for="email">Nome:</label>
             <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 300px" type="text" name="Nome" id="email" required>
           </div>
+          <div class="flex flex-col w-full mb-2">
+            <label class="field-label" for="email">Ano de Ingresso:</label>
+            <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 80px" type="text" name="Ingresso" id="ingresso" required>
+          </div>
           <div class="flex flex-col w-full mb-2" style="margin-right: 30px">
             <label class="field-label" for="profile">Semestre:</label>
             <select id='profile' name="Perfil" required>
@@ -840,6 +844,8 @@ $("#mynetwork canvas").attr("id","canvas");
               <option value="8">Semestre 8</option>
               <option value="9">Semestre 9</option>
               <option value="10">Semestre 10</option>
+              <option value="Concluído">Concluído</option>
+
             </select>
           </div>
           <div class="mb-2" style="align-items: center;">
