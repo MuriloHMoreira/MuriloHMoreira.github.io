@@ -446,111 +446,137 @@
     firstUpdatedColorRun = false;
     }
 
-var means;
-function fetchJSONData() {
-            fetch("./resources/averages.json")
-                .then((res) => {
-                    if (!res.ok) {
-                        throw new Error
-                            (`HTTP error! Status: ${res.status}`);
+// var means;
+// function fetchJSONData() {
+//             fetch("./resources/averages.json")
+//                 .then((res) => {
+//                     if (!res.ok) {
+//                         throw new Error
+//                             (`HTTP error! Status: ${res.status}`);
+//                     }
+//                     return res.json();
+//                 })
+//                 .then(function(data){
+//                     means = data;
+                    
+//                 })
+//                 .catch((error) => 
+//                        console.error("Unable to fetch data:", error));
+//         }
+//     fetchJSONData();
+
+
+
+const sheetLink = "https://sheets.googleapis.com/v4/spreadsheets/1Gvoq5VFR7C88r9_3MNJCv5IwOQtfz5-0tyyQatSl8U8/values/Sheet1/?key=AIzaSyDr-FYOktwiYjQs_5QmLnOFPx2x1ZOFIBw";
+async function fetchGSheetData(){
+    const response = await fetch(sheetLink);
+    const gsheetData = await response.json();
+    return gsheetData;
+};
+
+fetchGSheetData().then(gsheetData => {
+    filteredData = gsheetData["values"].slice(9).map(n => n.slice(-1)[0].replaceAll("NaN", "0").split(',').map(Number))
+    console.log("We are waiting")
+    ratings = []
+    filteredData[0].forEach(function(value, index){ratings.push(filteredData.map(function(value) { return value[index]; }));})
+    averageRatings = []
+    ratings.forEach(function(value){averageRatings.push(value.filter(item => item!==0).reduce((a, b) => (a + b), 0)/value.filter(item => item!==0).length)})
+    console.log(averageRatings)
+
+    var nodeId;
+
+    var allNodes = nodes.get({returnType:"Object"});
+    for (nodeId in allNodes){
+        var clickedNode = nodes.get(parseFloat(nodeId));
+        var rating = averageRatings[nodeId - 1]
+        var new_label = clickedNode.label + "\n Dificuldade: " + rating.toPrecision(2);
+
+        if (parseFloat(nodeId) < 100){
+        nodes.update({id: nodeId, rating: parseFloat(rating),
+                   label: new_label, color: 'white',
+                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+        if (rating == '-'){
+            new_color = {border: '#000000',
+                                 background: 'white',
+                                 hover: 'white',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                } 
+        else if (rating <= 1){
+            new_color = {border: '#000000',
+                                 background: 'LemonChiffon',
+                                 hover: 'LemonChiffon',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                } 
+        else if (rating <= 2){
+            new_color = {border: '#000000',
+                                 background: 'PaleGoldenRod',
+                                 hover: 'PaleGoldenRod',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                } 
+        else if (rating <= 3){
+            new_color = {border: '#000000',
+                                 background: 'yellow',
+                                 hover: 'yellow',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                } 
+
+        else if (rating <= 4){
+            new_color = {border: '#000000',
+                                 background: 'orangered',
+                                 hover: 'orangered',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
+                                } 
+
+        else if (rating <= 5){
+            new_color = {border: '#000000',
+                                 background: 'red',
+                                 hover: 'red',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'lightblue'
+                                  }};
+            nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
+                               color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
+                              }
+
                     }
-                    return res.json();
-                })
-                .then(function(data){
-                    means = data;
-                    var nodeId;
-                    var allNodes = nodes.get({returnType:"Object"});
-                    for (nodeId in allNodes){
-                        var clickedNode = nodes.get(parseFloat(nodeId));
-                        var rating = data["means"][0][nodeId - 1]
-                        var new_label = clickedNode.label + "\n Dificuldade: " + rating.toPrecision(2);
+                    }
+    });
 
-                        if (parseFloat(nodeId) < 100){
-                        nodes.update({id: nodeId, rating: parseFloat(rating),
-                                   label: new_label, color: 'white',
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
-                        if (rating == '-'){
-                new_color = {border: '#000000',
-                                     background: 'white',
-                                     hover: 'white',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
-                                   label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
-                                    } 
-            else if (rating <= 1){
-                new_color = {border: '#000000',
-                                     background: 'LemonChiffon',
-                                     hover: 'LemonChiffon',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
-                                   label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
-                                    } 
-            else if (rating <= 2){
-                new_color = {border: '#000000',
-                                     background: 'PaleGoldenRod',
-                                     hover: 'PaleGoldenRod',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
-                                   label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
-                                    } 
-            else if (rating <= 3){
-                new_color = {border: '#000000',
-                                     background: 'yellow',
-                                     hover: 'yellow',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
-                                   label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
-                                    } 
 
-            else if (rating <= 4){
-                new_color = {border: '#000000',
-                                     background: 'orangered',
-                                     hover: 'orangered',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
-                                   label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
-                                    } 
 
-            else if (rating <= 5){
-                new_color = {border: '#000000',
-                                     background: 'red',
-                                     hover: 'red',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
-                                   color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
-                                  }
 
-                        }
-                        }
-                })
-                .catch((error) => 
-                       console.error("Unable to fetch data:", error));
-        }
-    fetchJSONData();
 
 
 
