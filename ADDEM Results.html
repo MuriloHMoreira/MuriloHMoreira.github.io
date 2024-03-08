@@ -27,7 +27,7 @@
         border: 1px solid black;
     }
 </style>
-
+</head>
 <body style="overflow-x: auto; overflow-y:auto; font-family: 'IBM Plex Mono', monospace; background-color: #CCCAD4; margin-top: 30px; color: black;">
     <button class="btn btn-primary d-none" id="open_modal_button" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Button</button>
     <div class="container container-content">
@@ -47,10 +47,11 @@
         
 
 <div>
-</head>
 
-  <p><b>Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM):</b> Utilize o quadro abaixo para avaliar cada uma das disciplinas. Baseado no trabalho do Prof. Vinicius Sciuti no Simpósio sobre Ensino do PPGCEM.</p>
-  <p>Clique em cada uma delas e defina o nível de dificuldade entre <b>1 (Muito Fácil) a 5 (Muito Difícil)</b>. Para disciplinas não realizadas, mantenha o nível como "-". Após classificar suas disciplinas, observe o mapa de cor. Adicione seu nome e em qual semestre está antes de submeter.</p>
+
+  <p><b>Resultados da Avaliação da Dificuldade das Disciplinas de Engenharia de Materiais (ADDEM):</b> No quadro abaixo cada uma das disciplinas está ranqueada de acordo com a dificuldade média entre <b>1 (Muito Fácil) a 5 (Muito Difícil)</b>.</p>
+  <p>Caso já tenha respondido, <b><u>muito obrigado!</u></b>. Se quiser comparar com seus resultados clique no botão "Carregar Meus Resultados" e insira seu RA. Após isso, você poderá destacar as disciplinas que considerou mais fácil clicando no botão "Destacar Disciplinas Que Considerei Mais Fácil".</p>
+
 <!--   <div style="display: flex; flex-direction: column; position: absolute; right:0">
   <p><b>Compartilhar:</b></p>
   <img id="qrcode" src="./resources/qr_code_ADDEM.png" style="right:5px; margin-right: 30px; width: 150px;"></img>
@@ -62,12 +63,13 @@
     <span class="slider round"></span>
   </label> <b>Layout de Grafo </b>
   </span> -->
-  <!-- <div style="display: flex; position: absolute; right:0"> -->
-  <!-- <button id="loadPng" style="border-radius: 15px; right:0; margin-right: 15px;"><b>Salvar</b></button> -->
-  <!-- <button id="loadPng" style="border-radius: 15px; right:0; margin-right: 15px;"><b>Salvar</b></button> -->
-  <!-- </div> -->
 </div>
 <div id="mynetwork" style="height: 730px; width: 100%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
+
+<div style="display: flex; justify-content: center;">
+<button onclick="loadUser()" id="loadUserBtn" style="border-radius: 15px;"><b>Carregar Meus<br>Resultados</b></button>
+<button onclick="highlightEasier()" id="highlightEasierBtn" style="margin-left: 15px; border-radius: 15px; right:0; display: none;"><b>Destacar Disciplinas<br>Que Considerei Mais Fácil</b></button>
+</div>
 
 <script>
     var nodes = new vis.DataSet([
@@ -102,9 +104,9 @@
 
         {id: 25, rating: 0.0, shape: 'box',label: 'Mecânica Aplicada', url: 'http://www.google.com', x:600, y:82, group: 'other', perfil: 4},
         {id: 26, rating: 0.0, shape: 'box',label: 'Química Analítica \nExperimental A', url: 'http://www.google.com', x:600, y:490, group: 'chemistry', perfil: 4},
-        {id: 27, rating: 0.0, shape: 'box',label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:215, group: 'materials', perfil: 4},
+        {id: 27, rating: 0.0, shape: 'box',label: 'Termodinâmica \n dos Sólidos', url: 'http://www.google.com', x:600, y:230, group: 'materials', perfil: 4},
         {id: 28, rating: 0.0, shape: 'box',label: 'Ciência dos \nMateriais 2', url: 'http://www.google.com', x:600, y:400, group: 'materials', perfil: 4},
-        {id: 29, rating: 0.0, shape: 'box',label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:310, group: 'other', perfil: 4},
+        {id: 29, rating: 0.0, shape: 'box',label: 'Fenômenos de\n Transporte 6', url: 'http://www.google.com', x:600, y:315, group: 'other', perfil: 4},
 
         {id: 30, rating: 0.0, shape: 'box',label: 'Mecânica dos\n Sólidos', url: 'http://www.google.com', x:800, y:85, group: 'materials', perfil: 5},
         {id: 31, rating: 0.0, shape: 'box',label: 'Fundamentos\n em Reologia', url: 'http://www.google.com', x:800, y:190, group: 'materials', perfil: 5},
@@ -123,8 +125,8 @@
         {id: 42, rating: 0.0, shape: 'box',label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
         {id: 43, rating: 0.0, shape: 'box',label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
         {id: 44, rating: 0.0, shape: 'box',label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
-        {id: 45, rating: 0.0, shape: 'box',label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
-        {id: 46, rating: 0.0, shape: 'box',label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
+        {id: 45, rating: 0.0, shape: 'box',label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:730, group: 'metals', perfil: 7},
+        {id: 46, rating: 0.0, shape: 'box',label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:820, group: 'metals', perfil: 7},
         {id: 47, rating: 0.0, shape: 'box',label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
         {id: 48, rating: 0.0, shape: 'box',label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:305, group: 'polymers', perfil: 7},
         {id: 49, rating: 0.0, shape: 'box',label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
@@ -317,7 +319,8 @@
         other: {color: '#F7E771', font: {weight: 'bold', color: 'black'},},
         profile: {color: 'white'}
         },
-      edges: {arrows: {
+      edges: {chosen: false,
+              arrows: {
                 to: {
                      enabled: true,
                      scaleFactor: 0.5,
@@ -342,11 +345,12 @@
         hover: true,
         dragNodes: false,// do not allow dragging nodes
         zoomView: true, // do not allow zooming
-        dragView: true,  // do not allow dragging
+        dragView: true,
         multiselect: true,
         navigationButtons: false,
-        selectable: false,
+        selectable: true,
         selectConnectedEdges: false,
+        hoverConnectedEdges: false, 
     },
     width: "100%",   // This fills out the canvas size to the encompassing div
     height: "100%"
@@ -364,88 +368,7 @@
 
 
     var firstUpdatedColorRun = true;
-    function updateColors() {
-    var allNodes = nodes.get({returnType:"Object"});
-    var nodeId;
-    for (nodeId in allNodes){
-        network.body.nodes[nodeId].options.font.color = "black";
-        clickedNode = nodes.get({returnType:"Object"})[parseFloat(nodeId)]
-        console.log(allNodes[nodeId])
-        if (firstUpdatedColorRun){
-            var new_label = clickedNode.label + "\n Dificuldade: " + rating;
-        }
-        else{
-            var new_label = clickedNode.label.split(':')[0] + ": " + rating;
-        }
-        
-        if (clickedNode){
-            if (parseFloat(nodeId) < 100){
-            var rating = clickedNode.rating
-            console.log(rating)
-            if (rating == '-'){
-                new_color = {border: '#000000',
-                                     background: 'white',
-                                     hover: 'white',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                    } 
-            else if (rating <= 1){
-                new_color = {border: '#000000',
-                                     background: 'LemonChiffon',
-                                     hover: 'LemonChiffon',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                    } 
-            else if (rating <= 2){
-                new_color = {border: '#000000',
-                                     background: 'PaleGoldenRod',
-                                     hover: 'PaleGoldenRod',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                    } 
-            else if (rating <= 3){
-                new_color = {border: '#000000',
-                                     background: 'yellow',
-                                     hover: 'yellow',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                    } 
-
-            else if (rating <= 4){
-                new_color = {border: '#000000',
-                                     background: 'orangered',
-                                     hover: 'orangered',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                    } 
-
-            else if (rating <= 5){
-                new_color = {border: '#000000',
-                                     background: 'red',
-                                     hover: 'red',
-                                     highlight: {
-                                     border: '#2B7CE9',
-                                     background: 'lightblue'
-                                      }};
-                                  }
-        
-        ;
-    }}  
-
-      };
-    firstUpdatedColorRun = false;
-    }
-
+    
 // var means;
 // function fetchJSONData() {
 //             fetch("./resources/averages.json")
@@ -474,24 +397,68 @@ async function fetchGSheetData(){
     return gsheetData;
 };
 
+var gsheetDataOutside;
+
+function getUserRatings(RA, data){
+    if (data["values"].filter(n => n[3] == RA).length > 0){
+        return data["values"].filter(n => n[3] == RA)[0].slice(-1)[0].replaceAll("NaN", "0").split(',').map(Number)
+    }
+    else{
+        return
+    }
+}
+var userRatings;
+var userLoaded = false;
+function addUserRatings(RA, data){
+    userRatings = getUserRatings(RA, data)
+    for (nodeId in allNodes){
+        var clickedNode = nodes.get(parseFloat(nodeId));
+        if (parseFloat(nodeId) < 100){
+        var rating = userRatings[nodeId - 1]
+        // console.log(nodeId, rating)
+        if (rating > 0) {
+            var new_label = clickedNode.label + "\n Minha Dificuldade: " + rating.toPrecision(2);
+        }
+        else{
+            var new_label = clickedNode.label + "\n Minha Dificuldade: -";
+        }
+        nodes.update({id: nodeId, rating: clickedNode.rating,
+                   label: new_label, color: clickedNode.color,
+                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+        }
+    }
+    userLoaded = true
+    highlightEasierBtn = document.getElementById('highlightEasierBtn');
+    highlightEasierBtn.style.display = "block";
+
+}
+
+var averageRatingsOutside;
 fetchGSheetData().then(gsheetData => {
-    filteredData = gsheetData["values"].slice(9).map(n => n.slice(-1)[0].replaceAll("NaN", "0").split(',').map(Number))
-    console.log("We are waiting")
-    ratings = []
+    gsheetDataOutside = gsheetData;
+    filteredData = gsheetData["values"].slice(9).map(n => n.slice(-1)[0].replaceAll("NaN", "0").split(',').map(Number));
+    // console.log("We are waiting")
+    ratings = [];
     filteredData[0].forEach(function(value, index){ratings.push(filteredData.map(function(value) { return value[index]; }));})
-    averageRatings = []
-    ratings.forEach(function(value){averageRatings.push(value.filter(item => item!==0).reduce((a, b) => (a + b), 0)/value.filter(item => item!==0).length)})
-    console.log(averageRatings)
+    averageRatings = [];
+    ratings.forEach(function(value){averageRatings.push(value.filter(item => item!==0).reduce((a, b) => (a + b), 0)/value.filter(item => item!==0).length)});
+    nResponses = [];
+    ratings.forEach(function(value){nResponses.push(value.filter(item => item!==0).reduce((a, b) => 0, 0) + value.filter(item => item!==0).length)})
+    // console.log(averageRatings)
+    averageRatingsOutside = averageRatings;
 
     var nodeId;
 
     var allNodes = nodes.get({returnType:"Object"});
     for (nodeId in allNodes){
         var clickedNode = nodes.get(parseFloat(nodeId));
-        var rating = averageRatings[nodeId - 1]
-        var new_label = clickedNode.label + "\n Dificuldade: " + rating.toPrecision(2);
-
         if (parseFloat(nodeId) < 100){
+        var rating = averageRatings[nodeId - 1];
+        var nr = nResponses[nodeId - 1];
+        // console.log(nodeId, rating)
+        var new_label = clickedNode.label + "\n # de Respostas: " + nr + "\n Dificuldade Média: " + rating.toPrecision(2);
+
+        
         nodes.update({id: nodeId, rating: parseFloat(rating),
                    label: new_label, color: 'white',
                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
@@ -501,7 +468,7 @@ fetchGSheetData().then(gsheetData => {
                                  hover: 'white',
                                  highlight: {
                                  border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 background: 'white'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                label: new_label, color: new_color,
@@ -512,8 +479,8 @@ fetchGSheetData().then(gsheetData => {
                                  background: 'LemonChiffon',
                                  hover: 'LemonChiffon',
                                  highlight: {
-                                 border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 border: '#000000',
+                                 background: 'LemonChiffon'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                label: new_label, color: new_color,
@@ -524,8 +491,8 @@ fetchGSheetData().then(gsheetData => {
                                  background: 'PaleGoldenRod',
                                  hover: 'PaleGoldenRod',
                                  highlight: {
-                                 border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 border: '#000000',
+                                 background: 'PaleGoldenRod'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                label: new_label, color: new_color,
@@ -536,8 +503,8 @@ fetchGSheetData().then(gsheetData => {
                                  background: 'yellow',
                                  hover: 'yellow',
                                  highlight: {
-                                 border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 border: '#000000',
+                                 background: 'yellow'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                label: new_label, color: new_color,
@@ -549,8 +516,8 @@ fetchGSheetData().then(gsheetData => {
                                  background: 'orangered',
                                  hover: 'orangered',
                                  highlight: {
-                                 border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 border: '#000000',
+                                 background: 'orangered'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating),
                                label: new_label, color: new_color,
@@ -562,8 +529,8 @@ fetchGSheetData().then(gsheetData => {
                                  background: 'red',
                                  hover: 'red',
                                  highlight: {
-                                 border: '#2B7CE9',
-                                 background: 'lightblue'
+                                 border: '#000000',
+                                 background: 'red'
                                   }};
             nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
                                color: new_color,
@@ -572,13 +539,62 @@ fetchGSheetData().then(gsheetData => {
 
                     }
                     }
+
+
     });
 
+function resetHighlight(){
+    var nodeId;
+    var allNodes = nodes.get({returnType:"Object"});
+    for (nodeId in allNodes){
+        var clickedNode = nodes.get(parseFloat(nodeId));
+        if (parseFloat(nodeId) < 100){
+                nodes.update({id: clickedNode.id, borderWidth: 1, borderWidthSelected: 2, color: {border: 'black'}})
+            } 
+            else {
 
+            }
+        }
+    }
 
+function highlightEasier() {
+    var nodeId;
+    var allNodes = nodes.get({returnType:"Object"});
+    for (nodeId in allNodes){
+        var clickedNode = nodes.get(parseFloat(nodeId));
+        if (parseFloat(nodeId) < 100){
+            if (userRatings[nodeId - 1] < averageRatingsOutside[nodeId - 1] && userRatings[nodeId - 1] > 0){
+                nodes.update({id: clickedNode.id, borderWidth: 5, borderWidthSelected: 5, color: {border: 'green'},
+                                })
+                              }
+            } 
+            else {
 
+            }
+        }
+    }
 
+function loadUser(){
+    var RA = prompt("Insira seu RA");
+    if (getUserRatings(RA, gsheetDataOutside) != undefined){
+        addUserRatings(RA, gsheetDataOutside);
+    }
+    else{
+        alert ('RA não encontrado!');
 
+    }
+
+}
+
+network.on("click", function(params) {
+    if (params.nodes[0] > 0){
+        // console.log("Aha, you clicked on a Node!")
+    }
+    else{
+        // console.log("Newbie, you clicked outside a Node!")
+        resetHighlight()
+    }
+})
 
   // network.on("doubleClick", function (params) {
   //     if (params.nodes.length === 1) {
@@ -662,29 +678,6 @@ fetchGSheetData().then(gsheetData => {
     }};
 
 
-
-
-    // Create selectors
-    var allNodes = nodes.get({returnType:"Object"});
-    var myParent = document.body;
-    //Create array of options to be added
-    var possible_ratings = ['-', 1, 2, 3, 4, 5];
-    var nodeId;
-
-    for (nodeId in allNodes){
-      //Create and append select list
-      var selectList = document.createElement("text");
-      selectList.id = "rank_selection_" + nodeId;
-      document.body.appendChild(selectList);
-      //Create and append the options
-      for (let j = 0; j < possible_ratings.length; j++) {
-          var option = document.createElement("option");
-          option.value = possible_ratings[j];
-          option.text = String(possible_ratings[j]);
-          selectList.appendChild(option);
-      }
-      selectList.style.display = "none";
-    }
 
 
     network.on("afterDrawing", drawDivisions);
