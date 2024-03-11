@@ -804,7 +804,7 @@ $("#mynetwork canvas").attr("id","canvas");
      */
     $("#loadPng").on('click',function () {
         var mynetworkCanvas = document.getElementById("canvas");
-        console.log('mynetworkCanvas',mynetworkCanvas);
+        // console.log('mynetworkCanvas',mynetworkCanvas);
         mynetworkCanvas.toBlob(function(blob) {
             var a = document.createElement("a");
             document.body.appendChild(a);
