@@ -75,6 +75,11 @@ window.onload = function(){
 </div>
 <div id="mynetwork" style="height: 730px; width: 100%; margin-left: 0; margin-right: 0; border-width: 2px"></div>
 
+<div style="display: flex; justify-content: center;">
+<button onclick="loadUser()" id="loadUserBtn" style="border-radius: 5px; margin-top: 8px"><b>Carregar Meus Resultados</b></button>
+</div>
+
+
 <script>
     var nodes = new vis.DataSet([
         {id: 1, rating: 0, label: 'Cálculo 1', url: 'http://www.google.com', x:0, y:30, group: 'math', perfil: 1},
@@ -126,33 +131,33 @@ window.onload = function(){
         {id: 40, rating: 0, label: 'Processamento de\n Mat. Cerâmicos', url: 'http://www.google.com', x:1000, y:590, group: 'materials', perfil: 6},
         {id: 41, rating: 0, label: 'Processamento de\n Mat. Metálicos', url: 'http://www.google.com', x:1000, y:680, group: 'materials', perfil: 6},
 
-        {id: 44, rating: 0, label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
-        {id: 45, rating: 0, label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
-        {id: 46, rating: 0, label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
-        {id: 47, rating: 0, label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
-        {id: 50, rating: 0, label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
-        {id: 49, rating: 0, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
+        {id: 42, rating: 0, label: 'Intr. Planejamento e \nAnálise. Estat. de Exps.', url: 'http://www.google.com', x:1200, y:-25, group: 'other', perfil: 7},
+        {id: 43, rating: 0, label: 'Ensaios de\n Materiais', url: 'http://www.google.com', x:1200, y:390, group: 'materials', perfil: 7},
+        {id: 44, rating: 0, label: 'Caracterização de\n Materiais', url: 'http://www.google.com', x:1200, y:475, group: 'materials', perfil: 7},
+        {id: 45, rating: 0, label: 'Metalurgia Mecânica', url: 'http://www.google.com', x:1200, y:720, group: 'metals', perfil: 7},
+        {id: 46, rating: 0, label: 'Metalurgia Física', url: 'http://www.google.com', x:1200, y:780, group: 'metals', perfil: 7},
+        {id: 47, rating: 0, label: 'Processamento de\n Mat. Cer. Exp.', url: 'http://www.google.com', x:1200, y:645, group: 'ceramics', perfil: 7},
         {id: 48, rating: 0, label: 'Síntese de\n Polímeros', url: 'http://www.google.com', x:1200, y:305, group: 'polymers', perfil: 7},
-        {id: 51, rating: 0, label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
-        {id: 52, rating: 0, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:210, group: 'ceramics', perfil: 7},
-        {id: 53, rating: 0, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:122.5, group: 'other', perfil: 7},
-        {id: 54, rating: 0, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:560, group: 'materials', perfil: 7},
+        {id: 49, rating: 0, label: 'Análise de Investimentos', url: 'http://www.google.com', x:1200, y:50, group: 'other', perfil: 7},
+        {id: 50, rating: 0, label: 'Form. Cinética \n e Eq. em Mat. Cer.', url: 'http://www.google.com', x:1200, y:210, group: 'ceramics', perfil: 7},
+        {id: 51, rating: 0, label: 'Sociologia \nIndust. e do Trab.', url: 'http://www.google.com', x:1200, y:122.5, group: 'other', perfil: 7},
+        {id: 52, rating: 0, label: 'Projetos em \n Engenharia de Materiais', url: 'http://www.google.com', x:1200, y:560, group: 'materials', perfil: 7},
 
-        {id: 55, rating: 0, label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
-        {id: 56, rating: 0, label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:520, group: 'metals', perfil: 8},
-        {id: 57, rating: 0, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
-        {id: 58, rating: 0, label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
-        {id: 59, rating: 0, label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
-        {id: 60, rating: 0, label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
+        {id: 53, rating: 0, label: 'Seleção de\n Materiais', url: 'http://www.google.com', x:1400, y:300, group: 'materials', perfil: 8},
+        {id: 54, rating: 0, label: 'Tratamentos \n Térmicos', url: 'http://www.google.com', x:1400, y:520, group: 'metals', perfil: 8},
+        {id: 55, rating: 0, label: 'Props. Mec. e Termomec. \n de Mat. Cerâmicos', url: 'http://www.google.com', x:1400, y:610, group: 'ceramics', perfil: 8},
+        {id: 56, rating: 0, label: 'Processamento de \n Termoplásticos', url: 'http://www.google.com', x:1400, y:200, group: 'polymers', perfil: 8},
+        {id: 57, rating: 0, label: 'Estágio PIEEG', url: 'http://www.google.com', x:1400, y:100, group: 'materials', perfil: 8},
+        {id: 58, rating: 0, label: 'Teroria das \n Organizações', url: 'http://www.google.com', x:1400, y:0, group: 'other', perfil: 8},
 
-        {id: 61, rating: 0, label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
-        {id: 62, rating: 0, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:90, group: 'materials', perfil: 9},
-        {id: 68, rating: 0, label: 'Processamento de \n Elastômeros e Termofixos', url: 'http://www.google.com', x:1600, y:180, group: 'polymers', perfil: 9},
-        {id: 64, rating: 0, label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:270, group: 'polymers', perfil: 9},
-        {id: 65, rating: 0, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:360, group: 'ceramics', perfil: 9},
-        {id: 66, rating: 0, label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:450, group: 'ceramics', perfil: 9},
-        {id: 67, rating: 0, label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:540, group: 'metals', perfil: 9},
-        {id: 63, rating: 0, label: 'Fundição', url: 'http://www.google.com', x:1600, y:620, group: 'metals', perfil: 9},
+        {id: 59, rating: 0, label: 'Gestão da \n Qualidade 2', url: 'http://www.google.com', x:1600, y:0, group: 'other', perfil: 9},
+        {id: 60, rating: 0, label: 'Trabalho de \n Conclusão de Curso', url: 'http://www.google.com', x:1600, y:90, group: 'materials', perfil: 9},
+        {id: 61, rating: 0, label: 'Processamento de \n Elastômeros e Termofixos', url: 'http://www.google.com', x:1600, y:180, group: 'polymers', perfil: 9},
+        {id: 62, rating: 0, label: 'Engenharia de\n Polímeros', url: 'http://www.google.com', x:1600, y:270, group: 'polymers', perfil: 9},
+        {id: 63, rating: 0, label: 'Props. Funcionais e\n Aplic. de Mat. Ceram.', url: 'http://www.google.com', x:1600, y:360, group: 'ceramics', perfil: 9},
+        {id: 64, rating: 0, label: 'Cerâmicas \n Refratárias', url: 'http://www.google.com', x:1600, y:450, group: 'ceramics', perfil: 9},
+        {id: 65, rating: 0, label: 'Conformação \n Mecânica', url: 'http://www.google.com', x:1600, y:540, group: 'metals', perfil: 9},
+        {id: 66, rating: 0, label: 'Fundição', url: 'http://www.google.com', x:1600, y:620, group: 'metals', perfil: 9},
 
         {id: 101, label: 'Semestre 1', x:0, y:-100, group: 'profile'},
         {id: 102, label: 'Semestre 2', x:200, y:-100, group: 'profile'},
@@ -367,6 +372,7 @@ window.onload = function(){
 
     network.on("hoverNode", function(params) {
       // Get the node ID
+      var allNodes = nodes.get({returnType:"Object"});
       var nodeId = params.node;
       if (nodeId && allNodes[nodeId].group != 'profile') {
         // Get the node title to show in the popup
@@ -383,7 +389,7 @@ window.onload = function(){
         nodeX += rect.left;
         nodeY += rect.top - (document.body.getBoundingClientRect().top - 30);
         
-        console.log("rank_selection_" + nodeId)
+        // console.log("rank_selection_" + nodeId)
         document.getElementById("rank_selection_" + nodeId).style.display = "block";
         // Place the div
         document.getElementById("rank_selection_" + nodeId).style.position = "absolute";
@@ -417,7 +423,7 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
@@ -429,7 +435,7 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
@@ -441,7 +447,7 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
@@ -453,7 +459,7 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
                                    label: new_label, color: new_color,
                                    x:clickedNode.x, y:clickedNode.y, shape: 'box'})
                                     } 
@@ -466,9 +472,9 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating),
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
                                    label: new_label, color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
                                     } 
 
             else if (rating == 5){
@@ -479,9 +485,9 @@ window.onload = function(){
                                      border: '#2B7CE9',
                                      background: 'lightblue'
                                       }};
-                nodes.update({id: clickedNode.id, rating: parseFloat(rating), label: new_label, 
+                nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating), label: new_label, 
                                    color: new_color,
-                                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+                                   x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
                                   }
         
         ;
@@ -811,6 +817,168 @@ $("#mynetwork canvas").attr("id","canvas");
      $("#resetNet").on('click', resetNetwork);
 
 
+
+const sheetLink = "https://sheets.googleapis.com/v4/spreadsheets/1Gvoq5VFR7C88r9_3MNJCv5IwOQtfz5-0tyyQatSl8U8/values/Sheet1/?key=AIzaSyDr-FYOktwiYjQs_5QmLnOFPx2x1ZOFIBw";
+async function fetchGSheetData(){
+    const response = await fetch(sheetLink);
+    const gsheetData = await response.json();
+    return gsheetData;
+};
+
+var gsheetDataOutside;
+
+function getUserData(RA, data){
+    if (data["values"].filter(n => n[3] == RA).length > 0){
+        var ratings = data["values"].filter(n => n[3] == RA)[0].slice(-1)[0].replaceAll("NaN", "0").split(',').map(Number);
+        var name = gsheetDataOutside["values"].filter(n => n[3] == RA)[0].slice(2)[0];
+        var ra = gsheetDataOutside["values"].filter(n => n[3] == RA)[0].slice(3)[0];
+        var semester = gsheetDataOutside["values"].filter(n => n[3] == RA)[0].slice(4)[0];
+        var year = gsheetDataOutside["values"].filter(n => n[3] == RA)[0].slice(5)[0];
+        var data = {'name': name, 'ra': ra, 'year': year, 'semester': semester, 'ratings': ratings};
+        return data
+    }
+    else{
+        return
+    }
+}
+var userRatings;
+var userLoaded = false;
+function addUserRatings(RA, data){
+    var allNodes = nodes.get({returnType:"Object"});
+    userData = getUserData(RA, data)
+    // console.log(userData)
+    // userName = userData['name']
+    // userRa = userData['ra']
+    // userYear = userData['year']
+    // userSemester = userData['semester']
+    userRatings = userData['ratings']
+    // document.getElementById("email").value = userName;
+    // document.getElementById("ingresso").value = userYear;
+    // setSelectBoxByText("profile", userSemester)
+    for (nodeId in allNodes){
+        var clickedNode = nodes.get(parseFloat(nodeId));
+        if (parseFloat(nodeId) < 100){
+            var rating = userRatings[nodeId - 1]
+            if (rating == '0'){
+                rating = '-'
+            }
+            document.getElementById("rank_selection_" + nodeId).value = rating; 
+
+            // console.log(nodeId, rating)
+            var new_label = clickedNode.label.split(':')[0] + ": " + rating;
+        nodes.update({id: parseInt(nodeId), rating: parseFloat(rating),
+                   label: new_label, color: 'white',
+                   x:clickedNode.x, y:clickedNode.y, shape: 'box'})
+        if (rating == '-'){
+            new_color = {border: '#000000',
+                                 background: 'white',
+                                 hover: 'white',
+                                 highlight: {
+                                 border: '#2B7CE9',
+                                 background: 'white'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'black'}})
+                                } 
+        else if (rating <= 1){
+            new_color = {border: '#000000',
+                                 background: 'LemonChiffon',
+                                 hover: 'LemonChiffon',
+                                 highlight: {
+                                 border: '#000000',
+                                 background: 'LemonChiffon'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'black'}})
+                                } 
+        else if (rating <= 2){
+            new_color = {border: '#000000',
+                                 background: 'PaleGoldenRod',
+                                 hover: 'PaleGoldenRod',
+                                 highlight: {
+                                 border: '#000000',
+                                 background: 'PaleGoldenRod'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'black'}})
+                                } 
+        else if (rating <= 3){
+            new_color = {border: '#000000',
+                                 background: 'yellow',
+                                 hover: 'yellow',
+                                 highlight: {
+                                 border: '#000000',
+                                 background: 'yellow'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'black'}})
+                                } 
+
+        else if (rating <= 4){
+            new_color = {border: '#000000',
+                                 background: 'orangered',
+                                 hover: 'orangered',
+                                 highlight: {
+                                 border: '#000000',
+                                 background: 'orangered'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating),
+                               label: new_label, color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
+                                } 
+
+        else if (rating <= 5){
+            new_color = {border: '#000000',
+                                 background: 'red',
+                                 hover: 'red',
+                                 highlight: {
+                                 border: '#000000',
+                                 background: 'red'
+                                  }};
+            nodes.update({id: parseInt(clickedNode.id), rating: parseFloat(rating), label: new_label, 
+                               color: new_color,
+                               x:clickedNode.x, y:clickedNode.y, shape: 'box', font: {color: 'white'}})
+                              }
+
+
+
+        }
+    }
+    userLoaded = true;
+    document.getElementById('submit').removeAttribute('disabled');
+
+}
+
+var averageRatingsOutside;
+
+function setSelectBoxByText(eid, etxt) {
+    var eid = document.getElementById(eid);
+    for (var i = 0; i < eid.options.length; ++i) {
+        if (eid.options[i].text === etxt)
+            eid.options[i].selected = true;
+    }
+}
+
+function loadUser(){
+    fetchGSheetData().then(gsheetData => {
+    gsheetDataOutside = gsheetData;
+    var RA = prompt("Insira seu RA");
+    if (getUserData(RA, gsheetDataOutside) != undefined){
+        addUserRatings(RA, gsheetDataOutside);
+    }
+    else{
+        alert ('RA não encontrado!');
+
+    }
+    });
+
+
+}
+
 </script>
 
 
@@ -825,6 +993,10 @@ $("#mynetwork canvas").attr("id","canvas");
           <div class="flex flex-col w-full mb-2">
             <label class="field-label" for="email">Nome:</label>
             <input class="bg-green-100 px-2 py-1 outline-none" style="margin-right: 30px; width: 300px" type="text" name="Nome" id="email" required>
+          </div>
+          <div class="flex flex-col w-full mb-2">
+            <label class="field-label" for="email">RA:</label>
+            <input class="bg-green-100 px-2 py-1 outline-none"  style="text-align:right; margin-right: 30px; width: 120px" type="text" name="RA" id="ra" required>
           </div>
           <div class="flex flex-col w-full mb-2">
             <label class="field-label" for="email">Ano de Ingresso:</label>
@@ -898,15 +1070,25 @@ $("#mynetwork canvas").attr("id","canvas");
       newField.value  = nodesRating.filter(function( element ) {
                             return element !== undefined;
             });
-      console.log(form)
+      // console.log(form)
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => { 
               btn.disabled = false
-      btn.innerHTML = "Submit"
-            alert('Success!', response) })
+      btn.innerHTML = "Enviado!"
+            //write this above first
+            let a=document.createElement('a');
+            a.target='_self';
+            a.href='https://murilohmoreira.github.io/ADDEM%20Results';
+
+            //then use this code for alert
+            if (window.confirm('Caso queira  ver os resultados clique "Ok"'))
+            {
+            a.click();
+            };
+        })
         .catch(error => {
                      btn.disabled = false
-      btn.innerHTML = "Submit"
+      btn.innerHTML = "Enviado"
             alert('Error!', error.message)})
     })
 </script>
