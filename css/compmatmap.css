@@ -106,6 +106,7 @@
         border: 1px dashed; black;
         border-width: 4px!important;
         border-radius: 20px;
+        z-index: 10000;
     }
 
 .divNode{

@@ -74,10 +74,10 @@ smooth: false
 physics: false,
 interaction: {
     hover: true,
-    dragNodes: true,// do not allow dragging nodes
-    zoomView: true, // do not allow zooming
+    dragNodes: false,// do not allow dragging nodes
+    zoomView: false, // do not allow zooming
     dragView: false,  // do not allow dragging
-    multiselect: true,
+    multiselect: false,
     navigationButtons: false,
     selectable: true,
     selectConnectedEdges: true,
@@ -284,8 +284,8 @@ smooth: false
 physics: true,
 interaction: {
     hover: true,
-    dragNodes: true,// do not allow dragging nodes
-    zoomView: true, // do not allow zooming
+    dragNodes: false,// do not allow dragging nodes
+    zoomView: false, // do not allow zooming
     dragView: true,  // do not allow dragging
     multiselect: true,
     navigationButtons: true,
