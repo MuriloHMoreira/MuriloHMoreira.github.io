@@ -75,7 +75,7 @@ physics: false,
 interaction: {
     hover: true,
     dragNodes: true,// do not allow dragging nodes
-    zoomView: false, // do not allow zooming
+    zoomView: true, // do not allow zooming
     dragView: false,  // do not allow dragging
     multiselect: true,
     navigationButtons: false,
@@ -87,6 +87,12 @@ height: "100%"
 };
 var network = new vis.Network(container, data, options);
 
+// Get range
+function getRange(){
+  for (nodeId in allNodes){
+
+  }
+}
 
 // Create info windows
 var allNodes = nodes.get({returnType:"Object"});
@@ -161,9 +167,33 @@ network.on("zoom", function(){
 
 
 network.on("release", function(){
-  network.fit()
+  // network.fit()
 })
 
+
+function zoomin(zoomstep) {
+    network.setScale(network.getScale() + zoomstep);
+}
+
+function zoomout(zoomstep) {
+    network.setScale(network.getScale() - zoomstep);
+}
+
+vis.Network.prototype.setScale = function (scale) {
+    var options = {
+        nodes: []
+    };
+    // var range = this.view._getRange(options.nodes);
+    // var center = this.view._findCenter(range);
+    // var center = network.view.canvas.canvasViewCenter;
+    var center = network.view.getViewPosition();
+    var animationOptions = {
+        position: center,
+        scale: scale,
+        animation: true
+    };
+    this.view.moveTo(animationOptions);
+};
 
 function hideNodesInfo(params) {
 document.getElementById("page-langs").style.background = 'slateblue';
@@ -258,9 +288,10 @@ interaction: {
     zoomView: true, // do not allow zooming
     dragView: true,  // do not allow dragging
     multiselect: true,
-    navigationButtons: false,
+    navigationButtons: true,
     selectable: true,
     selectConnectedEdges: true,
+
 },
 width: "100%",   // This fills out the canvas size to the encompassing div
 height: "100%"
