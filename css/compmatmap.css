@@ -13,8 +13,9 @@
   height: 400px;
   background: #ffffff;
   opacity: 0.5;
-  z-index: 10000;
+  z-index: 100000000;
   font-family: 'IBM Plex Mono';
+  display: inline;
 }
 .hero-body {
   position: relative;

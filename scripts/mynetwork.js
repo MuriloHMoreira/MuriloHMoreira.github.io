@@ -171,6 +171,11 @@ network.on("release", function(){
 })
 
 
+
+network.on("blurNode", function(){
+  // network.fit()
+})
+
 function zoomin(zoomstep) {
     network.setScale(network.getScale() + zoomstep);
 }
@@ -205,6 +210,7 @@ var nodeId;
 for (nodeId in allNodes){
   //Create and append select list
   document.getElementById("node_info_" + nodeId).style.display = "none";
+  document.getElementById("bubble-circle-div").style.zIndex = "1000000000";
 }
 };
 network.on("hoverNode", showNodeInfo);
@@ -302,9 +308,3 @@ network.on("blurNode", hideNodesInfo);
 
 network.fit()
 
-if (window.innerWidth > 1000){
-  zoomin(0.7);
-}
-else if (window.innerWidth < 500){
-  zoomin(0.5)
-}

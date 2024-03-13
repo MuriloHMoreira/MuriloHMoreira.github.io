@@ -44,7 +44,7 @@
       }
     },
     interactivity: {
-        detectsOn: "canvas",
+        detectsOn: "page",
       events: {
         onHover: {
           enable: true,
