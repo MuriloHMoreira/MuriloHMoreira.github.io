@@ -79,9 +79,9 @@
         },
       }
     },
-    background: {
-      color: "#000035"
-    },
+    // background: {
+    //   color: "#000035"
+    // },
 
 
   }

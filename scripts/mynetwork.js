@@ -1,15 +1,34 @@
+function objectMap(obj, fn) {
+  var arrayData = [];
+  Object.keys(obj).forEach((key) => {
+    arrayData.push(fn(obj[key]));
+  });
+  return arrayData;
+}
+
 var nodes = new vis.DataSet([
-    {id: 1, label: 'Linguagem de\nProgramação', url: 'http://www.google.com', x:200, y:-70, group: 'programming'},
-    {id: 2, label: 'Bash/Shell', url: 'http://www.google.com', font:{color: "white"}, shape:'image', image: "assets/img/Bash-logo.svg", x:200, y:60, group: 'bash'},
-    {id: 3, label: 'Automatização', url: 'http://www.google.com', x:0, y:60, group: 'bash'},
-    {id: 4, label: 'Rodar Programas', url: 'http://www.google.com', x:400, y:60, group: 'bash'},
-    {id: 20, label: 'Python', url: 'http://www.google.com', shape:'image', image: "assets/img/Python-logo.svg", x:200, y:250, group: 'python_funs'},
-    {id: 30, label: 'Gráficos', url: 'http://www.google.com', x:0, y:200, group: 'python_funs'},
-    {id: 40, label: 'Processamento\nde Arquivos', url: 'http://www.google.com', x:0, y:250, group: 'python_funs'},
-    {id: 50, label: 'Cálculos\nAvançados', url: 'http://www.google.com', x:0, y:300, group: 'python_funs'},
-    {id: 60, label: 'Otimização', url: 'http://www.google.com', x:400, y:200, group: 'python_funs'},
-    {id: 70, label: 'Ler/Escrever\nDados', url: 'http://www.google.com', x:400, y:250, group: 'python_funs'},
-    {id: 80, label: 'Aplicações\nEspecíficas', url: 'http://www.google.com', x:400, y:300, group: 'python_funs'},
+    {id: 1, label: 'Linguagem de\nProgramação', url: 'http://www.google.com',
+     x:200, y:0, group: 'programming'},
+    {id: 2, label: 'Bash/Shell', url: 'http://www.google.com', font:{color: "white"}, shape:'image', image: "assets/img/Bash-logo.svg",
+     x:200, y:130, group: 'bash'},
+    {id: 3, label: 'Automatização', url: 'http://www.google.com',
+     x:0, y:130, group: 'bash'},
+    {id: 4, label: 'Rodar Programas', url: 'http://www.google.com',
+     x:400, y:130, group: 'bash'},
+    {id: 20, label: 'Python', url: 'http://www.google.com', shape:'image', image: "assets/img/Python-logo.svg",
+     x:200, y:320, group: 'python_funs'},
+    {id: 30, label: 'Gráficos', url: 'http://www.google.com',
+     x:0, y:270, group: 'python_funs'},
+    {id: 40, label: 'Processamento\nde Arquivos', url: 'http://www.google.com',
+     x:0, y:320, group: 'python_funs'},
+    {id: 50, label: 'Cálculos\nAvançados', url: 'http://www.google.com',
+     x:0, y:370, group: 'python_funs'},
+    {id: 60, label: 'Otimização', url: 'http://www.google.com',
+     x:400, y:270, group: 'python_funs'},
+    {id: 70, label: 'Ler/Escrever\nDados', url: 'http://www.google.com',
+     x:400, y:320, group: 'python_funs'},
+    {id: 80, label: 'Aplicações\nEspecíficas', url: 'http://www.google.com',
+     x:400, y:370, group: 'python_funs'},
     ]);
 
 var edges = new vis.DataSet([
@@ -75,8 +94,8 @@ physics: false,
 interaction: {
     hover: true,
     dragNodes: false,// do not allow dragging nodes
-    zoomView: false, // do not allow zooming
-    dragView: false,  // do not allow dragging
+    zoomView: true, // do not allow zooming
+    dragView: true,  // do not allow dragging
     multiselect: false,
     navigationButtons: false,
     selectable: true,
@@ -160,10 +179,117 @@ function showNodeInfo(params) {
         document.getElementById("page-langs").style.transitionProperty += ', background'
       }
 };
+var nodes_xmin;
+var nodes_xmax;
+var nodes_ymin;
+var nodes_ymax;
+
+var firstResize = true;
+// To make it work when scaled, we need to scale the canvas size properly
+function resizeFunction(){
+  if (firstResize){
+    network.fit()
+    firstResize = false;
+    canvasMarginOrig = 2
+    canvasWidthOrig = network.canvas.frame.canvas.clientWidth * 1 / network.getScale()
+    canvasHeightOrig = network.canvas.frame.canvas.clientHeight * 1 / network.getScale()
+    canvasOriginOrig = network.getViewPosition()
+    canvasXMinOrig = - canvasWidthOrig / 2 + canvasOriginOrig['x'] + canvasMarginOrig
+    canvasXMaxOrig = canvasWidthOrig / 2 + canvasOriginOrig['x'] - canvasMarginOrig
+    canvasYMaxOrig = - canvasHeightOrig / 2 + canvasOriginOrig['y'] + canvasMarginOrig
+    canvasYMinOrig = canvasHeightOrig / 2 + canvasOriginOrig['y'] - canvasMarginOrig
+  }
+  console.log('released')
+  canvasMargin = 2
+  canvasWidth = network.canvas.frame.canvas.clientWidth * 1 / network.getScale()
+  canvasHeight = network.canvas.frame.canvas.clientHeight * 1 / network.getScale()
+  canvasOrigin = network.getViewPosition()
+  canvasXMin = - canvasWidth / 2 + canvasOrigin['x'] + canvasMargin
+  canvasXMax = canvasWidth / 2 + canvasOrigin['x'] - canvasMargin
+  canvasYMax = - canvasHeight / 2 + canvasOrigin['y'] + canvasMargin
+  canvasYMin = canvasHeight / 2 + canvasOrigin['y'] - canvasMargin
+  nodesXMins = []
+  nodesXMaxs = []
+  nodesYMins = []
+  nodesYMaxs = []
+  var allNodes = nodes.get({returnType:"Object"});
+  var nodeId;
+  for (nodeId in allNodes){
+    var nodesYMaxi = network.getBoundingBox(nodeId)['top']
+    var nodesXMini = network.getBoundingBox(nodeId)['left']
+    var nodesXMaxi = network.getBoundingBox(nodeId)['right']
+    var nodesYMini = network.getBoundingBox(nodeId)['bottom']
+    nodesXMins.push(nodesXMini)
+    nodesXMaxs.push(nodesXMaxi)
+    nodesYMins.push(nodesYMini)
+    nodesYMaxs.push(nodesYMaxi)
+  }
+  nodesXMin = Math.min(...nodesXMins)
+  nodesXMax = Math.max(...nodesXMaxs)
+  nodesYMin = Math.max(...nodesYMins)
+  nodesYMax = Math.min(...nodesYMaxs)
+
+}
+
+network.on("resize", resizeFunction)
+
+
+
+
+var dragStartPosition;
+network.on("dragStart", function(params){
+  // console.log("Drag has Started!")
+  dragStartPosition = network.getViewPosition()
+  // console.log('dragStartPosition', dragStartPosition)
+
+})
+
+
+
+network.on("click", function(params){
+   console.log('Click', params["pointer"]["canvas"])
+
+})
+
+network.on("dragEnd", function(params){
+  var dragEndPosition = network.getViewPosition()
+  // console.log('dragEndPosition', dragEndPosition)
+
+
+  var xMaxCenter = (canvasOrigin['x'] - (canvasXMax - nodesXMax))
+  var xMinCenter = (canvasOrigin['x'] - (canvasXMin - nodesXMin))
+  var yMaxCenter = (canvasOrigin['y'] - (canvasYMax - nodesYMax))
+  var yMinCenter = (canvasOrigin['y'] - (canvasYMin - nodesYMin))
+
+
+  var correctDragX = dragEndPosition['x']
+  var correctDragY = dragEndPosition['y']
+  if (dragEndPosition['x'] < xMaxCenter){
+    // console.log('dragEndPositionX too small')
+    correctDragX = xMaxCenter
+  }
+  if (dragEndPosition['x'] > xMinCenter){
+    // console.log('dragEndPositionX too big')
+    correctDragX = xMinCenter
+  }
+  if (dragEndPosition['y'] <  yMinCenter){
+    // console.log('dragEndPositionY too small')
+    correctDragY = yMinCenter
+  }
+  if (dragEndPosition['y'] >  yMaxCenter){
+    // console.log('dragEndPositionY too big')
+    correctDragY = yMaxCenter
+
+  }
+  network.moveTo({'position': {'x': correctDragX, 'y': correctDragY}, 'animation': true})
+  // console.log('correctDrag', [correctDragX, correctDragY])
+  // console.log("Drag has Ended!")
+})
+
+
 
  // network.moveTo({'position': {'x': 200, 'y':200}, 'animation': true})
-network.on("zoom", function(){
-})
+network.on("zoom", resizeFunction)
 
 
 network.on("release", function(){
@@ -201,7 +327,8 @@ vis.Network.prototype.setScale = function (scale) {
 };
 
 function hideNodesInfo(params) {
-document.getElementById("page-langs").style.background = 'slateblue';
+document.getElementById("page-langs").style.background = 'deepskyblue';
+
 var allNodes = nodes.get({returnType:"Object"});
 var myParent = document.body;
 //Create array of options to be added
@@ -291,7 +418,7 @@ physics: true,
 interaction: {
     hover: true,
     dragNodes: false,// do not allow dragging nodes
-    zoomView: false, // do not allow zooming
+    zoomView: true, // do not allow zooming
     dragView: true,  // do not allow dragging
     multiselect: true,
     navigationButtons: true,

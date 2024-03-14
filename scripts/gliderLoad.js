@@ -11,6 +11,17 @@ if (e.keyCode === 39) {
 }
 }));
 
+function goToNumerics(){
+  window._.scrollItem(0)
+}
+
+function goToML(){
+  window._.scrollItem(1)
+}
+
+function goToSensors(){
+  window._.scrollItem(2)
+}
 
 window.addEventListener('load',function(){
   // document.querySelector('.glider').addEventListener('glider-slide-visible', function(event){
