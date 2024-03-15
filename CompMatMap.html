@@ -33,6 +33,8 @@
 <div class="docSlider">
 <section id="page-main">
   <div id="bubble-circle-div">
+    <img class="center" style="width: 200px;" src="./resources/CompMatMapLogo.svg"></img>
+
     <h1 style="color: black; padding: 10px; font-size: 36px; text-align: center;"><u>Bem-vindo ao CompMatMap</u>!</h1>
     <p style="color: black; padding: 10px; font-size: 26px; text-align: center;">Um <i>mapa</i> dos possíveis<br>trajetos dentro da área de<br>Engenharia de Materiais Computacional</p>
     <p style="color: black; padding: 10px; font-size: 26px; text-align: center;">Começar!</b></p>
@@ -53,13 +55,18 @@
   </div>
 </section>
 
-<section id="page-numerics" class="path_options">
-  <div class="hero-body">
-    <div class="container">
+<section id="page-crossroads" class="path_options">
+  <div class="path_options">
+    <div>
+        <div class="topnav">
+        <button id="MNBtn" onclick="goToNumerics()" style="background: #FFD166;">Modelos Numéricos</button>
+        <button id="MLBtn" onclick="goToML()" style="background: #F36337;"  class="active"><i>Machine Learning</i></button>
+        <button id="SBtn" onclick="goToSensors()" style="background: #06D6A0;">Sensores</button>
+        </div>
         <div class="glider-contain">
         <div class="glider">
             <div>
-            <div id="mynetwork2" style="height: 80%; width: 95%; margin-left: 0; margin-right: 0; border-width: 2px">
+            <div id="mynetwork2" style="height: 80vh; width: 95%; margin-left: 0; margin-right: 0; border-width: 2px">
             <script src="scripts/mynetwork.js"> </script>
             </div>
             </div>
@@ -72,30 +79,12 @@
 
     </div> 
   </div>
-
-  <!-- nav at the bottom -->
-  <div class="hero-foot">
-    <nav class="tabs">
-      <div class="container">
-        <ul>
-          <li class="is-active"><a>Home</a></li>
-          <li><a>Something Cool</a></li>
-          <li><a>Other cool</a></li>
-          <li><a>Batman's Lair</a></li>
-          <li><a>Superman's Cape</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
 </section>
 
 <section class="hero is-danger is-medium is-bold">
   <div class="hero-body">
     <div class="container">
-
-      <h1 class="title">Red, Medium, with Gradient</h1>
-      <h2 class="subtitle">.is-danger .is-medium .is-bold</h2>
-
+      <h1 class="title">Mapa Completo</h1>
     </div>
   </div>
 </section>

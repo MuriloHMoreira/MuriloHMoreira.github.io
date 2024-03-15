@@ -75,7 +75,7 @@
         attract:{
             distance: 200, 
             duration: 0.4,
-            factor: 3,
+            factor: 4,
         },
       }
     },
