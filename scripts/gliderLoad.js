@@ -134,6 +134,7 @@ window.addEventListener('load',function(){
       itemWidth: 800,
       draggable: false,
       scrollLock: true,
+      slidesToScroll: 1,
       dots: '#dots',
       rewind: false,
       arrows: {

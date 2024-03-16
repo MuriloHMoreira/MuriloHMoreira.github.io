@@ -106,13 +106,6 @@ height: "100%"
 };
 var network = new vis.Network(container, data, options);
 
-// Get range
-function getRange(){
-  for (nodeId in allNodes){
-
-  }
-}
-
 // Create info windows
 var allNodes = nodes.get({returnType:"Object"});
 var myParent = document.body;
@@ -138,46 +131,46 @@ for (nodeId in allNodes){
 
   divNode.appendChild(divNodeText)
 }
+
+
 $("#mynetwork canvas").attr("id","canvas");
 var firstHover = true;
 function showNodeInfo(params) {
-      // Get the node ID
-      var nodeId = params.node;
-      if (nodeId) {
-        // Get the node title to show in the popup
-        var popup = this.body.nodes[nodeId].options.title;
+  // Get the node ID
+  var nodeId = params.node;
+  if (nodeId) {
+    // Get the node coordinates
+    var { x: nodeX, y: nodeY } = network.canvasToDOM(
+      network.getPositions([nodeId])[nodeId]
+    );
 
-        // Get the node coordinates
-        var { x: nodeX, y: nodeY } = network.canvasToDOM(
-          network.getPositions([nodeId])[nodeId]
-        );
+    // Show the tooltip in a div
+    var mynetworkCanvas = document.getElementById("canvas");
+    var rect = mynetworkCanvas.getBoundingClientRect();
+    bb = network.getBoundingBox(nodeId)
+    node_width = bb.right - bb.left
+    node_heigth = bb.bottom - bb.top
+    // console.log('Node Id: ', nodeId)
+    // console.log('rect', rect)
+    // console.log('bb', bb)
+    // console.log('nodeX', nodeX)
+    // console.log('nodeY', nodeY)
+    nodeX += + rect.left - 150;
+    nodeY += rect.top - 100 / 2;
+    
+    document.getElementById("node_info_" + nodeId).style.display = "block";
+    // Place the div
+    document.getElementById("node_info_" + nodeId).style.position = "absolute";
+    document.getElementById("node_info_" + nodeId).style.top = nodeY + "px";
+    document.getElementById("node_info_" + nodeId).style.left = nodeX + "px";
+    
+    document.getElementById("page-langs").style.background = groups[allNodes[nodeId].group]['color']['background'];
 
-        // Show the tooltip in a div
-        var mynetworkCanvas = document.getElementById("canvas");
-        var rect = mynetworkCanvas.getBoundingClientRect();
-        bb = network.getBoundingBox(nodeId)
-        node_width = bb.right - bb.left
-        node_heigth = bb.bottom - bb.top
-        // console.log('Node Id: ', nodeId)
-        // console.log('rect', rect)
-        // console.log('bb', bb)
-        // console.log('nodeX', nodeX)
-        // console.log('nodeY', nodeY)
-        nodeX += + rect.left - 150;
-        nodeY += rect.top - 100 / 2;
-        
-        document.getElementById("node_info_" + nodeId).style.display = "block";
-        // Place the div
-        document.getElementById("node_info_" + nodeId).style.position = "absolute";
-        document.getElementById("node_info_" + nodeId).style.top = nodeY + "px";
-        document.getElementById("node_info_" + nodeId).style.left = nodeX + "px";
-        
-        document.getElementById("page-langs").style.background = groups[allNodes[nodeId].group]['color']['background'];
-
-      }
-      if (firstHover){
-        document.getElementById("page-langs").style.transitionProperty += ', background'
-      }
+  }
+  if (firstHover){
+    document.getElementById("page-langs").style.transitionProperty += ', background'
+    firstHover = false;
+  }
 };
 var nodes_xmin;
 var nodes_xmax;
@@ -187,27 +180,8 @@ var nodes_ymax;
 var firstResize = true;
 // To make it work when scaled, we need to scale the canvas size properly
 function resizeFunction(){
-  if (firstResize){
-    network.fit()
-    firstResize = false;
-    canvasMarginOrig = 2
-    canvasWidthOrig = network.canvas.frame.canvas.clientWidth * 1 / network.getScale()
-    canvasHeightOrig = network.canvas.frame.canvas.clientHeight * 1 / network.getScale()
-    canvasOriginOrig = network.getViewPosition()
-    canvasXMinOrig = - canvasWidthOrig / 2 + canvasOriginOrig['x'] + canvasMarginOrig
-    canvasXMaxOrig = canvasWidthOrig / 2 + canvasOriginOrig['x'] - canvasMarginOrig
-    canvasYMaxOrig = - canvasHeightOrig / 2 + canvasOriginOrig['y'] + canvasMarginOrig
-    canvasYMinOrig = canvasHeightOrig / 2 + canvasOriginOrig['y'] - canvasMarginOrig
-  }
-  console.log('released')
-  canvasMargin = 2
-  canvasWidth = network.canvas.frame.canvas.clientWidth * 1 / network.getScale()
-  canvasHeight = network.canvas.frame.canvas.clientHeight * 1 / network.getScale()
-  canvasOrigin = network.getViewPosition()
-  canvasXMin = - canvasWidth / 2 + canvasOrigin['x'] + canvasMargin
-  canvasXMax = canvasWidth / 2 + canvasOrigin['x'] - canvasMargin
-  canvasYMax = - canvasHeight / 2 + canvasOrigin['y'] + canvasMargin
-  canvasYMin = canvasHeight / 2 + canvasOrigin['y'] - canvasMargin
+  canvasElementWidth = network.canvas.frame.canvas.clientWidth
+  canvasElementHeight = network.canvas.frame.canvas.clientHeight
   nodesXMins = []
   nodesXMaxs = []
   nodesYMins = []
@@ -215,10 +189,11 @@ function resizeFunction(){
   var allNodes = nodes.get({returnType:"Object"});
   var nodeId;
   for (nodeId in allNodes){
-    var nodesYMaxi = network.getBoundingBox(nodeId)['top']
-    var nodesXMini = network.getBoundingBox(nodeId)['left']
-    var nodesXMaxi = network.getBoundingBox(nodeId)['right']
-    var nodesYMini = network.getBoundingBox(nodeId)['bottom']
+    var bb = network.getBoundingBox(nodeId)
+    var nodesYMaxi = bb['top']
+    var nodesXMini = bb['left']
+    var nodesXMaxi = bb['right']
+    var nodesYMini = bb['bottom']
     nodesXMins.push(nodesXMini)
     nodesXMaxs.push(nodesXMaxi)
     nodesYMins.push(nodesYMini)
@@ -228,6 +203,31 @@ function resizeFunction(){
   nodesXMax = Math.max(...nodesXMaxs)
   nodesYMin = Math.max(...nodesYMins)
   nodesYMax = Math.min(...nodesYMaxs)
+  nodesWidth = (nodesXMax-nodesXMin)
+  nodesHeight = -(nodesYMax-nodesYMin)
+  zoomFactorX = canvasElementWidth/nodesWidth
+  zoomFactorY = canvasElementHeight/nodesHeight
+  adjustedScale = Math.min(zoomFactorX, zoomFactorY) * 0.95
+  if (firstResize){
+    console.log('First RESIZE')
+    network.fit()
+    canvasOriginOrig = network.getViewPosition()
+    // network.setScale(adjustedScale)
+    firstResize = false;
+  }
+  network.setScale(adjustedScale)
+  canvasOrigin = network.getViewPosition()
+  canvasMargin = 10
+  canvasWidth = network.canvas.frame.canvas.clientWidth * 1 / network.getScale()
+  canvasHeight = network.canvas.frame.canvas.clientHeight * 1 / network.getScale()
+  canvasXMin = - canvasWidth / 2 + canvasOriginOrig['x'] + 15
+  canvasXMax = canvasWidth / 2 + canvasOriginOrig['x'] + 15
+  canvasYMax = - canvasHeight / 2 + canvasOriginOrig['y']
+  canvasYMin = canvasHeight / 2 + canvasOriginOrig['y']
+  // console.log(network.getViewPosition())
+  // network.moveTo({'position': canvasOriginOrig})
+  // network.moveTo({'position': canvasOriginOrig})
+  // console.log(network.getViewPosition())
 
 }
 
@@ -238,7 +238,6 @@ network.on("resize", resizeFunction)
 
 var dragStartPosition;
 network.on("dragStart", function(params){
-  // console.log("Drag has Started!")
   dragStartPosition = network.getViewPosition()
   // console.log('dragStartPosition', dragStartPosition)
 
@@ -253,7 +252,6 @@ network.on("click", function(params){
 
 network.on("dragEnd", function(params){
   var dragEndPosition = network.getViewPosition()
-  // console.log('dragEndPosition', dragEndPosition)
 
 
   var xMaxCenter = (canvasOrigin['x'] - (canvasXMax - nodesXMax))
@@ -282,6 +280,7 @@ network.on("dragEnd", function(params){
 
   }
   network.moveTo({'position': {'x': correctDragX, 'y': correctDragY}, 'animation': true})
+
   // console.log('correctDrag', [correctDragX, correctDragY])
   // console.log("Drag has Ended!")
 })
@@ -289,7 +288,7 @@ network.on("dragEnd", function(params){
 
 
  // network.moveTo({'position': {'x': 200, 'y':200}, 'animation': true})
-network.on("zoom", resizeFunction)
+// network.on("zoom", resizeFunction)
 
 
 network.on("release", function(){
@@ -317,7 +316,8 @@ vis.Network.prototype.setScale = function (scale) {
     // var range = this.view._getRange(options.nodes);
     // var center = this.view._findCenter(range);
     // var center = network.view.canvas.canvasViewCenter;
-    var center = network.view.getViewPosition();
+    // var center = network.view.getViewPosition();
+    var center = {'x': (nodesXMax + nodesXMin)/2, 'y':(nodesYMax + nodesYMin)/2}
     var animationOptions = {
         position: center,
         scale: scale,
@@ -327,18 +327,18 @@ vis.Network.prototype.setScale = function (scale) {
 };
 
 function hideNodesInfo(params) {
-document.getElementById("page-langs").style.background = 'deepskyblue';
+  document.getElementById("page-langs").style.background = 'deepskyblue';
 
-var allNodes = nodes.get({returnType:"Object"});
-var myParent = document.body;
-//Create array of options to be added
-var nodeId;
+  var allNodes = nodes.get({returnType:"Object"});
+  var myParent = document.body;
+  //Create array of options to be added
+  var nodeId;
 
-for (nodeId in allNodes){
-  //Create and append select list
-  document.getElementById("node_info_" + nodeId).style.display = "none";
-  document.getElementById("bubble-circle-div").style.zIndex = "1000000000";
-}
+  for (nodeId in allNodes){
+    //Create and append select list
+    document.getElementById("node_info_" + nodeId).style.display = "none";
+    document.getElementById("bubble-circle-div").style.zIndex = "1000000000";
+  }
 };
 network.on("hoverNode", showNodeInfo);
 network.on("blurNode", hideNodesInfo);
@@ -433,5 +433,5 @@ height: "100%"
 var network2 = new vis.Network(container2, data2, options2);
 
 
-network.fit()
+// network.fit()
 
