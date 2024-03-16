@@ -1,14 +1,52 @@
+var firstClick = true;
+
 document.addEventListener('keydown', (function(e) {
 if (e.keyCode === 37) {
- // Previous
- // console.log("prev");
- window._.scrollItem("prev")
-}
+  // Previous
+  window._.scrollItem("prev")
+  currentSlide = window._.getCurrentSlide();
+  destinationSlide = currentSlide - 1
+  if (destinationSlide >= 0){
+    if (destinationSlide == 0){
+      document.getElementById("MNBtn").classList.add("active");
+      document.getElementById("MLBtn").classList.remove("active");
+      document.getElementById("page-crossroads").style.background = pSBC(0.2, '#FFD166');
+    }
+    else if (destinationSlide == 1){
+      document.getElementById("MNBtn").classList.remove("active");
+      document.getElementById("MLBtn").classList.add("active");
+      document.getElementById("page-crossroads").style.background = pSBC(0.2, '#F36337')
+    }
+  }
+  if (firstClick){
+    document.getElementById("page-crossroads").style.transitionProperty += ', background'
+    firstClick = false;
+    }
+  }
 if (e.keyCode === 39) {
- // Next
- // console.log("next");
- window._.scrollItem("next")
-}
+  // Next
+  window._.scrollItem("next")
+  currentSlide = window._.getCurrentSlide();
+  destinationSlide = currentSlide + 1
+  if (destinationSlide <= 2){
+    if (destinationSlide == 1){
+      document.getElementById("MNBtn").classList.remove("active");
+      document.getElementById("MLBtn").classList.add("active");
+      document.getElementById("page-crossroads").style.background = pSBC(0.2, '#F36337')
+    }
+    else if (destinationSlide == 2){
+      document.getElementById("MNBtn").classList.remove("active");
+      document.getElementById("MLBtn").classList.remove("active");
+      document.getElementById("SBtn").classList.add("active");
+
+      document.getElementById("page-crossroads").style.background = pSBC(0.2, '#06D6A0')
+    }
+  }
+  if (firstClick){
+    document.getElementById("page-crossroads").style.transitionProperty += ', background'
+    firstClick = false;
+    }
+  }
 }));
 
 const pSBC=(p,c0,c1,l)=>{
@@ -36,7 +74,6 @@ const pSBC=(p,c0,c1,l)=>{
     else return"#"+(4294967296+r*16777216+g*65536+b*256+(f?m(a*255):0)).toString(16).slice(1,f?undefined:-2)
 }
 
-var firstClick = true;
 function goToNumerics(){
   window._.scrollItem(0)
   document.getElementById("MNBtn").classList.add("active");
@@ -46,6 +83,7 @@ function goToNumerics(){
   document.getElementById("page-crossroads").style.background = pSBC(0.2, '#FFD166');
   if (firstClick){
     document.getElementById("page-crossroads").style.transitionProperty += ', background'
+    firstClick = false;
   }
 }
 
@@ -57,6 +95,7 @@ function goToML(){
   document.getElementById("page-crossroads").style.background = pSBC(0.2, '#F36337')
   if (firstClick){
     document.getElementById("page-crossroads").style.transitionProperty += ', background'
+    firstClick = false;
   }
 }
 
@@ -69,6 +108,7 @@ function goToSensors(){
   document.getElementById("page-crossroads").style.background = pSBC(0.2, '#06D6A0')
   if (firstClick){
     document.getElementById("page-crossroads").style.transitionProperty += ', background'
+    firstClick = false;
   }
 }
 
@@ -93,7 +133,7 @@ window.addEventListener('load',function(){
       slidesToShow: 1, //'auto',
       itemWidth: 800,
       draggable: false,
-      scrollLock: false,
+      scrollLock: true,
       dots: '#dots',
       rewind: false,
       arrows: {
@@ -102,4 +142,5 @@ window.addEventListener('load',function(){
       },
   });
   goToML();
+  firstClick = true;
 });

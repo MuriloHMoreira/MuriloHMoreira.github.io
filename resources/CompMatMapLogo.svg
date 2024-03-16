@@ -3,8 +3,8 @@
 
 <svg
    width="72.447433mm"
-   height="83.361mm"
-   viewBox="0 0 72.447434 83.361"
+   height="72.447433mm"
+   viewBox="0 0 72.447434 72.447433"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.2946631"
-     inkscape:cx="130.53589"
-     inkscape:cy="229.0171"
+     inkscape:cx="56.385325"
+     inkscape:cy="188.07982"
      inkscape:window-width="1710"
      inkscape:window-height="1027"
      inkscape:window-x="0"
-     inkscape:window-y="57"
+     inkscape:window-y="43"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -39,7 +39,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-32.363153,-10.437924)">
+     transform="translate(-32.363153,-21.351495)">
     <circle
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-dasharray:none;stop-color:#000000"
        id="path234"
@@ -67,10 +67,7 @@
        d="m 68.586868,82.196242 v 5.582357"
        id="path1301" />
     <g
-       aria-label="1001
-1101
-1011
-"
+       aria-label="1001 1101 1011 "
        id="text3943"
        style="font-size:5.04473px;line-height:5.64885px;font-family:'IBM Plex Mono';-inkscape-font-specification:'IBM Plex Mono';text-align:center;text-anchor:middle;stroke:#000000;stroke-width:0;stroke-linejoin:round;stop-color:#000000"
        transform="matrix(0.72112567,0,0,0.72112568,-41.369531,8.7183476)">
@@ -169,16 +166,6 @@
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000"
        d="m 89.957467,36.204612 -3.598206,3.598206"
        id="path5663" />
-    <circle
-       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-dasharray:none;stop-color:#000000"
-       id="circle6391"
-       cx="68.586868"
-       cy="15.013456"
-       r="3.075532" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3.4;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stop-color:#000000"
-       d="m 68.586868,24.192669 v -6.10368"
-       id="path7119" />
     <circle
        style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:2.99999;stroke-linejoin:round;stroke-dasharray:none;stop-color:#000000"
        id="circle7162"
