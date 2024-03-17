@@ -11,7 +11,7 @@
   height: 100%;
   z-index: -1;
 /*  background-image: linear-gradient(to left top, #000035, #000643, #000a51, #00095f, #00076d, #00076d, #00076d, #00076d, #00095f, #000a51, #000643, #000035);*/
-background-image: linear-gradient(to right top, #000051, #00014c, #000247, #000241, #00013c, #00013c, #00013c, #00013c, #000241, #000247, #00014c, #000051);
+  background-image: linear-gradient(to right top, #000051, #00014c, #000247, #000241, #00013c, #00013c, #00013c, #00013c, #000241, #000247, #00014c, #000051);
 }
 
 

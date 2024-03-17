@@ -86,7 +86,9 @@
         }
 
 .langs{
-  background: deepskyblue
+/*  background: #000035*/
+  background-image: linear-gradient(to left top, #000051, #00014c, #000247, #000241, #00013c, #00013c, #00013c, #00013c, #000241, #000247, #00014c, #000051);
+
 }
 
 

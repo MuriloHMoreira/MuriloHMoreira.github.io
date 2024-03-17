@@ -11,24 +11,28 @@ var nodes = new vis.DataSet([
      x:200, y:0, group: 'programming'},
     {id: 2, label: 'Bash/Shell', url: 'http://www.google.com', font:{color: "white"}, shape:'image', image: "assets/img/Bash-logo.svg",
      x:200, y:130, group: 'bash'},
-    {id: 3, label: 'Automatização', url: 'http://www.google.com',
-     x:0, y:130, group: 'bash'},
-    {id: 4, label: 'Rodar Programas', url: 'http://www.google.com',
-     x:400, y:130, group: 'bash'},
+    {id: 3, label: 'Rodar Programas', url: 'http://www.google.com',
+     x:0, y:130, group: 'application'},
+    {id: 4, label: 'Automatização', url: 'http://www.google.com',
+     x:400, y:130, group: 'application'},
     {id: 20, label: 'Python', url: 'http://www.google.com', shape:'image', image: "assets/img/Python-logo.svg",
      x:200, y:320, group: 'python_funs'},
     {id: 30, label: 'Gráficos', url: 'http://www.google.com',
      x:0, y:270, group: 'python_funs'},
-    {id: 40, label: 'Processamento\nde Arquivos', url: 'http://www.google.com',
+    {id: 40, label: 'Aplicações\nEspecíficas', url: 'http://www.google.com',
      x:0, y:320, group: 'python_funs'},
-    {id: 50, label: 'Cálculos\nAvançados', url: 'http://www.google.com',
+    {id: 50, label: 'Otimização', url: 'http://www.google.com',
      x:0, y:370, group: 'python_funs'},
-    {id: 60, label: 'Otimização', url: 'http://www.google.com',
+    {id: 60, label: 'Cálculos\nAvançados', url: 'http://www.google.com',
      x:400, y:270, group: 'python_funs'},
     {id: 70, label: 'Ler/Escrever\nDados', url: 'http://www.google.com',
      x:400, y:320, group: 'python_funs'},
-    {id: 80, label: 'Aplicações\nEspecíficas', url: 'http://www.google.com',
+    {id: 80, label: 'Processamento\nde Arquivos', url: 'http://www.google.com',
      x:400, y:370, group: 'python_funs'},
+    {id: 90, label: 'Script', url: 'http://www.google.com', shape:'image', size: 30, image: "assets/img/scroll-text.svg",
+     x:400, y:30, group: 'python_funs'},
+    {id: 100, label: 'Jupyter Notebook', url: 'http://www.google.com', shape:'image', size: 20, image: "assets/img/Jupyter_logo.svg.png",
+     x:0, y:200, group: 'python_funs'},
     ]);
 
 var edges = new vis.DataSet([
@@ -63,11 +67,18 @@ var groups = {
     python_funs: {color:{background: 'lightgrey', border:"black", 
                   hover: {background: "lightgrey", border: "black"},
                   highlight: {background: "lightgrey", border: "black"}},
-           font:{color: "black", size:18, face: "monospace", align:"center"},
+           font:{color: "white", size:18, face: "monospace", align:"center"},
            borderWidth: 2,
            size: 50,
            shape: 'box'},
     bash: {color:{background: ' #F0F0F0', border:"black", 
+                  hover: {background: " #F0F0F0", border: "black"},
+                  highlight: {background: " #F0F0F0", border: "black"}},
+           font:{color: "black", size:18, face: "monospace", align:"center"},
+           borderWidth: 2,
+           size: 50,
+           shape: 'box'},
+    application: {color:{background: ' #F0F0F0', border:"black", 
                   hover: {background: " #F0F0F0", border: "black"},
                   highlight: {background: " #F0F0F0", border: "black"}},
            font:{color: "black", size:18, face: "monospace", align:"center"},
@@ -79,6 +90,7 @@ var options = {
   layout: {improvedLayout: true},
   groups: groups,
   edges: {width: 2,
+          color: 'deepskyblue',
           arrowStrikethrough: false,
           arrows: {
             to: {
@@ -94,8 +106,8 @@ physics: false,
 interaction: {
     hover: true,
     dragNodes: false,// do not allow dragging nodes
-    zoomView: true, // do not allow zooming
-    dragView: true,  // do not allow dragging
+    zoomView: false, // do not allow zooming
+    dragView: false,  // do not allow dragging
     multiselect: false,
     navigationButtons: false,
     selectable: true,
@@ -134,7 +146,6 @@ for (nodeId in allNodes){
 
 
 $("#mynetwork canvas").attr("id","canvas");
-var firstHover = true;
 function showNodeInfo(params) {
   // Get the node ID
   var nodeId = params.node;
@@ -164,13 +175,8 @@ function showNodeInfo(params) {
     document.getElementById("node_info_" + nodeId).style.top = nodeY + "px";
     document.getElementById("node_info_" + nodeId).style.left = nodeX + "px";
     
-    document.getElementById("page-langs").style.background = groups[allNodes[nodeId].group]['color']['background'];
-
   }
-  if (firstHover){
-    document.getElementById("page-langs").style.transitionProperty += ', background'
-    firstHover = false;
-  }
+  
 };
 var nodes_xmin;
 var nodes_xmax;
@@ -209,7 +215,6 @@ function resizeFunction(){
   zoomFactorY = canvasElementHeight/nodesHeight
   adjustedScale = Math.min(zoomFactorX, zoomFactorY) * 0.95
   if (firstResize){
-    console.log('First RESIZE')
     network.fit()
     canvasOriginOrig = network.getViewPosition()
     // network.setScale(adjustedScale)
@@ -327,7 +332,8 @@ vis.Network.prototype.setScale = function (scale) {
 };
 
 function hideNodesInfo(params) {
-  document.getElementById("page-langs").style.background = 'deepskyblue';
+  document.getElementById("page-langs").style.backgroundImage = "linear-gradient(to left top, #000051, #00014c, #000247, #000241, #00013c, #00013c, #00013c, #00013c, #000241, #000247, #00014c, #000051)"
+
 
   var allNodes = nodes.get({returnType:"Object"});
   var myParent = document.body;
@@ -342,6 +348,24 @@ function hideNodesInfo(params) {
 };
 network.on("hoverNode", showNodeInfo);
 network.on("blurNode", hideNodesInfo);
+
+
+
+function drawDivisions(ctx) {
+            ctx.lineWidth = 3;
+            ctx.setLineDash([15, 10]);
+            ctx.strokeStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.roundRect(305, -10, 190, 425, [10]);
+            ctx.stroke();
+            ctx.strokeStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.roundRect(-80, 160, 160, 240, [10]);
+            ctx.stroke();
+            }
+
+network.on("afterDrawing", drawDivisions);
+
 
 var nodes2 = new vis.DataSet([
     {id: 1, label: 'Linguagem de\nProgramação', url: 'http://www.google.com', x:200, y:-100, group: 'programming'},
