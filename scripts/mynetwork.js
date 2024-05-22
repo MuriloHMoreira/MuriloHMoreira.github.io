@@ -6,6 +6,7 @@ function objectMap(obj, fn) {
   return arrayData;
 }
 
+
 var nodes = new vis.DataSet([
     {id: 1, label: 'Linguagem de\nProgramação', url: 'http://www.google.com',
      x:200, y:0, group: 'programming'},
@@ -31,7 +32,7 @@ var nodes = new vis.DataSet([
      x:400, y:370, group: 'python_funs'},
     {id: 90, label: 'Script', url: 'http://www.google.com', shape:'image', size: 30, image: "assets/img/scroll-text.svg",
      x:400, y:30, group: 'python_funs'},
-    {id: 100, label: 'Jupyter Notebook', url: 'http://www.google.com', shape:'image', size: 20, image: "assets/img/Jupyter_logo.svg.png",
+    {id: 100, label: 'Jupyter\nNotebook', url: 'http://www.google.com', shape:'image', size: 30, image: "assets/img/Jupyter_logo.svg.png",
      x:0, y:200, group: 'python_funs'},
     ]);
 
