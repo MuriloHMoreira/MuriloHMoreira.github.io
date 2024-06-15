@@ -322,6 +322,7 @@ html, body {
 
 input {
     margin-left: 10px;
+    text-align: center;
 }
 label.inactive, .result.inactive label {
     color: blue;
