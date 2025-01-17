@@ -420,7 +420,7 @@ h3.nocount:before {
   .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
     color: rgb(252,252,252);
     font-weight: bold;
-    font-size: 22px!important;
+    font-size: 18px!important;
   }
 }
 
@@ -464,12 +464,12 @@ nav {
 }
 
 .nav-link:hover {
-  background-color: #B3FFAD;
+  /*background-color: #B3FFAD;*/
   color: #000000 !important;
 }
 
 .navbar-light .navbar-toggler {
-  color: rgb(6,255,1);
+  color: var(--bs-dark);
   border-color: rgba(0,0,0,.1);
 }
 
@@ -656,7 +656,7 @@ a.socialhub {
 }
 
 footer {
-  color: rgb(254,217,103);
+  color: var(--bs-dark);
 }
 
 @media (min-width: 300px) {
@@ -770,11 +770,10 @@ footer {
 }
 
 .nav-link {
-  background-color: #827baa!important;
+  /*background-color: #827baa!important;*/
 }
 
 .nav-link.active {
-  background-color: #fed968!important;
   border-width: 6px!important;
   border-color: #fed968!important;
 }
@@ -817,5 +816,8 @@ footer {
   .certificate-pdf-link {
     display: none!important;
   }
+}
+
+html {
 }
 

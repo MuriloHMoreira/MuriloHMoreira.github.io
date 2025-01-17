@@ -5,66 +5,110 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Murilo Henrique Moreira</title>
-    <meta name="description" content="Murilo Henrique Moreira's research efforts.">
+    <meta name="description" content="Personal webpage of Murilo Henrique Moreira.
+Welcome!">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/tsParticlesStyleHome.css">
     <link rel="stylesheet" href="assets/css/main_theme.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-window.onload = function(){
-                  document.getElementById('open_modal_button').click();
-                }
-</script>
+    <link rel="stylesheet" href="assets/css/Projects-Grid-images.css">
 </head>
 
 <body style="font-family: 'IBM Plex Mono', monospace;">
+    <div id="tsparticles"></div>
     <header class="d-inline d-xxl-flex justify-content-xxl-center" id="navbar-top">
-        <nav class="navbar navbar-expand-xl border-black border rounded-0 border-0 shadow-lg d-flex flex-xl-nowrap navbar-light" style="height: 64px;background: rgb(57,54,82);border-style: none;border-color: rgba(16,63,98,0);font-family: 'IBM Plex Mono';color: rgb(254,217,103);padding-top: 0px;width: 100%;max-width: 1320px;">
-            <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler d-flex d-xl-none justify-content-start justify-content-xxl-center" data-bs-target="#navcol-1" style="padding-top: 0px;padding-bottom: 0px;margin-left: 10px;color: var(--bs-focus-ring-color);border-style: none;border-color: var(--bs-focus-ring-color);margin-top: 0px;"><span class="visually-hidden" style="color: var(--bs-focus-ring-color);background: #ffffff;">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--bs-focus-ring-color);"></span></button><a class="navbar-brand d-none d-sm-flex d-md-flex align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: rgb(56,54,82)!important;" href="index.html">Murilo Henrique Moreira</a><a class="navbar-brand d-flex d-print-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: rgb(56,54,82)!important;" href="index.html">M H Moreira</a>
-                <div class="collapse navbar-collapse border rounded border-0 border-dark justify-content-start justify-content-xl-end" id="navcol-1" style="padding-left: 18px;background: #393652;height: auto;width: auto;margin-right: 2%;">
-                    <ul class="navbar-nav d-xl-flex d-xxl-flex justify-content-xl-end justify-content-xxl-end nav-items" style="height: 100%;">
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="height: 100%;margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#webpages" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-book"></i>&nbsp;Webpages</a></li>
-                        <li class="nav-item d-xxl-flex align-items-xxl-center" style="margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#cv" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-user-graduate d-xl-flex align-items-xl-center"></i>&nbsp;Curriculum Vitae</a></li>
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="research.html" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-microscope d-xl-flex align-items-xl-center"></i>&nbsp;Research</a></li>
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="projects.html" style="color: rgb(254,217,103);height: 100%;background: rgb(56,54,82)!important;"><i class="fas fa-cogs"></i>&nbsp;Projects</a></li>
+        <nav class="navbar navbar-expand-xl border-black border rounded-0 border-0 shadow-lg d-flex flex-xl-nowrap navbar-light" style="background: var(--bs-primary);font-family: 'IBM Plex Mono';color: var(--bs-dark);padding-top: 0px;width: 100%;box-shadow: 0px 4px 2px 2px black!important;/*max-width: 1320px;*/margin-right: auto;margin-left: auto;">
+            <div class="container-fluid"><a class="navbar-brand d-none d-sm-flex d-md-flex align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="font-family: 'IBM Plex Mono', monospace;font-weight: bold;font-size: 22px;height: auto;background: var(--bs-focus-ring-color);color: var(--bs-dark);margin: auto;margin-left: 8%;" href="index.html">Murilo Henrique Moreira</a><a class="navbar-brand d-flex d-print-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: var(--bs-dark);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: var(--bs-focus-ring-color);" href="index.html">M H Moreira</a><button data-bs-toggle="collapse" class="navbar-toggler d-flex d-xl-none justify-content-start justify-content-xxl-center" data-bs-target="#navcol-1" style="padding-top: 0px;padding-bottom: 0px;margin-left: calc(var(--bs-gutter-x) * .5);color: var(--bs-dark);border-style: none;border-color: var(--bs-focus-ring-color);margin-top: 0px;padding-right: 10%;padding-left: 0px;"><i class="fa fa-plus"></i></button>
+                <div class="collapse navbar-collapse text-center border rounded border-0 border-dark shadow-none d-flex d-xxl-flex justify-content-center justify-content-xl-end justify-content-xxl-end" id="navcol-1" style="background: var(--bs-primary);height: auto;color: var(--bs-dark);padding-right: 7%;">
+                    <ul class="navbar-nav d-xl-flex d-xxl-flex justify-content-xl-end justify-content-xxl-end nav-items" style="height: 100%;color: var(--bs-dark);margin-right: calc(var(--bs-gutter-x) * .5);">
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;background: var(--bs-focus-ring-color);color: var(--bs-dark);"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="index.html#webpages" style="color: var(--bs-dark);height: 100%;background: var(--bs-focus-ring-color);padding-right: calc(var(--bs-gutter-x) * .5 * 10;padding-left: calc(var(--bs-gutter-x) * .5);font-size: 16px;"><i class="fas fa-book"></i>&nbsp;Webpages</a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;background: var(--bs-focus-ring-color);color: var(--bs-dark);"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="index.html#cv" style="color: var(--bs-dark);height: 100%;background: var(--bs-focus-ring-color);padding-right: calc(var(--bs-gutter-x) * .5 * 10;padding-left: calc(var(--bs-gutter-x) * .5);font-size: 16px;"><i class="fas fa-user-graduate"></i>&nbsp;Curriculum Vitae</a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;background: var(--bs-focus-ring-color);color: var(--bs-dark);"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="research.html" style="color: var(--bs-dark);height: 100%;background: var(--bs-focus-ring-color);padding-right: calc(var(--bs-gutter-x) * .5 * 10;padding-left: calc(var(--bs-gutter-x) * .5);font-size: 16px;"><i class="fas fa-microscope"></i>&nbsp;Research</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header><button class="btn btn-primary d-none" id="open_modal_button" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Button</button>
-    <div class="container container-content">
-        <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="text-align: center;">
-                        <h4 class="modal-title" style="color: var(--bs-primary-text-emphasis);">Attention!</h4><button class="btn-close text-start d-xxl-flex justify-content-xxl-end" type="button" aria-label="Close" data-bs-dismiss="modal" style="padding-bottom: 8px;margin-right: 0px;margin-left: 0px;"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p style="color: var(--bs-primary-text-emphasis);font-size: 21px;text-align: center;">🚧 This page is under construction&nbsp;🚧</p>
-                    </div>
-                </div>
+    </header>
+    <div class="container border rounded border-0 container-content" style="background: rgba(255,255,255,0.25);padding: 10px;margin-top: 25px;">
+        <h6 class="display-6 d-xxl-flex justify-content-xxl-start align-items-xxl-center section-header" style="width: 95%;font-family: 'IBM Plex Mono';color: var(--bs-dark);font-size: 18px;"><i class="fas fa-microscope"></i><span style="color: var(--bs-heading-color);">&nbsp;Research Projects</span></h6>
+        <p class="project-page-description" style="margin-bottom: 25px;font-size: 16px;">Some of the projects that I have had the pleasure to participate:</p>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/insitu.jpg" loading="eager" style="width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);"><em>In-situ</em> Refractory Drying Observation</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2021-...</span></p>
+                <p class="project-description">The water withdraw from refractory castables involves several mechanisms that take place at multiple scales within this complex heterogeneous porous medium. This project aims to use neutron and x-ray tomography to assess <em>in-situ</em>&nbsp;how the water is transported during the non-isothermal drying.&nbsp;</p>
             </div>
         </div>
-        <section id="about" style="margin-top: 20px;">
-            <h6 class="display-6 d-xl-flex d-xxl-flex align-items-xl-center justify-content-xxl-start align-items-xxl-center section-header" style="width: 95%;font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><i class="fas fa-microscope d-xl-flex align-items-xl-center"></i><span style="color: var(--bs-heading-color);">&nbsp;Research</span></h6>
-            <p>The papers that I have taken part of:</p>
-            <div class="row" style="margin-bottom: 20px;">
-                <div class="col-xl-2"><img src="assets/img/projects_thumbnails/insitu.jpg" style="max-width: 100%;"></div>
-                <div class="col">
-                    <h1 class="nocount" style="font-size: 28px;"><em>Paper 1</em></h1>
-                    <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">Year</span></p>
-                    <p>Brief Description</p>
-                </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/simulation.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Refractory Drying Simulation</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2019-...</span></p>
+                <p class="project-description">The drying of refractory castables is the longest step during their installation within the industrial scenario. Heat-up protocols that balance the risk of explosive spalling and the reduction of the long production halts are critical for this application. This project proposes the simulation of the drying process of refractory castables based on the theory of partially saturated porous media.</p>
             </div>
-        </section>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/mw.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Microwave Refractory Drying Feasability</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2021-2023</span></p>
+                <p class="project-description">Aiming to reduce the drying process time and to maintain the process safe, the use of microwave heating was explored as an alternative to the traditional methods based in natural gas burners. The completely different physics of heat transport in these two scenarios leads to opposite thermal gradients. The preparation of a microwave baesd thermogravimetry showed that the mass loss peaks observed during the drying were shifted to smaller temperatures.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/xrd.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Alumina Phase Conversion</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2014-2015</span></p>
+                <p class="project-description">In this study the use of Aluminum Fluoride as a mineralizing agent for the transformation of transition aluminas to α-alumina was considered. Through the use of this additive, conversion temperatures were reduced, lowering the consumption of fossil fuels and the cost of the process. Various experimental assays were employed to characterize the obtained products, such as particle size distribution, mass spectrometry, X-ray diffraction, and DSC.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/doe.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Design of Experiments Feasibility in Refractory Castables</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2015-2016</span></p>
+                <p class="project-description">The use of Design of Experiments (DOE) is an essential approach for conducting systematic and reproducible studies. Its application in the field of refractory ceramic materials is limited, and this project aimed to identify if such a tool could be used to extract information from sets of experiments already conducted. It was found that the high variability and complexity of the system addressed hindered its effectiveness</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/courses_icons/data_mining.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Data Minning on Refractories Research</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2015-2016</span></p>
+                <p class="project-description">In this project, the aim was to employ data mining techniques combined with graph theory to analyze the last 21 years of scientific production in the field of refractory ceramics. The study assessed geographical aspects and international partnerships, encompassing research institutions as well as major companies in the field.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/steel_ladle.jpg" style="max-width: 100%;"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">Thermal Management of Steel Ladles</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2016-2018</span></p>
+                <p class="project-description">The use of computational tools for simulating diverse scenarios in industrial applications enables the proposal of various innovative designs, assessments of potential economic gains, and reductions in environmental impacts. This current project aimed to analyze the steelmaking process, specifically the steel ladle, and propose novel solutions for its thermal management through the use of numerical simulations.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="col-xl-2"><img src="assets/img/projects_thumbnails/coatings.jpg" style="max-width: 100%;width: 100%;height: 100%;" width="200" height="174"></div>
+            <div class="col">
+                <h1 class="nocount" style="font-size: 18px;color: var(--bs-dark);">High Emissivity Coatings</h1>
+                <p style="margin-bottom: 8px;"><span style="text-decoration: underline;">2016-2019</span></p>
+                <p class="project-description">The goal of this project was to reduce costs in high-temperature processes and enhance the performance of refractory materials as thermal insulators. The study focuses on investigating the fundamentals of thermal energy transport via radiation to comprehend the benefits of high emissivity coatings and compare them with high reflectance coatings.&nbsp;</p>
+            </div>
+        </div>
     </div>
-    <footer style="margin-top: 20px;color: rgb(254,217,103);">
-        <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><div><footer class="footer">
-  <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;;"> <i class="far fa-copyright"></i> Murilo Henrique Moreira –
+    <footer style="color: var(--bs-dark)!important;margin-top: 0px;">
+        <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: var(--bs-dark);"><script src='https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js'></script>
+    <script  src="./JavaSript/tsParticlesScriptHome.js"></script>
+
+<div><footer class="footer">
+  <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;; margin-bottom:5px"> <i class="far fa-copyright"></i> Murilo Henrique Moreira –
       <script language="javascript"> 
 months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
 var theDate = new Date(document.lastModified); 
@@ -79,6 +123,7 @@ document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear(
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/tsParticlesScriptHome.js"></script>
 </body>
 
 </html>

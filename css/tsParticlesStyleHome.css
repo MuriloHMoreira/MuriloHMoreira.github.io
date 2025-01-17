@@ -1,0 +1,20 @@
+.hero-body {
+  position: relative;
+}
+
+#tsparticles {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+/*  background-image: linear-gradient(to left top, #000035, #000643, #000a51, #00095f, #00076d, #00076d, #00076d, #00076d, #00095f, #000a51, #000643, #000035);*/
+  background-color: #050023;
+}
+
+
+.docSlider-pager {
+  display: none;
+}

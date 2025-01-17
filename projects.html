@@ -12,20 +12,22 @@ Welcome!">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/tsParticlesStyleHome.css">
     <link rel="stylesheet" href="assets/css/main_theme.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
 </head>
 
 <body style="font-family: 'IBM Plex Mono', monospace;">
+    <div id="tsparticles"></div>
     <header class="d-inline d-xxl-flex justify-content-xxl-center" id="navbar-top">
-        <nav class="navbar navbar-expand-xl border-black border rounded-0 border-0 shadow-lg d-flex flex-xl-nowrap navbar-light" style="height: 64px;background: rgb(57,54,82);border-style: none;border-color: rgba(16,63,98,0);font-family: 'IBM Plex Mono';color: rgb(254,217,103);padding-top: 0px;width: 100%;max-width: 1320px;">
-            <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler d-flex d-xl-none justify-content-start justify-content-xxl-center" data-bs-target="#navcol-1" style="padding-top: 0px;padding-bottom: 0px;margin-left: 10px;color: var(--bs-focus-ring-color);border-style: none;border-color: var(--bs-focus-ring-color);margin-top: 0px;"><span class="visually-hidden" style="color: var(--bs-focus-ring-color);background: #ffffff;">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--bs-focus-ring-color);"></span></button><a class="navbar-brand d-none d-sm-flex d-md-flex align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: rgb(56,54,82)!important;" href="index.html">Murilo Henrique Moreira</a><a class="navbar-brand d-flex d-print-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: rgb(56,54,82)!important;" href="index.html">M H Moreira</a>
-                <div class="collapse navbar-collapse border rounded border-0 border-dark justify-content-start justify-content-xl-end" id="navcol-1" style="padding-left: 18px;background: #393652;height: auto;width: auto;margin-right: 2%;">
-                    <ul class="navbar-nav d-xl-flex d-xxl-flex justify-content-xl-end justify-content-xxl-end nav-items" style="height: 100%;">
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="height: 100%;margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#webpages" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-book"></i>&nbsp;Webpages</a></li>
-                        <li class="nav-item d-xxl-flex align-items-xxl-center" style="margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#cv" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-user-graduate d-xl-flex align-items-xl-center"></i>&nbsp;Curriculum Vitae</a></li>
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="research.html" style="height: 100%;color: rgb(254,217,103);background: rgb(56,54,82)!important;"><i class="fas fa-microscope d-xl-flex align-items-xl-center"></i>&nbsp;Research</a></li>
-                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="projects.html" style="color: rgb(254,217,103);height: 100%;background: rgb(56,54,82)!important;"><i class="fas fa-cogs"></i>&nbsp;Projects</a></li>
+        <nav class="navbar navbar-expand-xl border-black border rounded-0 border-0 shadow-lg d-flex flex-xl-nowrap navbar-light" style="height: 64px;background: var(--bs-primary);font-family: 'IBM Plex Mono';color: rgb(254,217,103);padding-top: 0px;width: 100%;box-shadow: 0px 8px 4px 4px black!important;/*max-width: 1320px;*/">
+            <div class="container-fluid"><button data-bs-toggle="collapse" class="navbar-toggler d-flex d-xl-none justify-content-start justify-content-xxl-center" data-bs-target="#navcol-1" style="padding-top: 0px;padding-bottom: 0px;margin-left: calc(var(--bs-gutter-x) * .5);color: var(--bs-focus-ring-color);border-style: none;border-color: var(--bs-focus-ring-color);margin-top: 0px;"><span class="visually-hidden" style="color: var(--bs-focus-ring-color);background: #ffffff;">Toggle navigation</span><span class="navbar-toggler-icon" style="color: var(--bs-focus-ring-color);"></span></button><a class="navbar-brand d-none d-sm-flex d-md-flex align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 5%;height: auto;background: var(--bs-focus-ring-color);" href="index.html">Murilo Henrique Moreira</a><a class="navbar-brand d-flex d-print-none d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none align-items-center justify-content-xxl-start nav-link" data-bss-hover-animate="pulse" style="color: rgb(254,217,103);font-family: 'IBM Plex Mono', monospace;font-weight: bold;margin-left: 2%;font-size: 22px;padding-top: 8px;padding-left: 8px;height: auto;background: rgb(7,1,33);" href="index.html">M H Moreira</a>
+                <div class="collapse navbar-collapse border rounded border-0 border-dark justify-content-start justify-content-xl-end" id="navcol-1" style="padding-left: 18px;background: var(--bs-focus-ring-color);height: auto;width: auto;margin-right: 2%;">
+                    <ul class="navbar-nav d-xl-flex d-xxl-flex justify-content-xl-end justify-content-xxl-end nav-items" style="height: 100%;margin-right: calc(var(--bs-gutter-x) * .5);">
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="height: 100%;margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#webpages" style="height: 100%;color: rgb(254,217,103);"><i class="fas fa-book"></i>&nbsp;Webpages</a></li>
+                        <li class="nav-item d-xxl-flex align-items-xxl-center" style="margin-left: 0px;margin-right: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="index.html#cv" style="height: 100%;color: rgb(254,217,103);background: var(--bs-focus-ring-color);"><i class="fas fa-user-graduate d-xl-flex align-items-xl-center"></i>&nbsp;Curriculum Vitae</a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" data-bss-hover-animate="pulse" href="research.html" style="height: 100%;color: rgb(254,217,103);background: var(--bs-focus-ring-color);"><i class="fas fa-microscope d-xl-flex align-items-xl-center" style="background: var(--bs-focus-ring-color);"></i>&nbsp;Research</a></li>
+                        <li class="nav-item d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center" style="margin-right: 0px;margin-left: 0px;background: var(--bs-focus-ring-color);"><a class="nav-link active d-xl-flex d-xxl-flex align-items-xl-center align-items-xxl-center navbar-links" data-bss-hover-animate="pulse" href="projects.html" style="color: rgb(254,217,103);height: 100%;background: var(--bs-focus-ring-color);padding-right: calc(var(--bs-gutter-x) * .5 * 10;padding-left: calc(var(--bs-gutter-x) * .5);"><i class="fas fa-cogs"></i>&nbsp;Projects</a></li>
                     </ul>
                 </div>
             </div>
@@ -104,7 +106,10 @@ Welcome!">
         </div>
     </div>
     <footer style="margin-top: 20px;color: rgb(254,217,103);">
-        <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><div><footer class="footer">
+        <div class="text-center d-xxl-flex justify-content-xxl-center" style="font-family: 'IBM Plex Mono';color: rgb(254,217,103);"><script src='https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js'></script>
+    <script  src="./JavaSript/tsParticlesScriptHome.js"></script>
+
+<div><footer class="footer">
   <p style="font-family: &#39;IBM Plex Mono&#39;; font-weight:&#39;bold&#39;;"> <i class="far fa-copyright"></i> Murilo Henrique Moreira –
       <script language="javascript"> 
 months = ['January', 'Febraury', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
@@ -120,6 +125,7 @@ document.write("Last updated "+getDate()+' '+months[getMonth()]+' '+getFullYear(
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/tsParticlesScriptHome.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm's Law and Power Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .container, .results-container {
+            width: 300px; /* Set the same width for both containers */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .results-container {
+            margin-top: 20px; /* Add margin-top for the results container */
+            justify-content: left; /* Ensure items within the grid are left-aligned */
+        }
+
+        .container div, .results-container .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: left; /* Left-align items within the grid */
+        }
+
+
+        .results-container div {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            margin-left: 10px;
+        }
+        label.inactive, .result.inactive label {
+            color: blue;
+        }
+        label.active, .result.active label {
+            color: green;
+        }
+        .calculated {
+            color: blue;
+        }
+        .defined {
+            color: green;
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Ohm's Law and Power Calculator</h1>
+    <div class="container">
+        <div class="tooltip">
+            <label for="current" id="label-current">Current (I):</label>
+            <input type="number" id="current" placeholder="Enter Current">
+            <span class="tooltiptext" id="tooltip-current">Current (User-defined)</span>
+        </div>
+        <div class="tooltip">
+            <label for="resistance" id="label-resistance">Resistance (R):</label>
+            <input type="number" id="resistance" placeholder="Enter Resistance">
+            <span class="tooltiptext" id="tooltip-resistance">Resistance (User-defined)</span>
+        </div>
+        <div class="tooltip">
+            <label for="power" id="label-power">Power (P):</label>
+            <input type="number" id="power" placeholder="Enter Power">
+            <span class="tooltiptext" id="tooltip-power">Power (User-defined)</span>
+        </div>
+        <div class="tooltip">
+            <label for="voltage" id="label-voltage">Voltage (V):</label>
+            <input type="number" id="voltage" placeholder="Enter Voltage">
+            <span class="tooltiptext" id="tooltip-voltage">Voltage (User-defined)</span>
+        </div>
+
+        <div class="result tooltip" id="result-current">
+            <label for="current">Current (I):</label>
+            <div id="formula-current">N/A</div>
+            <span class="tooltiptext" id="result-tooltip-current">Current (Calculated)</span>
+        </div>
+        <div class="result tooltip" id="result-resistance">
+            <label for="resistance">Resistance (R):</label>
+            <div id="formula-resistance">N/A</div>
+            <span class="tooltiptext" id="result-tooltip-resistance">Resistance (Calculated)</span>
+        </div>
+        <div class="result tooltip" id="result-power">
+            <label for="power">Power (P):</label>
+            <div id="formula-power">N/A</div>
+            <span class="tooltiptext" id="result-tooltip-power">Power (Calculated)</span>
+        </div>
+        <div class="result tooltip" id="result-voltage">
+            <label for="voltage">Voltage (V):</label>
+            <div id="formula-voltage">N/A</div>
+            <span class="tooltiptext" id="result-tooltip-voltage">Voltage (Calculated)</span>
+        </div>
+    </div>
+
+    <script>
+        let lastTwoFields = [];
+
+        function updateLastTwoFields(fieldId) {
+            if (lastTwoFields.length === 2) {
+                if (lastTwoFields[1] === fieldId) {
+                    return; // No update needed if the same field is selected again
+                }
+                lastTwoFields.shift(); // Remove the oldest entry
+            }
+            lastTwoFields.push(fieldId);
+            updateLabels();
+        }
+
+        function updateLabels() {
+            const allLabels = document.querySelectorAll('label');
+            const allResults = document.querySelectorAll('label');
+
+            allLabels.forEach(label => {
+                if (lastTwoFields.includes(label.htmlFor)) {
+                    label.classList.remove('inactive');
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                    label.classList.add('inactive');
+
+                }
+            });
+
+            const allTooltips = document.querySelectorAll('.tooltiptext');
+            allTooltips.forEach(tooltip => {
+                const field = tooltip.id.replace('tooltip-', '');
+                if (lastTwoFields.includes(field)) {
+                    tooltip.innerHTML = `${field.charAt(0).toUpperCase() + field.slice(1)} (User-defined)`;
+                } else {
+                    tooltip.innerHTML = `${field.charAt(0).toUpperCase() + field.slice(1)} (Calculated)`;
+                }
+            });
+        }
+
+        function calculate() {
+            const current = parseFloat(document.getElementById('current').value);
+            const resistance = parseFloat(document.getElementById('resistance').value);
+            const power = parseFloat(document.getElementById('power').value);
+            const voltage = parseFloat(document.getElementById('voltage').value);
+
+            let fieldValues = {
+                'current': current,
+                'resistance': resistance,
+                'power': power,
+                'voltage': voltage
+            };
+
+            let formulaCurrent = isNaN(current) ? 'N/A' : `\\( I = ${current} \\)`;
+            let formulaResistance = isNaN(resistance) ? 'N/A' : `\\( R = ${resistance} \\)`;
+            let formulaPower = isNaN(power) ? 'N/A' : `\\( P = ${power} \\)`;
+            let formulaVoltage = isNaN(voltage) ? 'N/A' : `\\( V = ${voltage} \\)`;
+
+            if (lastTwoFields.includes('current') && lastTwoFields.includes('resistance') && !isNaN(current) && !isNaN(resistance)) {
+                fieldValues.power = (Math.pow(current, 2) * resistance).toFixed(2);
+                fieldValues.voltage = (current * resistance).toFixed(2);
+                formulaVoltage = `\\( V = I \\cdot R = ${current} \\cdot ${resistance} = ${fieldValues.voltage} \\)`;
+                formulaPower = `\\( P = I^2 \\cdot R = ${current}^2 \\cdot ${resistance} = ${fieldValues.power} \\)`;
+            } else if (lastTwoFields.includes('current') && lastTwoFields.includes('power') && !isNaN(current) && !isNaN(power)) {
+                fieldValues.resistance = (power / Math.pow(current, 2)).toFixed(2);
+                fieldValues.voltage = (power / current).toFixed(2);
+                formulaResistance = `\\( R = \\frac{P}{I^2} = \\frac{${power}}{${current}^2} = ${fieldValues.resistance} \\)`;
+                formulaVoltage = `\\( V = \\frac{P}{I} = \\frac{${power}}{${current}} = ${fieldValues.voltage} \\)`;
+            } else if (lastTwoFields.includes('current') && lastTwoFields.includes('voltage') && !isNaN(current) && !isNaN(voltage)) {
+                fieldValues.resistance = (voltage / current).toFixed(2);
+                fieldValues.power = (voltage * current).toFixed(2);
+                formulaResistance = `\\( R = \\frac{V}{I} = \\frac{${voltage}}{${current}} = ${fieldValues.resistance} \\)`;
+                formulaPower = `\\( P = V \\cdot I = ${voltage} \\cdot ${current} = ${fieldValues.power} \\)`;
+            } else if (lastTwoFields.includes('resistance') && lastTwoFields.includes('power') && !isNaN(resistance) && !isNaN(power)) {
+                fieldValues.current = Math.sqrt(power / resistance).toFixed(2);
+                fieldValues.voltage = (Math.sqrt(power / resistance) * resistance).toFixed(2);
+                formulaCurrent = `\\( I = \\sqrt{\\frac{P}{R}} = \\sqrt{\\frac{${power}}{${resistance}}} = ${fieldValues.current} \\)`;
+                formulaVoltage = `\\( V = I \\cdot R = ${fieldValues.current} \\cdot ${resistance} = ${fieldValues.voltage} \\)`;
+            } else if (lastTwoFields.includes('resistance') && lastTwoFields.includes('voltage') && !isNaN(resistance) && !isNaN(voltage)) {
+                fieldValues.current = (voltage / resistance).toFixed(2);
+                fieldValues.power = (Math.pow(voltage, 2) / resistance).toFixed(2);
+                formulaCurrent = `\\( I = \\frac{V}{R} = \\frac{${voltage}}{${resistance}} = ${fieldValues.current} \\)`;
+                formulaPower = `\\( P = \\frac{V^2}{R} = \\frac{${voltage}^2}{${resistance}} = ${fieldValues.power} \\)`;
+            } else if (lastTwoFields.includes('power') && lastTwoFields.includes('voltage') && !isNaN(power) && !isNaN(voltage)) {
+                fieldValues.current = (power / voltage).toFixed(2);
+                fieldValues.resistance = (Math.pow(voltage, 2) / power).toFixed(2);
+                formulaCurrent = `\\( I = \\frac{P}{V} = \\frac{${power}}{${voltage}} = ${fieldValues.current} \\)`;
+                formulaResistance = `\\( R = \\frac{V^2}{P} = \\frac{${voltage}^2}{${power}} = ${fieldValues.resistance} \\)`;
+            }
+
+            Object.keys(fieldValues).forEach(field => {
+                const element = document.getElementById(field);
+                if (!lastTwoFields.includes(field)) {
+                    element.value = fieldValues[field];
+                    document.getElementById(`result-tooltip-${field}`).innerHTML = `${field.charAt(0).toUpperCase() + field.slice(1)} (Calculated)`;
+                    document.getElementById(`result-${field}`).classList.remove('defined');
+                    document.getElementById(`result-${field}`).classList.add('calculated');
+
+                } else {
+                    document.getElementById(`result-tooltip-${field}`).innerHTML = `${field.charAt(0).toUpperCase() + field.slice(1)} (User-defined)`;
+                    document.getElementById(`result-${field}`).classList.remove('calculated');
+                    document.getElementById(`result-${field}`).classList.add('defined');
+                }
+                document.getElementById(`formula-${field}`).innerHTML = `\\( ${field.charAt(0).toUpperCase()} = ${fieldValues[field]} \\)`;
+            });
+
+            if (!lastTwoFields.includes('current')) document.getElementById('formula-current').innerHTML = formulaCurrent;
+            if (!lastTwoFields.includes('resistance')) document.getElementById('formula-resistance').innerHTML = formulaResistance;
+            if (!lastTwoFields.includes('power')) document.getElementById('formula-power').innerHTML = formulaPower;
+            if (!lastTwoFields.includes('voltage')) document.getElementById('formula-voltage').innerHTML = formulaVoltage;
+
+            MathJax.typeset();
+        }
+
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                updateLastTwoFields(e.target.id);
+                calculate();
+            });
+        });
+    </script>
+</body>
+</html>
